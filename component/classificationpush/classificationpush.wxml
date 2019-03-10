@@ -1,0 +1,6 @@
+<!--classificationpush.wxml-->
+<view class='back-v'>
+  <label class='tit'>{{title}}</label>
+  <image class='img' src='../../static/images/classification_push.png'></image>
+  <label class='subtit'>查看全部</label>
+</view>

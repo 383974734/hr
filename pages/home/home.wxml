@@ -1,0 +1,116 @@
+<!--pages/home/home.wxml-->
+
+<!-- 模块 -->
+<view class='modular' wx:for="{{modular}}" >
+  <!-- 图片 -->
+  <image class='modular-img' src='{{item.img}}'></image>
+  <!-- 文字 -->
+  <view class='modular-tit'>{{item.tit}}</view>
+</view>
+
+
+<!-- 招聘求职 -->
+<view class='job_wanted-sub-v' hidden='{{job_wanted.length === 0}}'>
+  <classificationpush class="job_wanted" title="招聘求职"></classificationpush>
+  <!-- 列表内容view -->
+  <view class='job_wanted-back-v'>
+    <!-- 内容view -->
+    <view class='job_wanted-v' wx:for="{{job_wanted}}" wx:for-index="index" data-index="{{index}}">
+      <!-- 名字 -->
+      <label class='job_wanted-tit'>{{item.tit}}</label>
+      <!-- 薪资 -->
+      <label class='job_wanted-money'>{{item.money}}</label>
+      <!-- 显示地址一栏的布局 -->
+      <view class='job_wanted-add-cell'>
+        <!-- 地址 -->
+        <label class='job_wanted-add'>{{item.add}}</label>
+        <!-- 年限 -->
+        <label class='job_wanted-add'>{{item.year}}</label>
+        <!-- 学历 -->
+        <label class='job_wanted-education'>{{item.education}}</label>
+      </view>
+      <!-- 公司区域的veiw -->
+      <view class='job_wanted-company'>
+        <!-- 图片 -->
+        <image class='job_wanted-img' src='{{item.img}}'></image>
+        <!-- 公司名字及详细内容区域 -->
+        <view class='job_wanted-name-con'>
+          <!-- 公司名字 -->
+          <label class='job_wanted-name'>{{item.name}}</label>
+          <view class='job_wanted-add-cell'>
+            <!-- 性质 -->
+            <label class='job_wanted-add'>{{item.subtit}}</label>
+            <!-- 人数 -->
+            <label class='job_wanted-add'>{{item.number}}</label>
+            <!-- 行业 -->
+            <label class='job_wanted-education'>{{item.industry}}</label>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+<!-- 有问必答 -->
+<view class='problem-sub-v' hidden='{{problem.length === 0}}'>
+  <classificationpush class="job_wanted" title="有问必答"></classificationpush>
+  <!-- 列表内容view -->
+  <view class='problem-back-v'>
+    <view class='problem-v' wx:for="{{problem}}" wx:for-index="index" data-index="{{index}}">
+      <!-- 红色的数字 -->
+      <label class='problem-number'>{{index + 1}}</label>
+      <!-- 图片 -->
+      <image class='problem-img' src='{{item.img}}'></image>
+      <!-- 下面的一排热度置顶啥的 -->
+      <view class='problem-name-v'>
+        <!-- 问题题目 -->
+        <label class='problem-name'>{{item.tit}}</label>
+        <label class='problem-type' hidden='{{item.type != 1}}'>圆桌</label>
+        <label class='problem-btn' hidden='{{item.btn != 1}}'>置顶</label>
+        <label class='problem-subtit'>{{item.subtit}}</label>
+      </view>
+      
+    </view>
+  </view>
+</view>
+
+
+
+<!-- 热门培训 -->
+<view class='train-sub-v' hidden='{{train.length === 0}}'>
+  <classificationpush class="job_wanted" title="热门培训"></classificationpush>
+  <!-- 热门背景view -->
+  <view class='train-back-v'>  
+    <!-- 每个子view -->
+    <view class='train-v' wx:for="{{train}}" wx:for-index="index" data-index="{{index}}">
+      <image class='train-img' src='{{item.img}}'></image>
+      <view class='train-tit'>{{item.tit}}</view>
+      <!-- 字节和时长 -->
+      <view class='train-number-v'>
+        <label class='train-number'>{{item.number}}</label>
+        <label class='train-time'>{{item.time}}</label>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+<!-- 协会消息 -->
+<view class='news-sub-v' hidden='{{news.length === 0}}'>
+  <classificationpush class="job_wanted" title="协会消息"></classificationpush>
+  <!-- 承载消息试图 -->
+  <view class='news-back-v' wx:for="{{news}}" wx:for-index="index" data-index="{{index}}">
+    <!-- cell整体 -->
+    <view class='news-cell'>
+      <!-- 左侧区域 -->
+      <view class='news-l'>
+        <label class='news-tit'>{{item.tit}}</label>
+        <label class='news-subtit'>{{item.subtit}}</label>
+      </view>
+      <image class='news-img' src='{{item.img}}'></image>
+    </view>
+  </view>
+</view>

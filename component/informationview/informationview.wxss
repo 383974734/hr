@@ -1,0 +1,36 @@
+/* informationview.wxss */
+
+.back-v {
+   border-bottom: 1rpx solid #ececec;
+   height: 100rpx;
+}
+
+.tit {
+  letter-spacing: 10rpx;
+  font-size: 34rpx;
+  line-height: 100rpx;
+  float: left;
+}
+
+.star {
+  color: #dc001c;
+  font-size: 32rpx;
+  line-height: 100rpx;
+}
+
+.img {
+  width: 20rpx;
+  height: 80rpx;
+  float: right;
+  margin-top: 10rpx;
+  margin-right: 10rpx;
+}
+
+.input {
+  height: 100rpx;
+  font-size: 30rpx;
+  line-height: 100rpx;
+  float: right;
+  text-align: right;
+  margin-right: 15rpx;
+}

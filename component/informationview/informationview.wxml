@@ -1,0 +1,8 @@
+<!--informationview.wxml-->
+<view class='back-v'>
+  <label class='tit'>{{tit}}</label>
+  <label class='star' hidden='{{tips === "1"}}'>*</label>
+  <image class='img' src='../../resources/images/push-btn-img.png' hidden='{{ishid === "1"}}'></image>
+  <input class="input" name="{{name}}" placeholder="{{placeholder}}" placeholder-style="color:#dcdcdc;"
+bindinput="getInputValue" disabled="{{disabled}}"/>
+</view>

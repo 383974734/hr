@@ -1,0 +1,339 @@
+/* pages/home/home.wxss */
+
+
+
+
+/* <!-- 模块 --> */
+.modular {
+  margin-top: 40rpx;
+  width: 20%;
+  float: left;
+}
+/* 图片 */
+.modular-img {
+  margin: 0 auto;  
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+/* 文字 */
+.modular-tit {
+  width: 100%;
+  height: 40rpx;
+  font-size: 24rpx;
+  text-align: center;
+  margin-top: 10rpx;
+}
+
+
+/* <!-- 招聘求职 --> */
+/*  列表内容view */
+.job_wanted-back-v {
+  margin: 180rpx 40rpx 0rpx 40rpx;
+}
+/* 内容view */
+.job_wanted-v {
+  height: 160rpx;
+  border: 5rpx solid #f8f6f6;
+  border-radius: 3rpx;
+  /* margin-bottom: 1rpx; */
+  padding: 30rpx;
+}
+/* 名字  */
+.job_wanted-tit {
+  width: 80%;
+  height: 35rpx;
+  line-height: 35rpx;
+  font-size: 28rpx;
+  font-weight: bolder;
+  /* margin-right: 130rpx; */
+  float: left;
+  /* 多余的文字显示... */
+  overflow: hidden; 
+  white-space: nowrap; 
+  text-overflow:ellipsis;
+}
+/* 薪资  */
+.job_wanted-money {
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 24rpx;
+  color: rgba(179, 45, 4, 0.932);
+  float: right;
+}
+
+/* 显示地址一栏的布局 */
+.job_wanted-add-cell {
+  display: block;
+  height: 40rpx;
+  padding-top: 15rpx;
+  float: left;
+}
+
+/* 地址  */
+.job_wanted-add {
+  height: 20rpx;
+  line-height: 20rpx;
+  font-size: 21rpx;
+  border-right: 1rpx solid #838181;
+  float: left;
+  color: #838181;
+  padding-right: 12rpx;
+  margin-right: 12rpx;
+}
+/* 年限  */
+.job_wanted-year {
+  height: 20rpx;
+  line-height: 20rpx;
+  font-size: 22rpx;
+  border-right: 1rpx solid #838181;
+  float: left;
+  color: #838181;
+  padding-right: 12rpx;
+  margin-right: 12rpx;
+}
+/* 学历  */
+.job_wanted-education {
+  height: 20rpx;
+  line-height: 20rpx;
+  font-size: 21rpx;
+  float: left;
+  color: #838181;
+
+}
+
+/* 公司区域的veiw */
+.job_wanted-company {
+  width: 100%;
+  height: 90rpx;
+  float: left;
+}
+/* 图片  */
+.job_wanted-img {
+  width: 58rpx;
+  height: 58rpx;
+  border: 1rpx solid #ececec;
+  display: inline-block;
+  margin-right: 20rpx;
+  margin-top: 10rpx;
+}
+
+/* 公司名字及详细内容区域 */
+.job_wanted-name-con {
+  display: inline-block;
+  height: 60rpx;
+  width: 70%;
+}
+
+/* 公司名字 */
+.job_wanted-name {
+  float: left;
+  font-size: 24rpx;
+  color: #686565;
+  width: 100%;
+  margin-top: -5rpx;
+}
+
+
+
+
+
+
+
+
+
+
+/* <!-- 有问必答 --> */
+.problem-sub-v {
+  margin: 0rpx 40rpx 0rpx 40rpx;
+}
+.problem-v {
+  height: 145rpx;
+  width: 100%;
+  border-right: 1rpx solid #ececec;
+  border-top: 1rpx solid #ececec;
+  border-bottom: 1rpx solid #ececec;
+  padding: 10rpx 0rpx 30rpx 0rpx;
+}
+
+/* 红色的数字 */
+.problem-number {
+  float: left;
+  height: 130rpx;
+  color: rgba(179, 45, 4, 0.932);
+  font-size: 34rpx;
+  font-weight: bolder;
+  margin-right: 20rpx;
+  margin-top: 8rpx;
+}
+
+/* 图片 */
+.problem-img {
+  width: 200rpx;
+  height: 140rpx;
+  border-radius: 10rpx;
+  background-color: pink;
+  float: right;
+  margin: 10rpx 20rpx 10rpx 10rpx;
+}
+
+.problem-name-v {
+  float: left;
+}
+
+/* 问题题目 */
+.problem-name {
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-top: 10rpx;
+  display: block;
+  width: 400rpx;
+  max-height: 115rpx;
+  /* 隐藏超出部分 */
+  overflow:hidden;
+  /* 显示省略号 */
+  text-overflow: ellipsis;
+  display:-webkit-box;
+  /* 块元素显示的文本行数 */
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
+}
+
+.problem-type {
+  height: 10rpx;
+  line-height: 20rpx;
+  font-size: 20rpx;
+  padding: 4rpx 6rpx 0rpx 8rpx;
+  border: 1rpx solid #9b9898;
+  border-radius: 8rpx;
+  color: #9b9898;
+  margin-right: 10rpx;
+}
+
+.problem-btn {
+  font-size: 24rpx;
+  color: #9b9898;
+}
+
+.problem-subtit {
+  font-size: 24rpx;
+  color: #9b9898;
+}
+
+
+
+/* <!-- 热门培训 --> */
+.train-back-v {
+  margin-left: 40rpx;
+}
+.train-v {
+  width: 315rpx;
+  height: 350rpx;
+  margin-right: 40rpx;
+  display: inline-block;
+  padding-bottom: 30rpx;
+}
+
+.train-img {
+  width: 100%;
+  height: 200rpx;
+  margin: 0rpx;
+  border-radius: 15rpx;
+  background-color: yellow;
+}
+
+.train-tit {
+  width: 100%;
+  height: 80rpx;
+  /* margin-top: 10rpx; */
+  font-size: 30rpx;
+  font-weight: bold;
+  /* 隐藏超出部分 */
+  overflow:hidden;
+  /* 显示省略号 */
+  text-overflow: ellipsis;
+  display:-webkit-box;
+  /* 块元素显示的文本行数 */
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+}
+.train-number-v {
+  height: 10rpx;
+  margin-bottom: 30rpx;
+}
+.train-number {
+  height: 20rpx;
+  line-height: 20rpx;
+  font-size: 26rpx;
+  border-right: 1rpx solid #b3afaf;
+  float: left;
+  color: #b3afaf;
+  padding-right: 12rpx;
+  margin-right: 12rpx;
+  margin-top: 20rpx;
+}
+
+.train-time {
+  height: 20rpx;
+  line-height: 20rpx;
+  font-size: 26rpx;
+  border-right: 1rpx solid white;
+  float: left;
+  color: #b3afaf;
+  padding-right: 12rpx;
+  margin-right: 12rpx;
+  margin-top: 20rpx;
+}
+
+
+/* <!-- 协会消息 --> */
+.news-back-v {
+  margin: 0rpx 40rpx 0rpx 40rpx;
+}
+.news-cell {
+  width: 100%;
+  height: 200rpx;
+  border-bottom: 1rpx solid #ececec;
+}
+
+.news-l {
+  float: left;
+  /* margin-top: 40rpx;
+  width: 400rpx;
+  display: inline-block;
+  background-color: pink;  */
+}
+
+.news-img {
+  float: right;
+  width: 240rpx;
+  height: 160rpx;
+  margin-top: 20rpx;
+  /* margin-left: 40rpx; */
+  display: inline-block;
+  background-color: yellow;
+}
+
+
+.news-tit {
+  width: 400rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-top: 40rpx;
+   /* 隐藏超出部分 */
+  overflow:hidden;
+  /* 显示省略号 */
+  text-overflow: ellipsis;
+  display:-webkit-box;
+  /* 块元素显示的文本行数 */
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+}
+
+.news-subtit {
+  font-size: 24rpx;
+  color: #b3afaf;
+}

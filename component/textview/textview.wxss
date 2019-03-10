@@ -1,0 +1,24 @@
+/* textview.wxss */
+
+.back-v {
+  border: 1rpx solid #ececec;
+  /* margin: 5rpx 15rpx 20rpx; */
+  height: 80rpx;
+}
+
+.img {
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align:top;
+  float: left;
+  margin-top: 20rpx;
+  margin-left: 10rpx;
+  margin-right: 5rpx;
+}
+
+.input {
+  height: 100%;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  margin-left: 20rpx;
+}

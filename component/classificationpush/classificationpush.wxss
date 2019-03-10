@@ -1,0 +1,32 @@
+/* classificationpush.wxss */
+
+.back-v {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  height: 140rpx;
+}
+
+.tit {
+  font-size: 32rpx;
+  height: 140rpx;
+  line-height: 140rpx;
+  font-weight: bolder;
+}
+
+.img {
+  float: right;
+  width: 27rpx;
+  height: 40rpx;
+  margin-left: 10rpx;
+  margin-top: 50rpx;
+  background-color: red;
+}
+
+.subtit {
+  height: 140rpx;
+  line-height: 140rpx;
+  float: right;
+  color: #c0bbbb;
+  font-size: 26rpx;
+  font-weight: lighter;
+}

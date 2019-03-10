@@ -1,0 +1,15 @@
+/* tagview.wxss */
+.tit {
+  font-size: 36rpx;
+  color: #111;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.star {
+  font-size: 26rpx;
+  color: #dc001c;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-left: 15rpx;
+}

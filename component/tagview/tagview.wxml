@@ -1,0 +1,3 @@
+<!--tagview.wxml-->
+<text class='tit'>{{title}}</text>
+<text class='star' hidden='{{tips === "1"}}'>*</text>

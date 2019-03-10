@@ -1,0 +1,6 @@
+<!--textview.wxml-->
+<view class='back-v'>
+  <image class='img' src='{{img}}' hidden='{{img === ""}}'></image>
+  <input class="input" name="{{name}}" placeholder="{{}}" type="{{type}}"
+    bindinput="getInputValue" />
+</view>

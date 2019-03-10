@@ -1,0 +1,7 @@
+<!--draw.wxml-->
+<view class="cb-drawer">
+  <view  wx:if = "{{open}}"  class="{{position === 'left' ? (open ? 'cb-drawer-open-mode': 'cb-drawer-close-mode' ):( open ? 'cb-drawer-open-mode-right' : 'cb-drawer-close-mode-right')}}" bind:tap = "modeClick"></view>
+  <view class = "{{ position === 'left' ? ( open ? 'cb-drawer-open-content' : 'cb-drawer-close-content') : ( open ? 'cb-drawer-open-content-right' : 'cb-drawer-close-content-right')}}">
+    <slot></slot>
+  </view>
+</view>
