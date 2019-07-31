@@ -1,0 +1,88 @@
+/* pages/newslist/newslist.wxss */
+
+page {
+  background-color: #f9f9f9;
+}
+
+
+
+.navbar-v {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  background-color: white;
+  top: 0;
+}
+
+.navbar {
+  width: 100%;
+  height: 46px;
+  position: absolute;
+	bottom: 0;
+}
+
+
+/* <!-- 搜索view --> */
+.search-v {
+  height: 110rpx;
+  background-color: white;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+
+/* 搜索框 */
+.search {
+  width: 630rpx;
+  height: 70rpx;
+  font-size: 30rpx;
+  line-height: 70rpx;
+  border-radius: 35rpx;
+  margin-top: 20rpx;
+  margin-left: 50rpx;
+  background-color: #f7f7f7;
+  padding-left: 20rpx;
+}
+
+
+/* 列表 */
+.list-b-v {
+  background-color: white;
+  margin-top: 10rpx;
+}
+
+.list-v {
+  height: 210rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  border-bottom: 2rpx solid #dddbdb;
+}
+
+.tit {
+  width: 420rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+    /* 多余的文字显示... */
+  overflow: hidden; 
+  white-space: nowrap; 
+  text-overflow:ellipsis;
+  display: inline-block;
+}
+
+.img {
+  width: 250rpx;
+  height: 160rpx;
+  margin-top: 25rpx;
+  border-radius: 15rpx;
+  margin-right: 10rpx;
+  vertical-align: top;
+  float: right;
+}
+
+.time {
+  font-size: 30rpx;
+  color: #838181;
+  margin-top: 49rpx;
+}

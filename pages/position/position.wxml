@@ -1,0 +1,35 @@
+<!--pages/position/position.wxml-->
+
+
+<!-- navbar -->
+<!-- <cover-view class='navbar-v'  style='height: {{navheight + 46}}px'>
+  <navbar-v class="navbar"  name="职位类型" naviteml="0" navpop="1"></navbar-v>
+</cover-view> -->
+
+<!-- <view  style='margin-top:{{navheight + 46}}px; height:{{screenHeight - 64}}px; overflow:hidden;'> -->
+<view  style=' height:{{screenHeight - 64}}px; overflow:hidden;'>
+  <view class='list-l'>
+    <view class="list-l-sub {{item.sele ? 'sele-border' : ''}}" wx:for="{{list}}" wx:for-index="index" data-index="{{index}}"  bindtap="clickL">{{item.classA}}</view>
+  </view>
+
+  <view class='list-m'>
+    <view class="{{item.sele ? 'r-border' : ''}}" wx:for="{{listM}}" wx:for-index="index" data-index="{{index}}"  bindtap="clickM">
+      <view class='temp-s'>
+        <view class='tit-s'>
+          <text>{{item.name}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='list-r'>
+    <view class='' wx:for="{{listR}}" wx:for-index="index" data-sele="{{item}}"  bindtap="determineSele">
+      <view class='temp-s'>
+        <view class='tit-s'>
+          <text>{{item}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

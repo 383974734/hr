@@ -1,0 +1,16 @@
+<!--component/popview/popview.wxml-->
+<!-- 飘起来选择的view -->
+<view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}" catchtouchmove='true'  hidden='{{!showDialog}}'>
+  <view class="zan-dialog__mask" bindtap="industrybtn" />
+  <view class="zan-dialog__container">
+    <!-- <view class='pop-tit'>温馨提示</view> -->
+    <view class='pop-subtit'>{{tit}}</view>
+    <view class='btn-v' hidden='{{examine}}'>
+      <view class='no' bindtap="industrybtn">再等等</view>
+      <view class='yes' bindtap="pushrecharge">马上去</view>
+    </view>
+    <view class='btn-v' style='text-align: center;'  hidden='{{examine == false}}'>
+      <view class='yes' bindtap="industrybtn">确定</view>
+    </view>
+  </view>
+</view>

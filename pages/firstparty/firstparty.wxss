@@ -1,0 +1,7 @@
+/* pages/firstparty/firstparty.wxss */
+
+
+
+page {
+  height: 100%;
+}

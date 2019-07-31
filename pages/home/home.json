@@ -1,5 +1,8 @@
 {
+  
   "usingComponents": {
-      "classificationpush": "../../component/classificationpush/classificationpush"
+      "classificationpush": "../../component/classificationpush/classificationpush",
+      "popview": "../../component/popview/popview",
+      "navbar-v": "../../component/navbar/navbar"
   }
 }

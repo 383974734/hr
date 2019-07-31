@@ -1,0 +1,65 @@
+<!--pages/newpersonnel/newpersonnel.wxml-->
+
+<!-- 搜索view -->
+<!-- <view class='search-v'  style='margin-top:{{navheight + 46}}px'> -->
+<view class='search-v'  >
+  <!-- 搜索框 -->
+  <input class='search' name='search' placeholder='关键字搜索' placeholder-style="color:#dcdcdc;" bindconfirm='searchClick'></input>
+</view>
+
+<view>
+  <!-- cell-view -->
+  <view class='cell-back-v' wx:for="{{list}}" wx:for-index="index" data-index="{{index}}" data-id='{{item.id}}' bindtap='listpush'>
+    <!-- 用户头像view -->
+    <view class='user-img-v'>
+      <!-- 用户头像 -->
+      <image class='user-img' src='{{item.jobwantedImageUrl}}'></image>
+    </view>
+    <!-- 用户信息 -->
+    <view class='user-con-v'>
+      <!-- 名字、应聘职位 -->
+      <view class='user-name-v'>
+        <text>{{item.jobwantedName}}</text>
+        <text class='user-name'>{{item.jobwantedPosition}}</text>
+      </view>
+      <!-- 年限、地址、学历 -->
+      <view class='user-add-v'>{{item.worklife == '0' ? "应届" : item.worklife + "年"}} | {{item.resumeArea}} | {{item.academicDegree}}</view>
+      <!-- 标签 -->
+      <view class='user-tit-v'>
+        <!-- 标签 -->
+      <view class='tits' wx:for="{{item.jobwantedLabel}}" wx:if="{{item.jobwantedLabel.count > 0}}" wx:for-index="index" data-index="{{index}}">{{item}}</view>
+      </view>
+    </view>
+    <!-- hr信息 -->
+    <view class='hr-info-v'>
+      <!-- 头像、名字、hot图标 -->
+      <view class='hr-hot-v'>
+        <!-- 头像 -->
+        <view class='hr-con-name-v'>
+          <!-- 两个图片叠加在一起 -->
+          <view style="position: absolute;"> 
+            <image class='hr-img-v' src="../../static/images/hr-super-v.png"></image>  
+          </view>
+          <image class='hr-img' src='{{item.imageUrl}}'></image>
+        </view>
+        <!-- hot图标 -->
+        <view class='hr-hot'>
+          <image class='hot-img' src='../../static/images/hr-hot.png'></image>
+        </view>
+        <view class='hr-name'>{{item.uname}}</view>
+      </view>
+      <!-- 单位、级别 -->
+      <view class='hr-title'>{{item.busName}} | {{item.busJob}}</view>
+    </view>
+  </view>
+</view>
+
+
+
+<view class='add_btn'>
+  <!-- 加号按钮 -->
+  <image class='btn' src='../../static/images/personnel-add.png' bindtap='addbtn' mode='aspectFill'></image>
+</view>
+
+
+

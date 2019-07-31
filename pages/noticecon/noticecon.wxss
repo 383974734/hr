@@ -1,0 +1,72 @@
+/* pages/noticecon/noticecon.wxss */
+
+.back-v {
+  border-top: 25rpx solid #f9f9f9;
+  padding-top: 70rpx;
+  overflow: hidden;
+}
+
+.time {
+  height: 40rpx;
+  line-height: 40rpx;
+  margin-left: 120rpx;
+  font-size: 26rpx;
+  color: #c4c0c0;
+}
+
+.logo {
+  float: left;
+  width: 100rpx;
+  height: 70%;
+  background-color: pink;
+}
+
+.message {
+  float: left;
+  width: 600rpx;
+  height: 70%;
+  /* background-color: yellowgreen; */
+}
+
+.logo-img {
+  width: 100rpx;
+  height: 100rpx;
+  vertical-align: middle;
+}
+
+.mes-back-v {
+  border: 1rpx solid #aaa9a9;
+  background-color: rgb(153, 241, 21);
+  border-radius: 15rpx;
+  padding: 25rpx;
+  font-size: 29rpx;
+  margin-left: 25rpx;
+  margin-top: 25rpx;
+  margin-right: 100rpx;
+}
+
+.mes-jt {
+  float: left;
+  margin-left: -60rpx;
+  width:0px;
+  height:0px; 
+  border-top:20rpx solid rgba(0,0,0,0);
+  border-right:20rpx solid rgb(153, 241, 21);
+  border-bottom:20rpx solid rgba(0,0,0,0);
+  border-left:20rpx solid rgba(0,0,0,0);
+
+}
+
+.mes-back-time {
+  font-size: 28rpx;
+  color: rgb(207, 10, 10);
+}
+
+
+.re {
+  filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}

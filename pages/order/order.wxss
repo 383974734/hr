@@ -1,0 +1,100 @@
+/* pages/order/order.wxss */
+
+page {
+  background-color: #f9f9f9;
+}
+
+
+.navbar-v {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  background-color: white;
+  top: 0;
+}
+
+.navbar {
+  width: 100%;
+  height: 46px;
+  position: absolute;
+	bottom: 0;
+}
+
+
+
+
+
+/* <!-- 列表父试图 --> */
+.back-v {
+  margin: 20rpx 0rpx 0rpx 0rpx;
+  background-color: white;
+  overflow: hidden;
+}
+/* <!-- 承载列表cell的view --> */
+.list-v {
+  margin: 30rpx 30rpx 0rpx 30rpx;
+}
+
+.header-v {
+  width: 100%;
+  height: 50rpx;
+  margin-bottom: 10rpx;
+  overflow: hidden;
+}
+
+/* <!-- 状态图片 --> */
+.state-img {
+  width: 50rpx;
+  height: 50rpx;
+  float: left;
+}
+/* <!-- 状态 --> */
+.state-name {
+  margin-left: 20rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  color: #c2bbbb;
+  float: left;
+}
+/* <!-- 时间 --> */
+.time {
+  height: 50rpx;
+  line-height: 50rpx;
+  float: right;
+  font-size: 28rpx;
+  color: #c2bbbb;
+}
+
+/* <!-- 交易明细图片 --> */
+.jf-img {
+  width: 60rpx;
+  height: 60rpx;
+  display: inline-block;
+  margin-right: 10rpx;
+  vertical-align: middle;
+}
+
+/* <!-- 交易明细 --> */
+.tit {
+  font-size: 30rpx;
+  font-weight: bold;
+  height: 60rpx;
+  line-height: 60rpx;
+  display: inline-block;
+}
+/* <!-- 实付文字 --> */
+.tit-money {
+  margin-top: 10rpx;
+  margin-left: 70rpx;
+  font-size: 28rpx;
+  color: #c2bbbb;
+  display: inline-block;
+}
+/* <!-- 实付金额 --> */
+.money {
+  font-size: 28rpx;
+  color: #e6952b;
+  display: inline-block;
+  margin-bottom: 20rpx;
+}

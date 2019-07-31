@@ -1,75 +1,265 @@
 <!--pages/home/home.wxml-->
 
-<!-- 模块 -->
-<view class='modular' wx:for="{{modular}}" >
-  <!-- 图片 -->
-  <image class='modular-img' src='{{item.img}}'></image>
-  <!-- 文字 -->
-  <view class='modular-tit'>{{item.tit}}</view>
+<scroll-view style="height:100%;" class="scroll-view" scroll-y="true" bindscroll="scroll">
+
+
+<!-- banner -->
+<view class="recommend" >
+  <view class="swiper-container">
+    <swiper autoplay="auto" interval="2000" duration="500" current="{{swiperCurrent}}" bindanimationfinish="swiperChange" circular="true" class="swiper">
+      <block wx:for="{{json.newbanner}}" wx:key="unique">
+        <swiper-item data-id="{{item.bannerId}}" data-url="{{item.bannerUrl}}">
+          <image src="{{item.bannerImg}}" class="img" style='width: {{imageWidth - 4}}px' bindtap='bannercell' data-url='{{item.bannerUrl}}' data-type='{{item.bannerType}}'mode='aspectFill'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="dots">
+      <block wx:for="{{json.newbanner}}" wx:key="unique">
+        <view class="dot{{index == swiperCurrent ? ' active' : ''}}" bindtap="chuangEvent" id="{{index}}"></view>
+      </block>
+    </view>
+  </view>
 </view>
 
 
-<!-- 招聘求职 -->
-<view class='job_wanted-sub-v' hidden='{{job_wanted.length === 0}}'>
-  <classificationpush class="job_wanted" title="招聘求职"></classificationpush>
-  <!-- 列表内容view -->
-  <view class='job_wanted-back-v'>
-    <!-- 内容view -->
-    <view class='job_wanted-v' wx:for="{{job_wanted}}" wx:for-index="index" data-index="{{index}}">
-      <!-- 名字 -->
-      <label class='job_wanted-tit'>{{item.tit}}</label>
-      <!-- 薪资 -->
-      <label class='job_wanted-money'>{{item.money}}</label>
-      <!-- 显示地址一栏的布局 -->
-      <view class='job_wanted-add-cell'>
-        <!-- 地址 -->
-        <label class='job_wanted-add'>{{item.add}}</label>
-        <!-- 年限 -->
-        <label class='job_wanted-add'>{{item.year}}</label>
-        <!-- 学历 -->
-        <label class='job_wanted-education'>{{item.education}}</label>
+<!-- 模块 -->
+<view class='modular-v'>
+  <view class='modular' wx:for="{{modular}}" wx:for-index="index" data-index="{{index}}" bindtap='modularpush'>
+    <!-- 图片 -->
+    <image class='modular-img' src='{{item.img}}' mode='aspectFill'></image>
+    <!-- 文字 -->
+    <view class='modular-tit'>{{item.name}}</view>
+    
+  </view>
+</view>
+
+<!-- //协会头条 -->
+<view class='sub-view'>
+  <view class='sub-tit'>协会头条 </view>
+  <view class='sub-all' bindtap='jobnewslist'>查看全部</view>
+</view>
+
+<!-- //协会消息展示 -->
+<view class='not-v'>
+  <view class='not-sub-v' wx:for="{{json.AssociationMessage}}" wx:for-index="index" data-index="{{index}}" data-messageId='{{item.id}}' bindtap='newsdetailspush'>
+    <view class='not-sub-l'>{{item.messageTitle}}</view>
+    <view class='not-sub-r'>{{item.messageDate}}</view>
+  </view>
+</view>
+
+<!-- 热门活动 -->
+<view class='sub-view'>
+  <view class='sub-tit'>热门活动</view>
+  <view class='sub-all' bindtap='jobwanted'>查看全部</view>
+</view>
+
+<!-- 热门活动图片和内容 -->
+<view class='scroller-v'>
+  <scroll-view class="scoll-w" scroll-x >
+    <block wx:for="{{json.Train}}" wx:key="*this" wx:for-index="index">
+        <view class='cell-view-avi' wx:for-index="index" data-index="{{index}}" data-trainId="{{item.id}}" bindtap='trainconpush'>
+          <image class="cell-img-avi" src="{{item.trainImageurlTitle}}" bindtap='cellClick'></image>
+          <view class='cell-tit-avi' style='{{index == 2 ? "margin-right: 0rpx;" : ""}}'>{{item.trainTitle}}</view>
+        </view>
+    </block>
+  </scroll-view>
+</view>
+
+
+<!-- page模块 -->
+<view >
+  <view scroll-x="true" class="tab-hs" scroll-left="{{scrollLeft}}" id='the-id'>
+      <view class="tab-item {{currentTab==0?'active':''}}"  data-current="0" bindtap="swichNav">有问必答</view>
+      <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">企业热招</view>
+      <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">人才求职</view>
+  </view>
+        
+  <view class='page-v' style='min-height: {{calc}}rpx;'>
+    <!-- 有问必答 -->
+    <view class='job_wanted-sub-v' hidden='{{currentTab != 0 ? true : false}}'>
+      <!-- <classificationpush class="job_wanted" title="有问必答" bindtap="problempush"></classificationpush> -->
+      <!-- 列表内容view -->
+      <view class='problem-back-v'>
+        <view class='problem-v' wx:for="{{json.question}}" wx:for-index="index" data-index="{{index}}" data-seleid="{{item.questionId}}" data-memberId="{{item.memberId}}" bindtap='problemconpush'>
+          <!-- 红色的数字 -->
+          <!-- <label class='problem-number'>{{index + 1}}.</label> -->
+          <!-- 问题题目 -->
+          <label class='problem-name'>{{item.questionTitle}}</label>
+          <view style='overflow: hidden; max-height: 155rpx;'>
+            <!-- 图片 -->
+            <!-- <image class='problem-img' src='{{item.imageUrl}}' mode='aspectFill' hidden='{{item.imageUrl == ""}}'></image> -->
+            <!-- <view class='problem-subtit' hidden='{{item.imageUrl == ""}}'>{{item.questionMessage}}</view> -->
+            <!-- <view class='problem-subtit' hidden='{{item.imageUrl == ""}}'>{{item.questionMessage}}</view> -->
+            <!-- <view class='problem-subtit' style='width: 95%;' hidden='{{item.imageUrl != ""}}'>{{item.questionMessage}}</view> -->
+            <view class='problem-subtit' style='width: 95%;'>{{item.questionMessage}}</view>
+          </view>
+          
+          <!-- 下面的一小分类 回答个数 积分 时间 -->
+          <view class='problem-maxclass-v'>
+            <view class='problem-maxclass'>
+              <!-- 回答个数图片 -->
+              <image class='problem-maxclass-img' src='../../static/images/problem-maxc-mes.png' mode='aspectFill'></image>
+              <!-- 回答个数 -->
+              <view class='problem-maxclass-tit'>{{item.count}}回答</view>
+            </view>
+            <view class='problem-maxclass'>
+              <!-- 积分 -->
+              <view class='problem-maxclass-tit problem-maxclass-r'>{{item.questionMp}}积分</view>
+              <!-- 积分图片 -->
+              <image class='problem-maxclass-img problem-maxclass-r' src='../../static/images/problem-maxc-jf.png' mode='aspectFill'></image>
+            </view>
+            <view class='problem-maxclass'>
+              <!-- 时间 -->
+              <view class='problem-maxclass-tit problem-maxclass-r'>{{item.questionDate}}</view>
+            </view>
+          </view>
+          
+        </view>
       </view>
-      <!-- 公司区域的veiw -->
-      <view class='job_wanted-company'>
-        <!-- 图片 -->
-        <image class='job_wanted-img' src='{{item.img}}'></image>
-        <!-- 公司名字及详细内容区域 -->
-        <view class='job_wanted-name-con'>
-          <!-- 公司名字 -->
-          <label class='job_wanted-name'>{{item.name}}</label>
+      <view class='look-all' bindtap='problempush'>查看更多</view>
+    </view>
+
+
+
+    <!-- 招聘求职 -->
+    <view class='job_wanted-sub-v' hidden='{{currentTab != 1 ? true : false}}'>
+      <!-- <classificationpush class="job_wanted" title="招聘求职" bindtap='recruitpush'></classificationpush> -->
+      <!-- 列表内容view -->
+      <view class='job_wanted-back-v'>
+        <!-- 内容view -->
+        <view class='job_wanted-v' wx:for="{{json.jobRecruit}}" wx:for-index="index" data-index="{{index}}" data-jobId='{{item.id}}' bindtap='jobWabtedPush'>
+          <!-- 名字 -->
+          <label class='job_wanted-tit'>{{item.jobName}}</label>
+          <!-- 薪资 -->
+          <label class='job_wanted-money'>{{item.salaryRange}}/月</label>
+          <!-- 显示地址一栏的布局 -->
           <view class='job_wanted-add-cell'>
-            <!-- 性质 -->
-            <label class='job_wanted-add'>{{item.subtit}}</label>
-            <!-- 人数 -->
-            <label class='job_wanted-add'>{{item.number}}</label>
-            <!-- 行业 -->
-            <label class='job_wanted-education'>{{item.industry}}</label>
+            <!-- 年限 地址jobPlace -->
+            <label class='job_wanted-add'>{{item.jobExperience}}</label>
+            <!-- 学历 -->
+            <label class='job_wanted-add'>{{item.jobEducation}}</label>
+            <!-- 工作性质 jobNature：全职 -->
+            <label class='job_wanted-add' hidden='{{item.jobNature == ""}}'>{{item.jobNature}}</label>
+            <!-- 公司 -->
+            <label class='job_wanted-education'>{{item.busName}}</label>
+          
+          </view>
+          <!-- 公司区域的veiw -->
+          <view class='job_wanted-company'>
+            <!-- 地址图片 -->
+            <image class='tit-add-img' src='../../static/images/recruitcon-add.png' mode='aspectFill'></image>
+            <!-- 地址 -->
+            <view class='tit-add'>{{item.jobPlace}}</view>
+            <view class='tit-add' style='float: right; color: #b9b7b7;'>{{item.publisherDate}}</view>
           </view>
         </view>
       </view>
+      <view class='look-all' bindtap='recruitpush'>查看更多</view>
+    </view>
+
+
+    <!-- 人才求职 -->
+    <view class='job_wanted-sub-v' hidden='{{currentTab != 2 ? true : false}}'>
+      <!-- cell-view -->
+      <view class='cell-back-v' wx:for="{{json.jobWantedResults}}" wx:for-index="index" data-index="{{index}}" data-id='{{item.id}}'bindtap='listpush'>
+        <!-- 用户头像view -->
+        <view class='user-img-v'>
+          <!-- 用户头像 -->
+          <image class='user-img' src='{{item.jobwantedImageUrl}}'></image>
+        </view>
+        <!-- 用户信息 -->
+        <view class='user-con-v'>
+          <!-- 名字、应聘职位 -->
+          <view class='user-name-v'>
+            <text style='word-break:keep-all; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;'>{{item.jobwantedName}}</text>
+            <text class='user-name'>{{item.jobwantedPosition}}</text>
+          </view>
+          <!-- 年限、地址、学历 -->
+          <view class='user-add-v'>{{item.worklife == '0' ? "应届" : item.worklife + "年"}} | {{item.resumeArea}} | {{item.academicDegree}}</view>
+          <!-- 标签 -->
+          <view class='user-tit-v'>
+            <!-- 标签 -->
+          <view class='tits' wx:for="{{item.jobwantedLabel}}" wx:if="{{item.jobwantedLabel.count > 0}}"   wx:for-index="index" data-index="{{index}}">{{item}}</view>
+          </view>
+        </view>
+        <!-- hr信息 -->
+        <view class='hr-info-v'>
+          <!-- 头像、名字、hot图标 -->
+          <view class='hr-hot-v'>
+            <!-- 头像 -->
+            <view class='hr-con-name-v'>
+              <!-- 两个图片叠加在一起 -->
+              <view style="position: absolute;"> 
+                <image class='hr-img-v' src="../../static/images/hr-super-v.png"></image>  
+              </view>
+              <image class='hr-img' src='{{item.imageUrl}}'></image>
+            </view>
+            <!-- hot图标 -->
+            <view class='hr-hot'>
+              <image class='hot-img' src='../../static/images/hr-hot.png'></image>
+            </view>
+            <view class='hr-name'>{{item.uname}}</view>
+          </view>
+          <!-- 单位、级别 -->
+          <view class='hr-title'>{{item.busName}} | {{item.busJob}}</view>
+        </view>
+      </view>
+      <view class='look-all' bindtap='pushNewpersonnelClick'>查看更多</view>
     </view>
   </view>
 </view>
 
 
 
-<!-- 有问必答 -->
+</scroll-view>
+
+
+<view class='float-v' hidden='{{isHidden}}'>
+  <view scroll-x="true" class="tab-hs" style='margin-top: 17rpx;' scroll-left="{{scrollLeft}}">
+        <view class="tab-item {{currentTab==0?'active':''}}"  data-current="0" bindtap="swichNav">有问必答</view>
+        <view class="tab-item {{currentTab==1?'active':''}}"  data-current="1" bindtap="swichNav">企业热招</view>
+        <view class="tab-item {{currentTab==2?'active':''}}"  data-current="2" bindtap="swichNav">人才求职</view>
+    </view>
+</view>
+
+
+<!-- 一下因为修改布局  所以不要了 -->
+<!-- 
+有问必答
 <view class='problem-sub-v' hidden='{{problem.length === 0}}'>
-  <classificationpush class="job_wanted" title="有问必答"></classificationpush>
-  <!-- 列表内容view -->
+  <classificationpush class="job_wanted" title="有问必答" bindtap="problempush"></classificationpush>
+  列表内容view
   <view class='problem-back-v'>
-    <view class='problem-v' wx:for="{{problem}}" wx:for-index="index" data-index="{{index}}">
-      <!-- 红色的数字 -->
-      <label class='problem-number'>{{index + 1}}</label>
-      <!-- 图片 -->
-      <image class='problem-img' src='{{item.img}}'></image>
-      <!-- 下面的一排热度置顶啥的 -->
-      <view class='problem-name-v'>
-        <!-- 问题题目 -->
-        <label class='problem-name'>{{item.tit}}</label>
-        <label class='problem-type' hidden='{{item.type != 1}}'>圆桌</label>
-        <label class='problem-btn' hidden='{{item.btn != 1}}'>置顶</label>
-        <label class='problem-subtit'>{{item.subtit}}</label>
+    <view class='problem-v' wx:for="{{json.question}}" wx:for-index="index" data-index="{{index}}" data-seleid="{{item.questionId}}" data-memberId="{{item.memberId}}" bindtap='problemconpush'>
+      红色的数字
+      <label class='problem-number'>{{index + 1}}.</label>
+      问题题目
+      <label class='problem-name'>{{item.questionTitle}}</label>
+      <view style='overflow: hidden; max-height: 155rpx;'>
+        图片
+        <image class='problem-img' src='{{item.imageUrl}}' mode='aspectFill' hidden='{{item.imageUrl == ""}}'></image>
+        <view class='problem-subtit' hidden='{{item.imageUrl == ""}}'>{{item.questionMessage}}</view>
+        <view class='problem-subtit' style='width: 95%;' hidden='{{item.imageUrl != ""}}'>{{item.questionMessage}}</view>
+      </view>
+      
+      下面的一小分类 回答个数 积分 时间
+      <view class='problem-maxclass-v'>
+        <view class='problem-maxclass'>
+          回答个数图片
+          <image class='problem-maxclass-img' src='../../static/images/problem-maxc-mes.png' mode='aspectFill'></image>
+          回答个数
+          <view class='problem-maxclass-tit'>{{item.count}}回答</view>
+        </view>
+        <view class='problem-maxclass'>
+          积分
+          <view class='problem-maxclass-tit problem-maxclass-r'>{{item.questionMp}}积分</view>
+          积分图片
+          <image class='problem-maxclass-img problem-maxclass-r' src='../../static/images/problem-maxc-jf.png' mode='aspectFill'></image>
+        </view>
+        <view class='problem-maxclass'>
+          时间
+          <view class='problem-maxclass-tit problem-maxclass-r'>{{item.questionDate}}</view>
+        </view>
       </view>
       
     </view>
@@ -78,19 +268,55 @@
 
 
 
-<!-- 热门培训 -->
-<view class='train-sub-v' hidden='{{train.length === 0}}'>
-  <classificationpush class="job_wanted" title="热门培训"></classificationpush>
-  <!-- 热门背景view -->
+热门培训
+<view class='train-sub-v' hidden='{{train.length === 0}}' >
+  <classificationpush class="job_wanted" title="热门活动" bindtap='jobwanted'></classificationpush>
+  热门背景view
   <view class='train-back-v'>  
-    <!-- 每个子view -->
-    <view class='train-v' wx:for="{{train}}" wx:for-index="index" data-index="{{index}}">
-      <image class='train-img' src='{{item.img}}'></image>
-      <view class='train-tit'>{{item.tit}}</view>
-      <!-- 字节和时长 -->
+    每个子view
+    <view class='train-v' wx:for="{{json.Train}}" wx:for-index="index" data-index="{{index}}" data-trainId="{{item.id}}" bindtap='trainconpush'>
+      <image class='train-img' src='{{item.trainImageurlTitle}}' mode='aspectFill'></image>
+      <view class='train-tit'>{{item.trainTitle}}</view>
+      字节和时长
       <view class='train-number-v'>
-        <label class='train-number'>{{item.number}}</label>
-        <label class='train-time'>{{item.time}}</label>
+        <label class='train-number'>{{item.duration}}小时</label>
+        <label class='train-time'>{{item.trainPoint}}H币</label>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+招聘求职
+<view class='job_wanted-sub-v' hidden='{{job_wanted.length === 0}}'>
+  <classificationpush class="job_wanted" title="招聘求职" bindtap='recruitpush'></classificationpush>
+  列表内容view
+  <view class='job_wanted-back-v'>
+    内容view
+    <view class='job_wanted-v' wx:for="{{json.jobRecruit}}" wx:for-index="index" data-index="{{index}}" data-jobId='{{item.id}}' bindtap='jobWabtedPush'>
+      名字
+      <label class='job_wanted-tit'>{{item.jobName}}</label>
+      薪资
+      <label class='job_wanted-money'>{{item.salaryRange}}/月</label>
+      显示地址一栏的布局
+      <view class='job_wanted-add-cell'>
+        年限 地址jobPlace
+        <label class='job_wanted-add'>{{item.jobExperience}}</label>
+        学历
+        <label class='job_wanted-add'>{{item.jobEducation}}</label>
+        工作性质 jobNature：全职
+        <label class='job_wanted-add' hidden='{{item.jobNature == ""}}'>{{item.jobNature}}</label>
+        公司
+        <label class='job_wanted-education'>{{item.busName}}</label>
+       
+      </view>
+      公司区域的veiw
+      <view class='job_wanted-company'>
+        地址图片
+        <image class='tit-add-img' src='../../static/images/recruitcon-add.png' mode='aspectFill'></image>
+        地址
+        <view class='tit-add'>{{item.jobPlace}}</view>
+        <view class='tit-add' style='float: right; color: #b9b7b7;'>{{item.publisherDate}}</view>
       </view>
     </view>
   </view>
@@ -98,19 +324,30 @@
 
 
 
-<!-- 协会消息 -->
+
+
+
+协会消息
 <view class='news-sub-v' hidden='{{news.length === 0}}'>
-  <classificationpush class="job_wanted" title="协会消息"></classificationpush>
-  <!-- 承载消息试图 -->
-  <view class='news-back-v' wx:for="{{news}}" wx:for-index="index" data-index="{{index}}">
-    <!-- cell整体 -->
+  <classificationpush class="job_wanted" title="协会消息" bindtap="jobnewslist"></classificationpush>
+  承载消息试图
+  <view class='news-back-v' wx:for="{{json.AssociationMessage}}" wx:for-index="index" data-index="{{index}}" data-messageId='{{item.id}}' bindtap='newsdetailspush'>
+    cell整体
     <view class='news-cell'>
-      <!-- 左侧区域 -->
+      左侧区域
       <view class='news-l'>
-        <label class='news-tit'>{{item.tit}}</label>
-        <label class='news-subtit'>{{item.subtit}}</label>
+        <label class='news-tit'>{{item.messageTitle}}</label>
+        <label class='news-subtit' hidden='true'>{{item.message}}</label>
       </view>
-      <image class='news-img' src='{{item.img}}'></image>
+      <image class='news-img' src='{{item.imageUrl}}' mode='aspectFill'></image>
     </view>
   </view>
 </view>
+
+-->
+<popview tit="{{popTit}}" examine="{{popExamine}}" showDialog="{{popShowDialog}}"></popview>
+
+
+
+
+

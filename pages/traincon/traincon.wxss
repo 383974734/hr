@@ -1,0 +1,417 @@
+/* pages/traincon/traincon.wxss */
+
+page {
+  background-color: #f9f9f9;
+}
+
+
+.navbar-v {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  background-color: white;
+  top: 0;
+}
+
+.navbar {
+  width: 100%;
+  height: 46px;
+  position: absolute;
+	bottom: 0;
+}
+
+
+.back-b-v {
+  margin-top: 20rpx;
+  overflow: hidden;
+  background-color: white;
+}
+
+.back-v {
+  margin: 20rpx;
+}
+
+.con-img {
+  width: 100%;
+  height: 300rpx;
+  border-radius: 10rpx;
+}
+
+.tit-shear-view {
+  width: 100%;
+  height: 60rpx;
+  overflow: hidden;
+}
+
+.con-tit {
+  width: 70%;
+  height: 35rpx;
+  line-height: 35rpx;
+  font-size: 34rpx;
+  display: block;
+  margin-top: 20rpx;
+  float: left;
+  font-weight: bold;
+  padding-left: 10rpx;
+  border-left: 6rpx solid red;
+}
+
+.shear::after {
+  border: 0;
+} 
+
+.shear-view {
+  width: 80rpx;
+  height: 80rpx;
+  float:right;
+}
+
+.shear {
+  display: flex;
+  width: 80rpx;
+  height: 80rpx;
+  opacity: 0.1;
+  right: 0rpx;
+  bottom: 80rpx;
+}
+
+.shear-img {
+  width: 80rpx; 
+  height: 80rpx; 
+  float:right;
+}
+
+
+.con-name {
+  width: 45%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  display: inline-block;
+  margin-left: 20rpx;
+}
+
+.con-timeleng {
+  width: 42%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 26rpx;
+  color: #a89e9e;
+  text-align: right;
+  margin-right: 40rpx;
+  display: inline-block;
+}
+
+.con-add {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 26rpx;
+  margin-left: 20rpx;
+}
+
+.con-time {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 26rpx;
+  margin-left: 20rpx;
+}
+
+.con-like {
+  height: 110rpx;
+  line-height: 110rpx;
+  font-size: 24rpx;
+  color: #041294;
+  float: left;
+  /* display: inline-block; */
+  /* margin-top: 30rpx; */
+}
+
+.enrollees {
+  height: 110rpx;
+  width: 60%;
+  display: inline-block;
+}
+
+
+/* <!-- 模块 --> */
+
+.modular-v {
+  width: 74%;
+  float: left;
+  overflow: hidden;
+  height: 110rpx;
+}
+
+.modular {
+  width: 60rpx;
+  float: left;
+  margin-top: 25rpx;
+  margin-right: 10rpx;
+}
+
+/* 图片 */
+.modular-img {
+  margin: 0 auto;  
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  background-color: lightgrey;
+}
+
+
+.con-like-btn {
+  background-color: rgba(255, 174, 0, 0.1);
+  width: 110rpx;
+  height: 110rpx;
+  line-height: 110rpx;
+  text-align: center;
+  border-radius: 55rpx;
+  border: 1rpx solid rgba(255, 166, 0, 0.438);
+  color: rgba(255, 166, 0, 0.719);
+  font-size: 36rpx;
+  /* display: inline-block; */
+  vertical-align: top;
+  /* margin-left: 160rpx;
+  margin-top: 30rpx; */
+  /* 居中显示 */
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+   /* 居中显示 */
+   margin-top: 30rpx;
+   margin-bottom: 100rpx;
+}
+
+.con-like-btn1 {
+  width: 140rpx;
+  height: 140rpx;
+  line-height: 110rpx;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 36rpx;
+  /* display: inline-block; */
+  vertical-align: top;
+  /* margin-left: 160rpx;
+  margin-top: 30rpx; */
+  /* 居中显示 */
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+   /* 居中显示 */
+   margin-top: 30rpx;
+   margin-bottom: 100rpx;
+}
+
+.curriculum-tit {
+  font-size: 34rpx;
+  margin-top: 20rpx;
+  height: 35rpx;
+  line-height: 35rpx;
+  border-left: 6rpx solid red;
+  padding-left: 20rpx;
+  font-weight: bold;
+}
+
+.curriculum-con {
+  line-height: 35rpx;
+  font-size: 25rpx;
+  margin: 20rpx 10rpx;
+}
+
+.curriculum-img {
+  width: 100%;
+  height: 370rpx;
+  border-radius: 10rpx;
+}
+
+.imp-tit {
+  font-size: 34rpx;
+  margin-top: 40rpx;
+  margin-bottom: 35rpx;
+   height: 35rpx;
+  line-height: 35rpx;
+  border-left: 6rpx solid red;
+  padding-left: 20rpx;
+  font-weight: bold;
+}
+
+.imp-user-img {
+  width: 80rpx;
+  height:80rpx;
+  border-radius: 40rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+
+.imp-user-name {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 30rpx;
+}
+
+.imp-user-article {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  color: #a89e9e;
+}
+
+.imp-article {
+  line-height: 35rpx;
+  font-size: 25rpx;
+  margin: 30rpx 10rpx 10rpx 10rpx;
+}
+
+
+
+
+/* 飘起来选择的view背景 */
+.zan-dialog__mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  /* 设置阴影半透明背景如： background: rgba(0, 0, 0, 0.4); */
+  background: rgba(0, 0, 0, 0);
+  display: none;
+}
+
+/* 飘起来选择的view内容 */
+.zan-dialog__container {
+  position: fixed;
+  top: 210rpx;
+  /* bottom: 320rpx; */
+  /* 弹窗布局宽 */
+  width: 650rpx;
+  /* 弹窗布局高，与下面弹出距离transform有关 */
+  height: 280rpx;
+  margin-left: 50rpx;
+  background: white;
+  /* 弹框弹出距离，与弹框布局高度有关，如300%表示弹起距离为3倍弹窗高度 */
+  /* transform: translateY(700%); */
+  transform: translateY(0);
+  transition: all 0.7s ease;
+  z-index: 12;
+  border-radius: 20rpx;
+  /* 弹框的悬浮阴影效果，如不需要可注释该行 */
+  /* box-shadow: 0px 0px 3px 2px rgb(240, 240, 240); */
+}
+
+.zan-dialog--show .zan-dialog__container {
+  transform: translateY(0);
+}
+
+.zan-dialog--show .zan-dialog__mask {
+  display: block;
+}
+
+
+.pop-tit {
+  width: 100%;
+  text-align: center;
+  font-size: 36rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #363434;
+  margin-bottom: 10rpx;
+}
+
+.pop-tits {
+  width: 100%;
+  text-align: center;
+  font-size: 38rpx;
+  height: 180rpx;
+  line-height: 180rpx;
+  color: #363434;
+  margin-bottom: 10rpx;
+}
+
+.pop-subtit {
+  color: yellowgreen;
+  margin-bottom: 60rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 26rpx;
+  text-align: center;
+}
+
+.btn-v {
+  width: 310rpx;
+  height: 50rpx;
+  margin: 0 auto;
+}
+
+.btn-vs {
+  width: 140rpx;
+  height: 50rpx;
+  margin: 0 auto;
+}
+
+
+.no {
+  width: 140rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  letter-spacing: 7rpx;
+  border-radius: 15rpx;
+  border: 1rpx solid rgb(248, 72, 18);
+  background-color: white;
+  color: rgb(248, 72, 18);
+  font-size: 28rpx;
+  /* font-weight: lighter; */
+  display: inline-block;
+  margin-right: 30rpx;
+}
+
+.yes {
+  width: 140rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  letter-spacing: 7rpx;
+  border-radius: 15rpx;
+  /* border: 1rpx solid  rgb(248, 72, 18); */
+  color: white;
+  font-size: 28rpx;
+  /* font-weight: lighter; */
+  background-color:  rgb(248, 72, 18);
+  display: inline-block;
+}
+
+
+.poptit {
+  text-align: center;
+}
+
+
+
+.sub-view {
+  /* width: 100%; */
+  height: 70rpx; 
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+
+.sub-tit {
+  height: 36rpx;
+  line-height: 36rpx;
+  border-left: 6rpx solid rgb(233, 7, 7);
+  margin-top: 34rpx;
+  font-size: 38rpx;
+  padding-left: 18rpx;
+  float: left;
+  font-weight: bold;
+}
+
+.sub-all {
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 30rpx;
+  color: rgb(129, 128, 128);
+  float: right;
+  margin-top: 35rpx;
+}

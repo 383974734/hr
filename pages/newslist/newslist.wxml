@@ -1,0 +1,27 @@
+<!--pages/newslist/newslist.wxml-->
+
+
+<!-- navbar -->
+<!-- <cover-view class='navbar-v'  style='height: {{navheight + 46}}px'>
+  <navbar-v class="navbar"  name="协会消息" naviteml="1"></navbar-v>
+</cover-view> -->
+
+
+
+<!-- 搜索view -->
+<!-- <view class='search-v' style='margin-top:{{navheight + 46}}px'> -->
+<view class='search-v' >
+  <!-- 搜索框 -->
+  <input class='search' name='search' placeholder='关键字搜索' placeholder-style="color:#dcdcdc;" bindconfirm='searchClick'></input>
+</view>
+
+
+<!-- 列表 -->
+<view class='list-b-v'>
+  <view class='list-v' wx:for="{{list}}" wx:for-index="index" data-index="{{index}}" data-id="{{item.id}}" bindtap='cellpush'>
+    <view class='tit'>{{item.messageTitle}}</view>
+    <image class='img' src='{{item.imageUrl}}' mode='aspectFill'></image>
+    <view class='time'>{{item.messageDate}}</view>
+  </view>
+</view>
+

@@ -1,0 +1,119 @@
+<!--pages/traincon/traincon.wxml-->
+
+<!-- navbar -->
+<!-- <cover-view class='navbar-v'  style='height: {{navheight + 46}}px'>
+  <navbar-v class="navbar"  name="培训详情" naviteml="1"></navbar-v>
+</cover-view> -->
+
+<!-- 整体内容容器 -->
+<!-- <view class='back-b-v' style='margin-top:{{navheight + 46}}px'> -->
+<view class='back-b-v' >
+  <!-- 缩进内容容器 -->
+  <view class='back-v'>
+
+    <!-- 内容图片 -->
+    <image class='con-img' src='{{json.trainImageurlTitle}}' mode='aspectFill'></image>
+    <view class='tit-shear-view'>
+      <!-- 内容标题 -->
+      <view class='con-tit'>{{json.trainTitle}}</view>
+      <view  class='shear-view' bindtap='shearClick'>
+        <image class='shear-img' src='../../static/images/share.png'></image>
+        <button  class='shear' open-type='share'></button>
+      </view>
+      
+    </view>
+    
+
+    <!-- 主讲   -->
+    <view class='con-name'>主讲人：{{json.speaker}}</view>
+
+    <!-- 时长 -->
+    <view class='con-timeleng'>时长：约{{json.duration}}小时</view>
+
+    <!-- 地址 -->
+    <view class='con-add'>地址：{{json.trainAddress}}</view>
+
+    <!-- 时间 -->
+    <view class='con-time'>时间：{{json.trainStarttime}}</view>
+
+    
+
+
+    <!-- 课程内容文字 -->
+    <view class='curriculum-tit'>课程内容</view>
+
+    <!-- 课程内容 -->
+    <view class='curriculum-con'>{{json.trainMessage}}</view>
+
+    <!-- 课程图片 -->
+    <!-- <image class='curriculum-img' src='{{json.trainImageurl}}' mode='aspectFill'></image> -->
+
+
+    <!-- 主讲文字 -->
+    <view class='imp-tit'>主讲人</view>
+
+    <!-- 主讲头像 -->
+    <image class='imp-user-img' src='{{json.speakerImage}}' mode='aspectFill'></image>
+
+    <!-- 主讲名字 -->
+    <view class='imp-user-name'>{{json.speaker}}</view>
+
+    <!-- 主讲公文 文字 -->
+    <view class='imp-user-article'>{{json.speakerTitle}}</view>
+
+    <!-- 主讲公文 -->
+    <view class='imp-article'>{{json.speakerMessage}}</view>
+
+
+
+    <!-- 喜欢数量 -->
+    <!-- <view class='con-like'>有兴趣（{{json.trainFollow}}）</view> -->
+    <view style='display: inline-block;' bindtap='modularpush'>
+      <view class='con-like'>已报名（{{json.attendTrainResultsCount}}）</view>
+      <view class='modular-v' hidden='{{json.attendTrainResultsCount == 0}}' style='height: 110rpx; line-height: 120rpx;'>
+        <view class='modular' wx:for="{{json.attendTrainResults}}" wx:for-index="index" data-index="{{index}}" >
+        <!-- 图片 -->
+          <image class='modular-img' src='{{item.imageUrl}}' mode='aspectFill'  wx:if="{{index <= 6}}"></image>
+        </view>
+        {{json.attendTrainResultsCount > 0 ? "..." : ''}}
+      </view>
+    </view>
+    
+
+    <!-- 喜欢按钮 joinState:1 未参加过    0参加过-->
+    <view class='con-like-btn' bindtap='btnClick' hidden='{{json.joinState == 0}}'>报</view>
+    <image class='con-like-btn1' src='{{json.joinState == 1 ? "" : "../../static/images/traincon-y.png"}}' hidden='{{json.joinState == 1}}' mode='aspectFill'></image>
+
+
+  </view>
+</view>
+
+
+
+<!-- 飘起来选择的view -->
+<view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}" catchtouchmove='true' hidden='{{!showDialog}}'>
+  <view class="zan-dialog__mask" bindtap="industrybtn" />
+  <view class="zan-dialog__container">
+    <view class='pop-tit'>本次课程需消耗</view>
+    <view class='pop-subtit'>{{json.trainPoint}}H币</view>
+    <view class='btn-v'>
+      <button class='no' bindtap="industrybtn">取消</button>
+      <button class='yes' bindtap="pushrecharge">确定</button>
+    </view>
+  </view>
+</view>
+
+
+<!-- 飘起来选择的view -->
+<view class="zan-dialog {{ showDialogPop ? 'zan-dialog--show' : '' }}"  catchtouchmove="ture" hidden='{{!showDialogPop}}'>
+  <view class="zan-dialog__mask" bindtap="industrybtn" />
+  <view class="zan-dialog__container">
+    <view class='pop-tits'>{{popstr}}</view>
+    <view class='btn-vs'>
+      <button class='yes' bindtap="pushrecharges">确定</button>
+    </view>
+  </view>
+</view>
+
+
+<popview tit="{{popTit}}" examine="{{popExamine}}" showDialog="{{popShowDialog}}"></popview>

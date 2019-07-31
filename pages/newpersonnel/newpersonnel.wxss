@@ -1,0 +1,212 @@
+/* pages/newpersonnel/newpersonnel.wxss */
+page {
+  background-color: #f0f0f0;
+}
+
+/* <!-- 搜索view --> */
+.search-v {
+  height: 110rpx;
+  background-color: white;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+
+/* 搜索框 */
+.search {
+  width: 630rpx;
+  height: 70rpx;
+  font-size: 30rpx;
+  line-height: 70rpx;
+  border-radius: 35rpx;
+  margin-top: 20rpx;
+  margin-left: 50rpx;
+  background-color: #f7f7f7;
+  padding-left: 20rpx;
+}
+
+
+
+.cell-back-v {
+  width: 100%;
+  /* height: 210rpx; */
+   height: 160rpx;
+  -moz-box-shadow:0px 4px 6px rgba(241, 239, 239, 0.527); 
+  -webkit-box-shadow:0px 4px 6px rgba(241, 239, 239, 0.527);  
+  box-shadow:0px 4px 6px rgba(241, 239, 239, 0.527); 
+  margin-top: 50rpx;
+  /* background-color: lightblue; */
+  background-color: white;
+}
+
+.user-img-v {
+  width: 160rpx;
+  height: 100%;
+  /* background-color: rgb(146, 146, 5); */
+  float: left;
+  margin-top: -50rpx;
+  
+}
+
+.user-img {
+  width: 120rpx;
+  height: 120rpx;
+  margin-top: 10rpx;
+  margin-left: 25rpx;
+  margin-right: 15rpx;
+  border-radius: 50%;
+  /* background-color: rgb(250, 248, 248); */
+  background-color: white;
+  border: 10rpx solid white;
+}
+
+.user-con-v {
+  height: 100%;
+  width: 375rpx;
+  float: left;
+  margin-left: 8rpx;
+  /* background-color: pink; */
+  margin-top: -57rpx;
+}
+
+.user-name-v {
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-top: 35rpx;
+  font-size: 36rpx;
+  /* background-color: lightblue; */
+}
+
+.user-name {
+  font-size: 24rpx;
+  margin-left: 15rpx;
+  color: rgb(136, 130, 130);
+  font-weight: bold;
+}
+
+.user-add-v {
+  margin-top:7rpx;
+  font-size: 25rpx;
+  /* color: rgb(136, 130, 130); */
+  /* font-weight: bold; */
+}
+
+.user-tit-v {
+  width: 100%;
+  height: 60rpx;
+  /* background-color: lavender; */
+}
+
+.tits {
+  height: 34rpx;
+  font-size: 24rpx;
+  line-height: 34rpx;
+  background-color: #ececec;
+  border-radius: 5rpx;
+  display: inline-block;
+  color: #8f8c8c;
+  padding-left: 5rpx;
+  padding-right: 5rpx;
+  padding-top: 2rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+  /* font-weight: bold; */
+}
+
+
+
+.hr-info-v {
+  width: 190rpx;
+  height: 100%;
+  float: right;
+  margin-top: -60rpx;
+}
+
+.hr-hot-v {
+  width: 100%;
+  height: 155rpx;
+  
+}
+
+.hr-con-name-v {
+  width: 120rpx;
+  height: 125rpx;
+  float: left;
+}
+
+.hr-img {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background-color: pink;
+  margin-top: 40rpx;
+  margin-left: 40rpx;
+  border: 5rpx solid white;
+}
+
+
+.hr-img-v {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 93rpx;
+  margin-left: 87rpx;
+}
+
+.hr-hot {
+  width: 70rpx;
+  height: 125rpx;
+  float: left;
+  
+}
+
+.hot-img {
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: 10rpx;
+  margin-top: 65rpx;
+}
+
+
+
+.hr-name {
+  width: 160rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  color: rgba(230, 61, 19, 0.863);
+  font-size: 24rpx;
+  text-align: center;
+  float: left;
+}
+
+
+
+.hr-title {
+  width: 170rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: rgb(182, 180, 180);
+  font-weight: bold;
+  /* background-color: olivedrab; */
+}
+
+
+
+.add_btn{
+  position:fixed;
+  display:flex;
+  width: 100rpx;
+  bottom: 30rpx;
+  justify-content:center;
+  left: 50%;
+  margin-left: -50rpx;
+}
+
+.btn{
+  margin-top: 30rpx;
+  width: 100rpx;
+  height:100rpx;
+  font-size: 70rpx;
+  line-height: 70rpx;
+  border-radius: 35rpx;
+  color: white;
+}

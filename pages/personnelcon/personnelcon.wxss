@@ -1,0 +1,99 @@
+/* pages/personnelcon/personnelcon.wxss */
+
+
+.navbar-v {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  background-color: white;
+  top: 0;
+}
+
+.navbar {
+  width: 100%;
+  height: 46px;
+  position: absolute;
+	bottom: 0;
+}
+
+
+/* <!-- 头像 --> */
+.add-img {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 100rpx;
+  /* 居中显示 */
+  margin: 20rpx auto;
+  display: flex;
+  justify-content: center;
+   /* 居中显示 */
+}
+
+
+/* 标签列表 */
+.titlist {
+  margin: 30rpx 50rpx 40rpx 50rpx;
+}
+
+/* 标签文字 */
+.title {
+  min-width: 80rpx;
+  /* width: 110rpx; */
+  text-align: center;
+  font-size: 28rpx;
+  color: #67b5e9;
+  border: 1rpx solid #67b5e9;
+  border-radius: 5rpx;
+  display: inline-block;
+  padding: 0rpx 5rpx;
+  margin-right: 20rpx;
+  background-color: #e7eff5;
+}
+
+
+.con-info-v {
+  margin: 10rpx 30rpx;
+  /* height: 100rpx; */
+}
+
+/* title */
+.tit {
+  height: 100rpx;
+  letter-spacing: 10rpx;
+  font-size: 32rpx;
+  line-height: 100rpx;
+  float: left;
+}
+
+/* 备注 title */
+.tit-bz {
+  letter-spacing: 10rpx;
+  font-size: 32rpx;
+  height: 500rpx;
+  line-height: 180rpx;
+  float: left;
+  margin-right: 30rpx;
+  margin-top: 20rpx;
+}
+
+/* 小星星 */
+.star {
+  float: left;
+  color: #dc001c;
+  font-size: 34rpx;
+  line-height: 100rpx;
+}
+
+/* 用户详情内容 */
+.con {
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 32rpx;
+}
+
+/* 用户详情内容---备注内容 */
+.con-bz {
+  margin: 20rpx 30rpx 40rpx 30rpx;
+  font-size: 32rpx;
+}

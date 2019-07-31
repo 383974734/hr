@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "popview": "../../component/popview/popview",
+    "navbar-v": "../../component/navbar/navbar"
+
+  }
 }

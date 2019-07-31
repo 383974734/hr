@@ -1,0 +1,9 @@
+<!--pages/registersuccess/registersuccess.wxml-->
+
+
+<view class='back-v'>
+  <image class='img' src='../../static/images/registersuccess.png' mode='aspectFill'></image>
+  <view class='tit'>亲，管理员会在24小时内</view>
+  <view class='tit'>审核您的信息</view>
+  <view class='tit'>请耐心等待</view>
+</view>

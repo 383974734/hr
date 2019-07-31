@@ -1,0 +1,77 @@
+/* navbar.wxss */
+
+
+/* 导航view */
+.nav-v {
+  width: 100%;
+  height: 46px;
+}
+
+/* 导航item左侧按钮背景 */
+.nav-item-l-b {
+  width: 200rpx;
+  height: 100%;
+  float: left;
+}
+
+/* 导航item左侧按钮view */
+.cover-image {
+  width: 70px;
+  height: 25px;
+  border-radius: 40rpx;
+  margin-top: 9px;
+  margin-left: 10px;
+  overflow: hidden;
+  float: left;
+}
+
+.pop-btn {
+  width: 35px;
+  height: 25px;
+  background-color: pink;
+  position: relative;
+}
+
+.home-btn {
+  width: 35px;
+  height: 25px;
+  background-color: yellow;
+  position: relative;
+}
+
+/* 导航item左侧按钮view */
+.nav-item-l-v {
+  width: 70px;
+  height: 25px;
+  border: 1rpx solid #ececec;
+  border-radius: 40rpx;
+  margin-top: 9px;
+  margin-left: 10px;
+  overflow: hidden;
+}
+
+/* 返回上一页按钮 */
+.nav-pop-btn {
+  width: 34px;
+  height: 20px;
+  border-right:  1rpx solid #ececec;
+  margin-top: 3px;
+  float: left;
+}
+
+/* 返回首页按钮 */
+.nav-pop-home-btn {
+  width: 35px;
+  height: 20px;
+  margin-top: 3px;}
+
+/* 导航标题 */
+.nav-tit {
+  width: 47.5%;
+  height: 46px;
+  line-height: 46px;
+  font-size: 36rpx;
+  text-align: center;
+  display: inline-block;
+  margin-left: 0rpx;
+}

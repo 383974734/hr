@@ -1,0 +1,80 @@
+
+<!--pages/recruitcon/recruitcon.wxml-->
+
+<view class='back-v' >
+  <!-- 缩进背景试图 -->
+  <view class='problemcon-v'>
+    <!-- 图片 -->
+    <!-- <image class='img' src='{{json.imageUrl}}' hidden='{{json.imageUrl == ""}}' mode='aspectFill'></image> -->
+    <!-- 标题整体view -->
+    <view class='tit-back-v'>
+      <!-- 标题 -->
+      <view class='tit'>{{json.jobName}}</view>
+      <!-- 年限、学历、。。。{{json.}}-->
+      <view class='train-cv'>
+        <label class='train-rv'>{{json.jobExperience}}</label>
+        <label class='train-rv'>{{json.jobEducation}}</label>
+        <label class='train-rv' hidden='{{json.jobNature == ""}}'>{{json.jobNature}}</label>
+        <label class='train-v'>{{json.jobCompany}}</label>
+      </view>
+      <view>
+        <view class='tit-money'>{{json.salaryRange}}月</view>
+        <view class='tit-time'>{{json.publisherDate}}</view>
+      </view>
+      
+      <!-- 地址图片 -->
+      <image class='tit-add-img' src='../../static/images/recruitcon-add.png' mode='aspectFill'></image>
+      <!-- 地址 -->
+      <view class='tit-add'>{{json.jobPlace}}</view>
+      <!-- 休息图片 -->
+      <image class='tit-add-img' style='margin-left:100rpx;' src='../../static/images/rest.png' mode='aspectFill'></image>
+      <!-- 休息 -->
+      <view class='tit-add'>{{json.restDate == '0' ? "单休" : "双休"}}</view>
+    </view>
+  </view>
+
+  <!-- 发布职位view -->
+  <view class='con-back-v' hidden='{{json.publisherState == "2"}}'>
+    <view>
+      <!-- 地址图片 -->
+      <image class='con-back-img' src='../../static/images/recruitcon-user.png' mode='aspectFill'></image>
+      <!-- 地址 -->
+      <view class='con-back-tit'>职位发布者</view>
+    </view>
+    <image class='con-img' src='{{json.publisherImageUrl}}'></image>
+    <view class='con-tit'>
+      <view class='con-tit-name'>{{json.publisherRealName}}-{{json.publisherBusJob}}</view>
+      <view class='con-tit-str'>{{json.publisherBusName}}</view>
+    </view>
+  </view>
+
+  <!-- 职位描述 -->
+  <view class='problemcon-v'>
+    <view>
+      <!-- 职位描述图片 -->
+      <image class='con-back-img' src='../../static/images/recruitcon-con.png' mode='aspectFill'></image>
+      <!-- 职位描述 -->
+      <view class='con-back-tit'>职位描述</view>
+    </view>
+    <view class='con-back-tit'>{{json.jobDescribe}}</view>
+  </view>
+
+  <!-- 企业介绍 -->
+  <view style='width: 100%; border-bottom: 20rpx solid #f9f9f9;'></view>
+  <view class='problemcon-v'>
+    <view>
+      <!-- 企业介绍图片 -->
+      <image class='con-back-img' src='../../static/images/enterprise.png' mode='aspectFill'></image>
+      <!-- 企业介绍 -->
+      <view class='con-back-tit'>企业介绍</view>
+    </view>
+    <!-- 图片 -->
+    <image class='img' src='{{json.businessInfoImageUrl}}' hidden='{{json.businessInfoImageUrl == ""}}' mode='aspectFill'></image>
+    <view class='con-back-tit'>{{json.businessInfo}}</view>
+  </view>
+
+
+</view>
+
+
+

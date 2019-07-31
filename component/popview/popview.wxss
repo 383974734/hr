@@ -1,0 +1,123 @@
+/* component/popview/popview.wxss */
+
+
+
+/* 飘起来选择的view背景 */
+.zan-dialog__mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  /* 设置阴影半透明背景如： background: rgba(0, 0, 0, 0.4); */
+  background: rgba(0, 0, 0, 0);
+  display: none;
+}
+
+/* 飘起来选择的view内容 */
+.zan-dialog__container {
+  position: fixed;
+  top: 210rpx;
+  /* bottom: 320rpx; */
+  /* 弹窗布局宽 */
+  width: 650rpx;
+  /* 弹窗布局高，与下面弹出距离transform有关 */
+  height: 380rpx;
+  margin-left: 50rpx;
+  background: white;
+  /* 弹框弹出距离，与弹框布局高度有关，如300%表示弹起距离为3倍弹窗高度 */
+  /* transform: translateY(700%); */
+  transform: translateY(0);
+  transition: all 0.7s ease;
+  z-index: 12;
+  border-radius: 20rpx;
+  /* 弹框的悬浮阴影效果，如不需要可注释该行 */
+  /* box-shadow: 0px 0px 3px 2px rgb(240, 240, 240); */
+}
+
+.zan-dialog--show .zan-dialog__container {
+  transform: translateY(0);
+}
+
+.zan-dialog--show .zan-dialog__mask {
+  display: block;
+}
+
+
+.pop-tit {
+  width: 100%;
+  text-align: center;
+  font-size: 36rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #363434;
+  margin-bottom: 10rpx;
+}
+
+.pop-tits {
+  width: 100%;
+  text-align: center;
+  font-size: 38rpx;
+  height: 180rpx;
+  line-height: 180rpx;
+  color: #363434;
+  margin-bottom: 10rpx;
+}
+
+.pop-subtit {
+  margin-bottom: 30rpx;
+  height: 140rpx;
+  line-height: 140rpx;
+  font-size: 36rpx;
+  text-align: center;
+  margin-top: 45rpx;
+}
+
+.btn-v {
+  width: 400rpx;
+  height: 50rpx;
+  margin: 0 auto;
+}
+
+.btn-vs {
+  width: 140rpx;
+  height: 50rpx;
+  margin: 0 auto;
+}
+
+
+.no {
+  width: 160rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  letter-spacing: 7rpx;
+  border-radius: 15rpx;
+  border:0.5rpx solid rgb(160, 160, 160);
+  background-color: white;
+  color: rgb(136, 136, 136);
+  font-size: 30rpx;
+  /* font-weight: lighter; */
+  display: inline-block;
+  margin-right: 30rpx;
+  text-align: center;
+}
+
+.yes {
+  width: 160rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  letter-spacing: 7rpx;
+  border-radius: 15rpx;
+  border: 1rpx solid  rgb(248, 72, 18);
+  color: white;
+  font-size: 30rpx;
+  /* font-weight: lighter; */
+  background-color:  rgb(248, 72, 18);
+  display: inline-block;
+  text-align: center;
+}
+
+.poptit {
+  text-align: center;
+}

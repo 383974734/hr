@@ -5,6 +5,10 @@
    height: 100rpx;
 }
 
+.back-line {
+  border-bottom: 1rpx solid rgba(210, 105, 30, 0);
+}
+
 .tit {
   letter-spacing: 10rpx;
   font-size: 34rpx;
@@ -33,4 +37,5 @@
   float: right;
   text-align: right;
   margin-right: 15rpx;
+  width: 45%;
 }

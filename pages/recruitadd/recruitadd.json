@@ -1,0 +1,7 @@
+{
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "informationview": "../../component/informationview/informationview",
+    "navbar-v": "../../component/navbar/navbar"
+  }
+}

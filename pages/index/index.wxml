@@ -1,13 +1,59 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+
+
+<view class='header'>
+  <image class='logo-img' src='../../static/images/logo.png' bindtap='changeAvatar' mode='aspectFill'></image>
+
+
+  <view style='width:686rpx;margin-top: 150rpx;margin-left: auto;margin-right: auto;'>
+    <!-- <button type='primary' bindgetuserinfo='sendCode' disabled='{{disabled}}' open-type='getUserInfo'>登录验证码</button> -->
+    <!-- <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取用户信息</button> -->
+    <view class='content'>
+        <text style='font-size: 32rpx;'>请依次允许获得你的公开信息及手机号码</text>
+    </view>
+    <view class="" >
+        <button class="{{flag?'show':'hide'}}" type="primary" open-type="getUserInfo" lang="zh_CN"  bindgetuserinfo="bindGetUserInfo">{{AuthorizedLogin}}</button>
+    <button class="{{flag?'hide':'show'}}" type="primary" lang="zh_CN" open-type='getPhoneNumber'  bindgetphonenumber="getPhoneNumber">{{UserPhone}}</button>
+    </view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+
+  <!-- 2019年06月25日10:39:27 变更需求： 修改为微信授权注册和登录
+  <view class='head-text'>{{userInfo.nickName}}短信验证码登录</view>
+  <view class="flex-row" style="display: flex;margin-top:118rpx;justify-content:space-between;font-size:32rpx;">
+      <view class="flex-view-item" style='margin-left:42rpx;color:#666666;'>+86</view>
+      <view class="flex-view-item"><input placeholder="请输入手机号" bindinput="phoneInput" style='text-align:center;' maxlength='11' type='number' value='{{phone}}'  focus='{{focus}}'></input></view>
+      <view class="flex-view-item" style='margin-right: 33rpx;'><icon type='clear' bindtap='clearPhone'></icon></view>
+  </view> -->
 </view>
+
+<!-- 2019年06月25日10:39:27 变更需求： 修改为微信授权注册和登录
+<view style='width:686rpx;margin-top: 50rpx;margin-left: auto;margin-right: auto;'>
+  <button type='primary' bindgetuserinfo='sendCode' disabled='{{disabled}}' open-type='getUserInfo'>登录验证码</button>
+</view> -->
+
+<!-- <view style='width:686rpx;margin-top: 20rpx;margin-left: auto;margin-right: auto;'>
+  <button class='register-button' bindtap='pushRegister'>注册</button>
+</view> -->
+
+
+<!-- 2019年06月25日10:39:27 变更需求： 修改为微信授权注册和登录
+<view class='agreement-backv'>
+  <image class='tit-add-img' mode='aspectFill' bindtap='registertitsele' src='{{agreement ? "../../static/images/limit_y.png" : "../../static/images/limit_n.png"}}'></image>
+  
+  <view class='tit-add' bindtap='registertitpush'>我已认真阅读并同意“HR私享圈用户服务协议”</view>
+  <view >
+      <official-account bindload="bindload" binderror='binderror'  style="width:100%;height:400rpx;border: 1rpx solid white;"></official-account>
+  </view>
+</view> -->
+
+
+
+<!-- 飘起来选择的view -->
+<!-- <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}" catchtouchmove='true'>
+  <view class="zan-dialog__mask" bindtap="industrybtn" />
+  <view class="zan-dialog__container">
+    <view class='public-number-subv'>
+      <official-account bindload="bindload" binderror='binderror'  style="width:100%;height:400rpx;border: 1rpx solid white;"></official-account>
+    </view>
+  </view>
+</view> -->
+

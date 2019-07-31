@@ -1,0 +1,32 @@
+<!--pages/train/train.wxml-->
+
+<!-- navbar -->
+<!-- <cover-view class='navbar-v'  style='height: {{navheight + 46}}px'>
+  <navbar-v class="navbar"  name="培训" naviteml="1"></navbar-v>
+</cover-view> -->
+
+<!-- 搜索view -->
+<!-- <view class='search-v' style='margin-top:{{navheight + 46}}px'> -->
+<view class='search-v' >
+  <!-- 搜索框 -->
+  <input class='search' name='search' placeholder='关键字搜索' placeholder-style="color:#dcdcdc;" bindconfirm='searchClick'></input>
+</view>
+
+
+<!-- 标签列表 -->
+<view class='list-b'>
+  <!-- 标签 -->
+  <!-- <view class='titlist'>
+    <view class='title' wx:for="{{titlist}}" wx:for-iindex="index" data-index="{{index}}" >{{item.tit}}</view>
+  </view> -->
+
+  <view class='list-v' wx:for="{{list}}" wx:for-index="index" data-index="{{index}}" bindtap='cellpush' data-trainId="{{item.id}}">
+    <image class='list-img' src='{{item.trainImageurlTitle}}' mode='aspectFill'></image>
+    <view class='list-r-v'>
+      <view class='list-tit'>{{item.trainTitle}}</view>
+      <view class='list-name'>{{item.speaker}}</view>
+      <view class='list-member'>{{item.trainPoint}}H币</view>
+    </view>
+  </view>
+
+</view>

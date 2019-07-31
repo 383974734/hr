@@ -1,16 +1,60 @@
 {
-  "pages":[
-    "pages/home/home",
+  "pages": [
     "pages/index/index",
+    "pages/home/home",
+    "pages/webview/webview",
+    "pages/imgview/imgview",
+    "pages/userinfo/userinfo",
+    "pages/revcode/revcode",
+    "pages/register/register",
+    "pages/newregister/newregister",
+    "pages/recruit/recruit",
+    "pages/recruitadd/recruitadd",
+    "pages/authentication/authentication",
+    "pages/introduce/introduce",
+    "pages/recruitcon/recruitcon",
+    "pages/newpersonnel/newpersonnel",
+    "pages/newpersonnelcon/newpersonnelcon",
+    "pages/personnel/personnel",
+    "pages/personneladd/personneladd",
+    "pages/newpersonneladd/newpersonneladd",
+    "pages/personnelcon/personnelcon",
+    "pages/problem/problem",
+    "pages/problemcon/problemcon",
+    "pages/uploadproblem/uploadproblem",
+    "pages/newslist/newslist",
+    "pages/newsdetails/newsdetails",
+    "pages/registersuccess/registersuccess",
+    "pages/registertit/registertit",
+    "pages/train/train",
+    "pages/traincon/traincon",
+    "pages/enrollees/enrollees",
+    "pages/industry/industry",
+    "pages/position/position",
+    "pages/order/order",
+    "pages/ordercon/ordercon",
+    "pages/notice/notice",
+    "pages/noticecon/noticecon",
+    "pages/integral/integral",
+    "pages/recharge/recharge",
+    "pages/record/record",
+    "pages/balance/balance",
+    "pages/newbalance/newbalance",
+    "pages/exchange/exchange",
+    "pages/myproblem/myproblem",
+    "pages/myrecruit/myrecruit",
+    "pages/mytrain/mytrain",
+    "pages/my/my",
     "pages/logs/logs",
-    "pages/my/my"
+    "pages/firstparty/firstparty"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTextStyle": "black",
     "backgroundColor": "#eeeeee",
     "backgroundTextStyle": "light",
-    "enablePullDownRefresh": false
+    "enablePullDownRefresh": true,
+    "navigationBarTitleText": "HR私享汇圈"
   },
   "tabBar": {
     "backgroundColor": "#ffffff",
@@ -20,17 +64,18 @@
     "list": [
       {
         "pagePath": "pages/home/home",
-        "text": "首页",
+        "text": "发现",
         "iconPath": "static/images/icon_home_p.png",
         "selectedIconPath": "static/images/icon_home.png"
       },
       {
         "pagePath": "pages/my/my",
-        "text": "我的",
+        "text": "我",
         "iconPath": "static/images/icon_my_p.png",
         "selectedIconPath": "static/images/icon_my.png"
       }
     ]
   },
-  "debug": true
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
 }

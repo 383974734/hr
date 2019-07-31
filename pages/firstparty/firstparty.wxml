@@ -1,0 +1,5 @@
+<!--pages/firstparty/firstparty.wxml-->
+<scroll-view style="height:80%" class="scroll-view" scroll-y="true" bindscroll="scroll">
+
+  <view style='height: 50000rpx; width: 100%; background-color: palegoldenrod'></view>
+</scroll-view>

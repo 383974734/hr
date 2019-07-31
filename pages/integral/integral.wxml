@@ -1,0 +1,37 @@
+<!--pages/integral/integral.wxml-->
+
+
+
+<!-- navbar -->
+<!-- <cover-view class='navbar-v'  style='height: {{navheight + 46}}px'>
+  <navbar-v class="navbar"  name="积分" naviteml="1"></navbar-v>
+</cover-view> -->
+
+<!-- <view class='header-v' style='margin-top:{{navheight + 46}}px'> -->
+<view class='header-v' >
+  <view class='header-number'>{{json.mp}}</view>
+  <view class='header-str'>当前积分</view>
+
+  <view class='list-v'>
+    <view class='cell-v' wx:for="{{json.pointHistory}}" wx:for-index="index" data-index="{{index}}">
+
+      <image class='img' style='{{item.operation == "1" ? "background-color: #0faf25" : ""}}' src='{{item.operation == "1" ? "../../static/images/integral_jia.png" : "../../static/images/integral_jian.png"}}' mode='aspectFill'></image>
+
+      <view class='con-v'>
+        <view class='tit'>{{item.reason}}</view>
+        <view class='time'>{{item.time}}</view>
+      </view> 
+
+      <view class='number {{item.operation == "1" ? "type-y" : ""}}'>{{item.operation == '1' ? "+" : "-"}}{{item.mp}}</view>
+    
+
+      <view class='lin'></view>
+    </view>
+  
+  </view>
+
+
+
+
+
+</view>

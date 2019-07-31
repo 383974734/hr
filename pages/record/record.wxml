@@ -1,0 +1,30 @@
+<!--pages/record/record.wxml-->
+
+<!-- navbar -->
+<!-- <cover-view class='navbar-v'  style='height: {{navheight + 46}}px'>
+  <navbar-v class="navbar"  name="兑换记录" naviteml="1"></navbar-v>
+</cover-view> -->
+
+<!-- <view class='back-v' style='margin-top:{{navheight + 46}}px'> -->
+<view class='back-v' >
+  <view class='list-v'>
+  
+    <view class='cell-v' wx:for='{{list}}' wx:for-index='index' data-index='{{index}}'>
+      <!-- 状态和时间view -->
+      <view class='header-v'>
+        <!-- 状态图片 -->
+        <image class='state-img' src='../../static/images/record_dui.png' mode='aspectFill'></image>
+        <!-- 状态 -->
+        <view class='state-name'>已完成</view>
+        <!-- 时间 -->
+        <view class='time'>{{item.time}}</view>
+      </view> 
+      <!-- 金额/数量 -->
+      <view class='number'>{{item.mp}}</view>
+      <!-- <view class='number'>{{item.type == 3 ? item.mp : item.point}}</view> -->
+      <image class='img' src='{{item.type == 1 ? "../../static/images/record_duih.png" : "../../static/images/record_duij.png"}}' mode='aspectFill'></image>
+    </view>
+  
+  </view>
+
+</view>

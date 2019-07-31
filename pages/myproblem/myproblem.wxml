@@ -1,0 +1,51 @@
+<!--pages/myproblem/myproblem.wxml-->
+
+
+
+<!-- navbar -->
+<!-- <cover-view class='navbar-v'  style='height: {{navheight + 46}}px'>
+  <navbar-v class="navbar"  name="我的问题" naviteml="1"></navbar-v>
+</cover-view> -->
+
+<!-- 搜索view -->
+<!-- <view class='search-v' style='margin-top:{{navheight + 46}}px'> -->
+<view class='search-v' >
+  <!-- 搜索框 -->
+  <input class='search' name='search' placeholder='关键字搜索' placeholder-style="color:#dcdcdc;" bindconfirm='searchClick'></input>
+</view>
+
+
+
+<!-- 列表 -->
+<view class='list'>
+  <!-- 列表 -->
+  <view class='list-v' wx:for="{{list}}" wx:for-index="index" data-index="{{index}}" bindtap='cellpush' data-memberId="{{item.memberId}}" data-questionID="{{item.questionId}}">
+    <image class='list-fork' src='../../static/images/personnel-dele.png' catchtap='deleBtn' data-memberId='{{item.memberId}}' data-questionId='{{item.questionId}}' mode='aspectFill'></image>
+    <image class='list-img' hidden='{{item.imageUrl == ""}}' src='{{item.imageUrl}}' mode='aspectFill'></image>
+    <view class='list-tit'>{{item.questionTitle}}</view>
+    <view class='list-name'>发布人：{{item.realName}}</view>
+    <view class='list-time'>{{item.questionDate}}</view>
+    <view class='list-con'>{{item.questionMessage}}</view>
+    <view class='list-number'>回复({{item.count}})</view>
+  </view>
+
+</view>
+
+<view class='add_btn'>
+<!-- 加号按钮 -->
+<image class='btn' src='../../static/images/personnel-add.png' bindtap='addbtn' mode='aspectFill'></image>
+</view>
+
+<!-- 飘起来选择的view -->
+<view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}" catchtouchmove='true' hidden='{{!showDialog}}'>
+  <view class="zan-dialog__mask" bindtap="industrybtn" />
+  <view class="zan-dialog__container">
+    <view class='pop-tit'>温馨提示</view>
+    <view class='pop-subtit'>删除当前选中数据？</view>
+    <view class='btn-v'>
+      <button class='no' bindtap="industrybtn">取消</button>
+      <button class='yes' bindtap="pushrecharge">确定</button>
+    </view>
+  </view>
+</view>
+

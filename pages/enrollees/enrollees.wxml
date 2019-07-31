@@ -1,0 +1,13 @@
+<!--pages/enrollees/enrollees.wxml-->
+<view style='text-align: center;'>共{{tit}}人</view>
+
+<!-- 模块 -->
+<view class='modular-v'>
+  <view class='modular' wx:for="{{list}}" wx:for-index="index" data-index="{{index}}" >
+    <!-- 图片 -->
+    <image class='modular-img' src='{{item.imageUrl}}' mode='aspectFill'></image>
+    <!-- 文字 -->
+    <view class='modular-tit'>{{item.realName}}</view>
+    
+  </view>
+</view>

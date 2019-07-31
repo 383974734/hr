@@ -1,0 +1,19 @@
+<!--navbar.wxml-->
+<!-- 导航view -->
+<cover-view class='nav-v'>
+  <!-- 导航item左侧按钮背景 -->
+  <cover-view class='nav-item-l-b'>
+    <!-- 导航item左侧按钮 -->
+    <cover-view class='nav-item-l-v' hidden='{{naviteml == 0}}'>
+      <!-- 返回上一页按钮 -->
+      <cover-image class='nav-pop-btn' src='../../static/images/nav_pop.png' bindtap='_navback'></cover-image>
+      <!-- 返回首页按钮 -->
+      <cover-image class='nav-pop-home-btn' src='../../static/images/nav_index.png'  hidden='{{naviteml == 2}}' bindtap='_backhome'></cover-image>
+    </cover-view>
+    <cover-image class='cover-image-pop' src='../../static/images/nav-pop.png' hidden='{{navpop == 0}}' bindtap='_navback'></cover-image>
+  </cover-view>
+  
+
+  <!-- 导航标题 -->
+  <cover-view class='nav-tit'>{{name}}</cover-view>
+</cover-view>

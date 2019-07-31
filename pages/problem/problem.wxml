@@ -1,0 +1,45 @@
+<!--pages/problem/problem.wxml-->
+
+
+<!-- navbar -->
+<!-- <cover-view class='navbar-v'  style='height: {{navheight + 46}}px'>
+  <navbar-v class="navbar"  name="有问必答" naviteml="1"></navbar-v>
+</cover-view> -->
+
+<!-- 搜索view -->
+<!-- <view class='search-v' style='margin-top:{{navheight + 46}}px'> -->
+<view class='search-v' >
+  <!-- 搜索框 -->
+  <input class='search' name='search' placeholder='关键字搜索' placeholder-style="color:#dcdcdc;" bindconfirm='searchClick'></input>
+</view>
+
+<!-- 列表 -->
+<view class='list'>
+  <!-- 分类选择器 --> 
+  <view class='classification-v'>
+    <view class='{{type == 0 ? "classification-o-y classification" : "classification-o-n border-l classification"}}' bindtap='allBtn'>全部</view>
+    <view class="{{type == 0 ? 'border-r classification' : (type == 1 ? 'classification-tf-y classification' : 'border-l classification')}}" bindtap='newestBtn'>最新</view>
+    <view class="{{type == 3 ? 'border-l classification' : (type == 2 ? 'classification-tf-y classification' : 'border-r classification')}}" bindtap='hottestBtn'>最热</view>
+    <view class='{{type == 3 ? "classification-f-y classification" : "classification-f-n border-r classification"}}' bindtap='myBtn'>我的</view>
+  </view>
+  
+  <!-- 列表 -->
+  <view class='list-v' wx:for="{{list}}" wx:for-index="index" data-index="{{index}}" data-memberId="{{item.memberId}}" data-questionID="{{item.questionId}}" bindtap='cellpush'>
+    <image class='list-img' hidden='{{item.imageUrl == ""}}' src='{{item.imageUrl}}' mode='aspectFill'></image>
+    <view class='list-tit'>{{item.questionTitle}}</view>
+    <view class='list-t-con'>
+      <view class='list-name'>发布人：{{item.realName}}</view>
+      <!-- <view class='list-shang'>赏</view> -->
+      <image class='list-shang' src='../../static/images/problem-shang.png'></image>
+      <view class='list-time'>{{item.questionDate}}</view>
+    </view>
+    <view class='list-con'>{{item.questionMessage}}</view>
+    <view class='list-number'>回复({{item.count}})</view>
+  </view>
+
+</view>
+
+<view class='add_btn'>
+<!-- 加号按钮 -->
+<image class='btn' src='../../static/images/personnel-add.png' bindtap='addbtn' mode='aspectFill'></image>
+</view>

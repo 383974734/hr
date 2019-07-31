@@ -1,2 +1,80 @@
 <!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<!-- 我的 -->
+
+<!-- navbar -->
+<!-- <cover-view class='navbar-v'  style='height: {{navheight + 46}}px'>
+  <navbar-v class="navbar"  name="个人中心" naviteml="0"></navbar-v>
+</cover-view> -->
+
+
+<!-- 头部用户信息 -->
+<!-- <view class='header-view' style='margin-top:{{navheight + 46}}px'> -->
+<view class='header-view' >
+  <!-- 用户头像 -->
+  <image class='user-img' src='{{json.imageUrl == "" ? userImg : json.imageUrl}}' mode='aspectFill'></image>
+  <!-- 箭头按钮 -->
+  <image class='pushUserInfo' src='../../static/images/user_infoo_push.png'   bindtap='pushUserInfo' mode='aspectFill'></image>
+  <!-- 用户名字 -->
+  <view class='user-name'>{{json.realName == "" ? "请完善个人信息" : json.realName}}</view>
+  <!-- 用户介绍 -->
+  <!-- <view class='user-usb-title'>{{userSubTitle}}</view> -->
+  <!-- 分类 -->
+  <view class='classification-v' wx:for="{{classification}}" wx:for-index="index" data-index="{{index}}" bindtap='headerpush'>
+    <view class='xian' hidden='true'></view>
+    <view class='{{item.img == "" ? "classification-tit-red" : "classification-tit"}}'>{{item.tit}}</view>
+    <image class='classification-img' src='{{item.img}}' mode='aspectFill'></image>
+    
+  </view>
+</view> 
+
+<!-- 分类选项 -->
+<view class='list-view'>
+  <!-- 每一个row-view
+    <view class='listTow-bs'>
+      row-图片
+      <image class='listTow-img' src='../../static/images/user_info.png'></image>
+      row-标题
+      <view class='listTow-tit'>个人信息</view>
+      row-箭头
+      <image class='listTow-push' src='../../static/images/user_push.png'></image>
+    </view> -->
+    
+  <!-- 每一个row-view -->
+    <view class='listTow-b' wx:for="{{listRow}}" wx:for-index="index" data-index="{{index}}" bindtap='cellpush'>
+      <!-- row-图片 -->
+      <image class='listTow-img' src='{{item.img}}' mode='aspectFill'></image>
+      <!-- row-标题 -->
+      <view class='listTow-tit'>{{item.tit}}</view>
+      <!-- row-箭头 -->
+      <image class='listTow-push' src='../../static/images/user_push.png' mode='aspectFill'></image>
+    </view>
+</view>
+
+<!-- 退出登录按钮改成立即分享按钮了 -->
+<view style='height: 400rpx; background-color:white; margin-top: 30rpx; padding-top: 30rpx;'>
+  <!-- <view class='logout' bindtap='logoutClick'>邀请好友</view> -->
+  <button class='logout' open-type='share'>邀请好友</button>
+  <view style=' width: 170rpx; height: 170rpx; margin: 0 auto; margin-top: 40rpx;'>
+    <image class='cq-img' src='{{json.inviteImageUrl}}'></image>
+  </view>
+</view>
+
+
+<!-- 飘起来选择的view -->
+<view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}" catchtouchmove='true' hidden='{{!showDialog}}'>
+  <view class="zan-dialog__mask" bindtap="industrybtn" />
+  <view class="zan-dialog__container">
+    <view class='pop-tit'>请输入您需要的积分数</view>
+    <input class='input' value='{{jfValue}}'  bindconfirm='inputClick'  bindinput='inputBindinput' type='number'></input>
+    <view class='subtit'>{{paymoney}}</view>
+    <view class='btn-v'>
+      <button class='no' bindtap="industrybtn">取消</button>
+      <button class='yes' bindtap="pushrecharge">确定</button>
+    </view>
+  </view>
+</view>
+
+
+
+
+<popview tit="{{popTit}}" examine="{{popExamine}}" showDialog="{{popShowDialog}}"></popview>

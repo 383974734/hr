@@ -1,0 +1,70 @@
+<!--pages/uploadproblem/uploadproblem.wxml-->
+
+<view class='back-v' >
+  <form bindsubmit="formSubmit" bindreset="formReset" report-submit="true">
+    <!-- 赏金按钮 -->
+    <view class='reward' bindtap='rewardBtn'>{{reward}}</view>
+
+    <view class='xing'>*</view>
+
+    <view class='tit-v' hidden='{{public}}'>
+      <view class='{{tit == "" ? "tit-v-temp" : "tit-v-temps"}}'>{{tits}}</view>
+    </view>
+
+    <textarea class='tit-v' hidden='{{public == false}}' bindblur="bindTextAreaBlur" name='tit'  placeholder='标题（50字以内）' placeholder-style="color:#dcdcdc;" maxlength='50' value='{{tit}}' disabled='{{reward == "悬赏积分"}}'></textarea>
+
+    <view class='xing'>*</view>
+
+    <textarea class='text-v' hidden='{{public == false}}' bindblur="bindTextAreaBlurs" name='textv' disabled='{{reward == "悬赏积分"}}'  placeholder='问题详述（200字以内）' placeholder-style="color:#dcdcdc;" maxlength='200' value='{{textv}}' ></textarea>
+
+    <view class='text-v' hidden='{{public}}'>
+      <view class='{{textv == "" ? "tit-v-temp" : "tit-v-temps"}}'>{{textvs}}</view>
+    </view>
+
+    <image class='add-img' src='{{user.avatar}}' bindtap='changeAvatar' mode='aspectFit'></image>
+
+    <!-- 提交按钮 -->
+    <button class='submission'  form-type='submit'>发布</button>
+  </form>
+</view>
+
+
+
+
+
+
+
+
+<!-- 飘起来选择的view -->
+<view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}" catchtouchmove='true' hidden='{{!showDialog}}'>
+  <view class="zan-dialog__mask" bindtap="industrybtn" />
+  <view class="zan-dialog__container">
+    <view class='pop-tit'>悬赏积分</view>
+    <input class='input' value='{{jfValue}}'  bindconfirm='inputClick'  bindinput='inputBindinput'  focus="{{name_focus}}" bindchange="bindChange" bindtap="listenerPhoneInput" type='number'placeholder="{{name_focus ? temp : json.mp}}"  placeholder-style="color:#dcdcdc;"></input>
+    <view class='subtit'>{{subtit}}</view>
+    <view class='btn-v'>
+      <button class='no' bindtap="industrybtn">取消</button>
+      <button class='yes' bindtap="pushrecharge">确定</button>
+    </view>
+  </view>
+</view>
+
+
+
+
+<!-- 提示飘起来选择的view -->
+<view class="zan-dialog-sub {{ showDialogSub ? 'zan-dialog--show-sub' : '' }}" catchtouchmove='true' hidden='{{!showDialogSub}}'>
+  <view class="zan-dialog__mask-sub" bindtap="industrybtnsub" />
+  <view class="zan-dialog__container-sub">
+    <view class='pop-tit-sub'>温馨提示</view>
+    <view class='pop-subtit-sub'>是否确认提交数据？</view>
+    <view class='btn-v-sub'>
+      <button class='no-sub' bindtap="industrybtnsub">取消</button>
+      <button class='yes-sub' bindtap="pushrechargesub">确定</button>
+    </view>
+  </view>
+</view>
+
+
+
+

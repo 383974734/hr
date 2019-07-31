@@ -1,0 +1,23 @@
+<!--pages/balance/balance.wxml-->
+
+
+<!-- navbar -->
+<!-- <cover-view class='navbar-v'  style='height: {{navheight + 46}}px'>
+  <navbar-v class="navbar"  name="" naviteml="1"></navbar-v>
+</cover-view> -->
+
+<!-- <view class='back-v' style='margin-top:{{navheight + 46}}px;'> -->
+<view class='back-v'>
+  <view class='record' bindtap='pushRecord'>记录</view>
+  <image class='logo' src='../../static/images/exchange_loga.png' mode='aspectFill'></image>
+  <view class='tit'>我的H币</view>
+  <view class='number'>{{mp}}</view>
+  <view class='balance-back'>
+    <view class='hbalance' bindtap='pushHbalance'>积分>H币</view>
+  </view>
+  <view class='balance-back'>
+    <view class='hbalance balance' bindtap='pushJbalance'>H币>积币</view>
+  </view>
+  
+
+</view>

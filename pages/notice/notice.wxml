@@ -1,0 +1,49 @@
+<!--pages/notice/notice.wxml-->
+
+
+
+<!-- navbar -->
+<!-- <cover-view class='navbar-v'  style='height: {{navheight + 46}}px'>
+  <navbar-v class="navbar"  name="通知" naviteml="1"></navbar-v>
+</cover-view> -->
+
+
+<!-- <view class='list-v' style='margin-top:{{navheight + 46}}px'> -->
+<view class='list-v' >
+
+  <view class='cell-v' wx:for="{{list}}" wx:for-index="index" data-index="{{index}}"   data-memberId="{{item.memberId}}" data-messageID="{{item.id}}" bindtap='cellPush'>
+    <image class='img' src='../../static/images/notice_img.png' mode='aspectFill'></image>
+     <!-- <view class='tit'>{{item.tit}}</view>
+      <view class='time'>{{item.time}}</view> -->
+
+    <view class='con-v'>
+      <view class='tit'>{{item.messageTitle}}</view>
+      <view class='time'>{{item.messageDate}}</view>
+    </view> 
+
+    <image class='list-fork' src='../../static/images/personnel-dele.png' catchtap='deleBtn' data-memberId='{{item.memberId}}' data-messageid='{{item.id}}' data-questionId='{{item.questionId}}' mode='aspectFill'></image>
+
+    <view class='type {{item.messageState == "2" ? "type-y" : ""}}' hidden="{{item.messageState == '2'}}">未读</view>
+    <view class='type {{item.messageState == "2" ? "type-y" : ""}}' hidden="{{item.messageState == '1'}}">已读</view>
+
+    <view class='lin'></view>
+
+  </view>
+    
+</view>
+
+
+
+
+<!-- 飘起来选择的view -->
+<view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}" catchtouchmove='true' hidden='{{!showDialog}}'>
+  <view class="zan-dialog__mask" bindtap="industrybtn" />
+  <view class="zan-dialog__container">
+    <view class='pop-tit'>温馨提示</view>
+    <view class='pop-subtit'>删除当前选中数据？</view>
+    <view class='btn-v'>
+      <button class='no' bindtap="industrybtn">取消</button>
+      <button class='yes' bindtap="pushrecharge">确定</button>
+    </view>
+  </view>
+</view>

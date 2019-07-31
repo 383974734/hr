@@ -1,0 +1,121 @@
+/* pages/integral/integral.wxss */
+
+/* 
+page {
+  background-color: #f9f9f9;
+} */
+
+
+.navbar-v {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  background-color: white;
+  top: 0;
+}
+
+.navbar {
+  width: 100%;
+  height: 46px;
+  position: absolute;
+	bottom: 0;
+}
+
+.header-v {
+  width: 100%;
+  height: 100%;
+  border-top: 20rpx solid #f9f9f9;
+  background-color: rgb(250, 76, 82);
+  overflow: hidden;
+}
+
+.header-number {
+  height: 120rpx;
+  line-height: 120rpx;
+  font-size: 100rpx;
+  text-align: center;
+  margin-top: 50rpx;
+  color: white;
+}
+
+.header-str {
+  width: 100%;
+  height: 30rpx;
+  font-size: 24rpx;
+  color: white;
+  font-weight: lighter;
+  text-align: center;
+  margin-bottom: 100rpx;
+}
+
+.list-v {
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+  background-color: white;
+  padding: 30rpx 0rpx 30rpx 30rpx;
+}
+
+
+.cell-v {
+  width: 100%;
+  height: 130rpx;
+}
+
+.img {
+  float: left;
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  margin: 20rpx 50rpx 20rpx 20rpx;
+  /* display: inline-block; */
+  vertical-align: middle;
+  background-color: pink;
+}
+
+.con-v {
+  float: left;
+  height: 130rpx;
+  overflow: hidden;
+}
+
+.number {
+  height: 40rpx;
+  width: 140rpx;
+  line-height: 40rpx;
+  text-align: center;
+  float: right;
+  margin-right: 50rpx;
+  font-size: 36rpx;
+  color: #db2403;
+  margin-top: 40rpx;
+}
+
+.type-y {
+  color: #0faf25;
+}
+
+.tit {
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-top: 10rpx;
+}
+
+
+.time {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size:26rpx;
+  color: #948a8a
+}
+
+
+.lin {
+  width: 100%;
+  height: 1rpx;
+  background-color: #ececec;
+  position: relative;
+  top: 130rpx;
+  left: 150rpx;
+}

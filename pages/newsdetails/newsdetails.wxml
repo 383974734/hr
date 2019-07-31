@@ -1,0 +1,26 @@
+<!--pages/newsdetails/newsdetails.wxml-->
+
+
+<!-- navbar -->
+<!-- <cover-view class='navbar-v'  style='height: {{navheight + 46}}px'>
+  <navbar-v class="navbar"  name="消息详情" naviteml="1"></navbar-v>
+</cover-view> -->
+
+
+<!-- 整体父试图 -->
+<!-- <view class='back-v' style='margin-top:{{navheight + 46}}px'> -->
+<view class='back-v' >
+  <!-- 缩进背景试图 -->
+  <view class='problemcon-v'>
+    <!-- 图片 -->
+    <image class='img' src='{{json.imageUrl}}' hidden='{{json.imageUrl == ""}}' mode='aspectFill'></image>
+    <!-- 标题 -->
+    <view class='tit'>{{json.messageTitle}}</view>
+    <!-- 问题 -->
+    <view class='problem'>{{json.message}}</view>
+    <!-- 时间 -->
+    <view class='time'>{{json.messageDate}}</view>
+    <!-- 按钮 -->
+    <view class='btn' hidden='true'>读</view>
+  </view>
+</view>

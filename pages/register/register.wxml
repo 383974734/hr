@@ -1,0 +1,108 @@
+<!--pages/register/register.wxml-->
+
+
+<!-- navbar -->
+<!-- <cover-view class='navbar-v'  style='height: {{navheight + 46}}px'>
+  <navbar-v class="navbar"  name="会员申请表" naviteml="0" navpop="1"></navbar-v>
+</cover-view> -->
+
+<!-- 标题栏 -->
+<!-- <view class='nav-tit' style='margin-top:{{navheight + 46}}px'>龙江网才人力资源协会会员申请表</view> -->
+<view class='nav-tit' >龙江网才人力资源协会会员申请表</view>
+<!-- 整体表格背影布局 -->
+<view class='back-v'>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <!-- 姓名文字 -->
+    <tagview class='tagview' title='您的姓名'></tagview>
+    <!-- 填写姓名输入框 -->
+    <textview class='textview' img='../../resources/images/textv-name.png' name='name' click=''></textview>
+
+    <!-- 性别文字 -->
+    <tagview class='tagview' title='性别'></tagview>
+    <!-- 选择性别 -->
+    <view class="radio-box" wx:for="{{radios}}"  key="item.id"  style='margin-right: 250rpx; text-align: lleft'>
+      <lebel class="radio {{ index==sex ? 'on' : ''}}" data-index='{{index}}' data-value='{{item.value}}' bindtap="check">
+        <image wx:if='{{index==sex}}' mode='aspectFill'></image>
+      </lebel>
+      {{item.label}}
+    </view>
+
+    <!-- 出生日期文字 -->
+    <tagview class='tagview' title='出生日期'></tagview>
+    <!-- 填写日期规范提示 -->
+    <label class='tips'>精确到年份即可</label>
+    <!-- 填写出生日期输入框 -->
+    <textview class='textview' img='' name='date' click='' type="number"></textview>
+
+    <!-- 微信号文字 -->
+    <tagview class='tagview' title='微信号'></tagview>
+    <!-- 填写微信号规范提示 -->
+    <label class='tips'>注意：申请通过后，管理员会加您的微信，发送关注邀请码，请注意查收。</label>
+    <!-- 填写微信号输入框 -->
+    <textview class='textview' img='' name='wetchat' click=''></textview>
+
+    <!-- 手机号文字 -->
+    <tagview class='tagview' title='手机号' type="number"></tagview>
+    <!-- 填写手机号输入框 -->
+    <textview class='textview' img='../../resources/images/textv-phone.png' name='phone' type="number" click=''></textview>
+
+    <!-- 企业固话文字 -->
+    <tagview class='tagview' title='企业固话' type="number"></tagview>
+    <!-- 填写企业固话输入框 -->
+    <textview class='textview' img='../../resources/images/textv-tel.png' name='tel' click=''></textview>
+
+    <!-- 邮箱文字 -->
+    <tagview class='tagview' title='邮箱'></tagview>
+    <!-- 邮箱输入框 -->
+    <textview class='textview' img='../../resources/images/textv-mail.png' name='mail' click=''></textview>
+
+    <!-- 现所在企业文字 -->
+    <tagview class='tagview' title='现所在企业'></tagview>
+    <!-- 现所在企业输入框 -->
+    <textview class='textview' img='' name='enterprise' click=''></textview>
+
+    <!-- 现所在职务文字 -->
+    <tagview class='tagview' title='现所在职务'></tagview>
+    <!-- 现所在职务输入框 -->
+    <textview class='textview' img='' name='job' click=''></textview>
+
+    <!-- 行业文字 -->
+    <tagview class='tagview' title='行业'></tagview>
+    <!-- 行业输入框 -->
+    <textview class='textview' img='' name='industry' click=''></textview>
+
+    <!-- 企业性质文字 -->
+    <tagview class='tagview' title='企业性质'></tagview>
+    <!-- 企业性质输入框 -->
+    <textview class='textview' img='' name='enterprisetype' click=''></textview>
+
+    <!-- 推荐人文字 -->
+    <tagview class='tagview' title='推荐人'></tagview>
+    <!-- 推荐人输入框 -->
+    <textview class='textview' img='' name='recommend' click=''></textview>
+
+    <!-- 推荐人联系方式文字 -->
+    <tagview class='tagview' title='推荐人联系方式'></tagview>
+    <!-- 推荐人联系方式输入框 -->
+    <textview class='textview' img='' name='contact' click=''></textview>
+
+    <!-- HR从业经历文字 -->
+    <tagview class='tagview' title='HR从业经历' tips='1'></tagview>
+    <!-- HR从业经历输入框 -->
+    <textarea class='textarea-v' name='experience'></textarea>
+
+    <!-- HR资质证书/培训经历文字 -->
+    <tagview class='tagview' title='HR资质证书/培训经历' tips='1'></tagview>
+    <!-- HR资质证书/培训经历输入框 -->
+    <textarea class='textarea-v' name='certificate'></textarea>
+
+    <!-- 工作中比较关心的问题文字 -->
+    <tagview class='tagview' title='工作中比较关心的问题' tips='1'></tagview>
+    <!-- 工作中比较关心的问题输入框 -->
+    <textarea class='textarea-v textarea-v-b' name='problem'></textarea>
+
+    <!-- 提交按钮 -->
+    <button class='submission'  form-type='submit' bindtap='pushTab'>提交按钮</button>
+
+  </form>
+</view>

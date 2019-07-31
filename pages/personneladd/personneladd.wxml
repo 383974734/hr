@@ -1,0 +1,99 @@
+<!--pages/personneladd/personneladd.wxml-->
+
+<!-- navbar -->
+<!-- <cover-view class='navbar-v'  style='height: {{navheight + 46}}px'>
+  <navbar-v class="navbar"  name="创建简历" naviteml="1"></navbar-v>
+</cover-view> -->
+
+
+<!-- 上面的灰色线 -->
+<!-- <view style='margin-top:{{navheight + 46}}px; height:20rpx; background-color:#ececec'></view> -->
+<!-- <view style=' height:2rpx; background-color:#ececec'></view> -->
+
+<view class='back-v'>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <!-- 标题 -->
+    <informationview tit="标题" name='resumeTitle' placeholder="标题" ishid='1' disabled="" value="{{resumeTitle}}"></informationview>
+    <!-- 上传头像按钮 -->
+<image class='add-img' src='{{user.avatar}}' bindtap='changeAvatar' mode='aspectFill'></image>
+    <!-- 姓名 -->
+    <informationview tit="姓名" name='resumeName' placeholder="姓名" ishid='1' disabled="" value="{{resumeName}}"></informationview>
+    <!-- 性别 -->
+    <view class='back-v-sex'>
+      <label class='tit'>性别</label>
+      <label class='star'>*</label>
+
+      <view class="radio-box" wx:for="{{radios}}"  key="item.id"  style='margin-right: 50rpx; text-align: lleft'>
+        <lebel class="radio {{ index==sex ? 'on' : ''}}" data-index='{{index}}' data-value='{{item.value}}' bindtap="check">
+        <image wx:if='{{index==sex}}' mode='aspectFill'></image>
+        </lebel>
+        {{item.label}}
+      </view>
+    </view>
+
+    <!-- 电话 -->
+    <informationview tit="电话" name='resumePhone' placeholder="电话" state='1' ishid='1' disabled="" state='1' value="{{resumePhone}}"></informationview>
+    <!-- 行业 -->
+    <informationview tit="行业" name='resumeIndustry' placeholder="请选择" tips='1' value="{{industry}}" bindtap="industrybtn"></informationview>
+    <!-- 地址 -->
+    <informationview tit="地址" name='resumeArea' placeholder="请输入" tips='1' ishid='1' disabled="" value="{{resumeArea}}"></informationview>
+    <!-- 职位 -->
+    <informationview tit="职位" name='resumePosition' placeholder="请选择" tips='1' value="{{position}}" bindtap="positionbtn"></informationview>
+    <!-- 附件 -->
+    <!-- <view class='back-fj-v'>
+      <view class='tit-fb'>附件</view>
+      <image class='fj-img' src='../../static/images/personneladd-file.png'></image>
+      <view class='fj-text'>支持扩展名：.txt .doc .docx .pdf .jpg...</view>
+    </view> -->
+    <!-- 标签 -->
+    <view class='back-bq-v'>
+      <view class='tit-fb'>标签</view>
+      <image class='bq-img' src='../../static/images/personneladd-title.png' bindtap='addtitClick'></image>
+      <view class='bq-text'>最多可添加3个标签</view>
+      <view class='title-back-v'>
+        <view class='title' wx:for="{{titlist}}" wx:for-iindex="index" data-index="{{index}}" >{{item}}</view>
+      </view>
+    </view>
+    <!-- 备注 -->
+    <label class='bz-tit'>备注</label>
+    <textarea class='textarea' name="remark" placeholder='备注说明' placeholder-style="color:#e2e2e2;" value="{{remark}}"></textarea>
+    
+    <!-- 提交按钮 -->
+    <button class='submission'  form-type='submit' bindtap='formSubmit'>提交</button>
+    <button class='reste'  form-type='reste' bindtap='formCancelt'>取消</button>
+  </form>
+</view>
+
+
+
+
+<!-- 飘起来选择的view -->
+<view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}" catchtouchmove='true' hidden='{{!showDialog}}'>
+  <view class="zan-dialog__mask" bindtap="industrybtn" />
+  <view class="zan-dialog__container">
+    <view class='pop-tit'>添加标签</view>
+    <form bindsubmit="formSubmitadd" bindreset="formReset">
+      <input class='pop-subtit' name='problem' placeholder='备注说明' value='{{jfValue}}' placeholder-style="color:#e2e2e2;"></input>
+      <view class='btn-v'>
+        <button class='no'  form-type='reste' bindtap='formCanceltadd'>取消</button>
+        <button class='yes'  form-type='submit' bindtap='formSubmitadd'>确定</button>
+      </view>
+    </form>
+  </view>
+</view>
+
+
+
+
+<!-- 提示飘起来选择的view -->
+<view class="zan-dialog-sub {{ showDialogSub ? 'zan-dialog--show-sub' : '' }}" catchtouchmove='true' hidden='{{!showDialogSub}}'>
+  <view class="zan-dialog__mask-sub" bindtap="industrybtnsub" />
+  <view class="zan-dialog__container-sub">
+    <view class='pop-tit-sub'>温馨提示</view>
+    <view class='pop-subtit-sub'>是否确认提交数据？</view>
+    <view class='btn-v-sub'>
+      <button class='no-sub' bindtap="industrybtnsub">取消</button>
+      <button class='yes-sub' bindtap="pushrechargesub">确定</button>
+    </view>
+  </view>
+</view>

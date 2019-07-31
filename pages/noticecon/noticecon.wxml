@@ -1,0 +1,19 @@
+<!--pages/noticecon/noticecon.wxml-->
+<view class='back-v'>
+
+  <view class='time'>{{json.messageDate}}</view>
+  <view class='logo'>
+    <image class='logo-img' src='../../static/images/noticecon-logo.png'></image>
+  </view>
+  <view class='message'>
+    <view class='mes-back-v'>
+    <!-- mes-jt -->
+      <view class='mes-jt'>
+      </view>
+      {{json.messageTitle}}
+      <label class='mes-back-time'>{{json.messageDate}}</label>
+      {{json.messageContent}}
+    </view>
+  </view>
+
+</view>

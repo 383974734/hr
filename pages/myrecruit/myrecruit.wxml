@@ -1,0 +1,51 @@
+<!--pages/myrecruit/myrecruit.wxml-->
+
+
+
+<!-- navbar -->
+<!-- <cover-view class='navbar-v'  style='height: {{navheight + 46}}px'>
+  <navbar-v class="navbar"  name="我的发布" naviteml="1"></navbar-v>
+</cover-view> -->
+
+<!-- 搜索view -->
+<!-- <view class='search-v' style='margin-top:{{navheight + 46}}px'> -->
+<view class='search-v' >
+  <!-- 搜索框 -->
+  <input class='search' name='search' placeholder='关键字搜索' placeholder-style="color:#dcdcdc;" bindconfirm='searchClick'></input>
+</view>
+<!-- 列表-->
+<view class='list-b' wx:for="{{list}}" wx:for-index="index" data-index="{{index}}" data-jobId='{{item.id}}' bindtap='cellpush'>
+  <view class='list-v'>
+    <image class='list-fork' src='../../static/images/personnel-dele.png' catchtap='deleBtn' data-memberId='{{item.memberId}}' data-resumeId='{{item.id}}' mode='aspectFill'></image>
+    <view class='title'>{{item.jobName}}</view>
+    <view class='money'>{{item.salaryRange}}</view>
+    <view class='list-s'>
+      <view class='add'>{{item.jobPlace}}</view>
+      <view class='add'>{{item.jobExperience}}</view>
+      <view class='education'>{{item.jobEducation}}</view>
+      <view class='time'>{{item.publisherDate}}</view>
+    </view>
+    <!-- <image class='img' src='{{item.img}}'></image>
+    <view class='name'>{{item.name}}</view>
+    <view class='time'>{{item.time}}</view> -->
+  </view>
+</view>
+
+<view class='add_btn'>
+<!-- 加号按钮 -->
+<image class='btn' src='../../static/images/personnel-add.png' bindtap='addbtn' mode='aspectFill'></image>
+</view>
+
+
+<!-- 飘起来选择的view -->
+<view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}" catchtouchmove='true' hidden='{{!showDialog}}'>
+  <view class="zan-dialog__mask" bindtap="industrybtn" />
+  <view class="zan-dialog__container">
+    <view class='pop-tit'>温馨提示</view>
+    <view class='pop-subtit'>删除当前选中数据？</view>
+    <view class='btn-v'>
+      <button class='no' bindtap="industrybtn">取消</button>
+      <button class='yes' bindtap="pushrecharge">确定</button>
+    </view>
+  </view>
+</view>

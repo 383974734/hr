@@ -1,0 +1,95 @@
+<!--pages/recruitadd/recruitadd.wxml-->
+
+<!-- navbar -->
+<!-- <cover-view class='navbar-v'  style='height: {{navheight + 46}}px'>
+  <navbar-v class="navbar"  name="发布招聘" naviteml="1"></navbar-v>
+</cover-view> -->
+
+<!-- <view class='back-v' style='margin-top:{{navheight + 56}}px'> -->
+<view class='back-v'>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <!-- 类型 -->
+    <informationview tit="招聘企业" name='jobCompany' placeholder="请选择" bindtap="jobbtn" value="{{jobCompany}}"></informationview>
+    <!-- 职位名称 -->
+    <informationview tit="职位名称" name='jobName' placeholder="职位名称" ishid="1" disabled="" value='{{position}}'></informationview>
+    <!-- 工资范围 -->
+    <informationview tit="工资范围" name='salaryRange' value="{{wages}}" placeholder="请选择" bindtap="industrybtn" data-index='0'></informationview>
+    <!-- 经验要求 -->
+    <informationview tit="经验要求" name='jobExperience' value="{{experience}}" placeholder="请选择" bindtap="industrybtn" data-index='1'></informationview>
+    <!-- 工作地点 -->
+    <informationview tit="工作地点" name='jobPlace' placeholder="请输入" ishid="1" disabled="" value="{{typejobPlaceqy}}"></informationview>
+    <!-- 最低学历 -->
+    <informationview tit="最低学历" name='jobEducation' value="{{education}}" placeholder="请选择" bindtap="industrybtn" data-index='2' ></informationview>
+    <!-- 性别 -->
+      <view class='back-v-sex'>
+        <label class='tit'>单双休</label>
+        <label class='star'>*</label>
+
+        <view class="radio-box" wx:for="{{radios}}"  key="item.id"  style='margin-right: 50rpx; text-align: lleft'>
+          <lebel class="radio {{ index==rest ? 'on' : ''}}" data-index='{{index}}' data-value='{{item.value}}' bindtap="check">
+          <image wx:if='{{index==rest}}' mode='aspectFill'></image>
+          </lebel>
+          {{item.label}}
+        </view>
+      </view>
+
+    <!-- <image class='add-img' src='{{user.avatar}}' bindtap='changeAvatar' mode='aspectFit'></image> -->
+    <!-- 描述替代 -->
+    <view class='textarea-v' hidden='{{public}}'>
+      <view class='{{jobDescribe == "" ? "tit-v-temp" : "tit-v-temps"}}'>{{tits}}</view>
+    </view>
+    <!-- 描述 -->
+    <view class='textarea-v' hidden='{{public == false}}'>
+      <textarea class='textarea' name="jobDescribe" placeholder="职位描述（200以内）" bindblur="bindTextAreaBlur" placeholder-style="color:#e2e2e2;" maxlength='200' value="{{jobDescribe}}"></textarea>
+    </view>
+    
+    <!-- 附件 -->
+    <!-- <view class='back-fj-v'>
+      <view class='tit-fb'>附件</view>
+      <image class='fj-img' src='../../static/images/personneladd-file.png'></image>
+      <view class='fj-text'>支持扩展名：.txt .doc .docx .pdf .jpg...</view>
+    </view> -->
+
+    <!-- 发布按钮 -->
+    <button class='submission'  form-type='submit' bindtap='formSubmit'>立即发布</button>
+  </form>
+</view>
+
+
+<!-- 飘起来选择的view -->
+<view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}" catchtouchmove='true' hidden='{{!showDialog}}'>
+  <view class="zan-dialog__mask" bindtap="industrybtn" />
+  <view class="zan-dialog__container">
+    <view style='text-align: center; height: 50px; line-height: 110rpx; font-size: 36rpx;'>{{pickertit}}</view>
+
+      <view class='picker-view-back'>
+        <picker-view indicator-style="height: 50px;" style="width: 100%; height: 450rpx;" value="{{pickvalue}}" bindchange="bindChange"  bindpickend="bindpickend">
+        
+          <picker-view-column>
+            <view class='view-t' style="line-height: 50px" wx:for="{{packList}}">{{item}}</view>
+          </picker-view-column>
+        
+        </picker-view>
+      </view>
+
+      <view class='btn-n' bindtap="industrybtn">取消</view>
+      <view class='btn-n btn-y' bindtap="pushrecharge">确定</view>
+
+  </view>
+</view>
+
+
+
+
+<!-- 提示飘起来选择的view -->
+<view class="zan-dialog-sub {{ showDialogSub ? 'zan-dialog--show-sub' : '' }}" catchtouchmove='true' hidden='{{!showDialogSub}}'>
+  <view class="zan-dialog__mask-sub" bindtap="industrybtnsub" />
+  <view class="zan-dialog__container-sub">
+    <view class='pop-tit-sub'>温馨提示</view>
+    <view class='pop-subtit-sub'>是否确认提交数据？</view>
+    <view class='btn-v-sub'>
+      <button class='no-sub' bindtap="industrybtnsub">取消</button>
+      <button class='yes-sub' bindtap="pushrechargesub">确定</button>
+    </view>
+  </view>
+</view>

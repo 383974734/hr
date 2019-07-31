@@ -4,21 +4,24 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false
+		"autoAudits": false,
+		"uglifyFileName": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.6.2",
-	"appid": "wxe50c70fc90535239",
+	"appid": "wx19edb0dee18b3887",
 	"projectname": "HRAssociation",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
-	"isGameTourist": false,
+	"scripts": {},
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -28,13 +31,73 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
-			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 7,
+			"list": [
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/home/home",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "培训详情",
+					"pathName": "pages/traincon/traincon",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "账户",
+					"pathName": "pages/balance/balance",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "新的账户",
+					"pathName": "pages/newbalance/newbalance",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "求职",
+					"pathName": "pages/newpersonnel/newpersonnel",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "添加求职信息",
+					"pathName": "pages/newpersonneladd/newpersonneladd",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "供应商",
+					"pathName": "pages/firstparty/firstparty",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "活动详情",
+					"pathName": "pages/traincon/traincon",
+					"query": "",
+					"scene": null
+				}
+			]
 		}
 	}
 }

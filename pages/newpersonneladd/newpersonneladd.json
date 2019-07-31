@@ -1,0 +1,8 @@
+{
+  
+  "usingComponents": {
+    "buttonview": "../../component/buttonview/buttonview",
+    "informationview": "../../component/informationview/informationview",
+    "navbar-v": "../../component/navbar/navbar"
+  }
+}

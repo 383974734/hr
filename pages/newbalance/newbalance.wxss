@@ -1,0 +1,342 @@
+/* pages/newbalance/newbalance.wxss */
+
+.header-back {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(233, 94, 99);
+
+}
+
+.header-btn {
+  width: 50%;
+  height: 230rpx;
+  line-height: 80rpx;
+  display: inline-block;
+  text-align: center;
+  color: white;
+}
+
+.btn {
+  width: 90rpx;
+  margin: 0 auto;
+}
+
+.sele-btn {
+  border-bottom: 8rpx solid white;
+}
+
+.add-coin {
+  font-size: 28rpx;
+  text-align: left;
+  margin-left: 40rpx;
+  height: 150rpx;
+  line-height: 150rpx;
+}
+
+.add-integral {
+  font-size: 28rpx;
+  text-align: right;
+  margin-right: 40rpx;
+  height: 150rpx;
+  line-height: 150rpx;
+}
+
+.con-v {
+  margin-top: 220rpx;
+  background-color: white;
+  padding-top: 60rpx;
+}
+
+.con-v-border {
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+  background-color: white;
+  padding: 30rpx 0rpx 30rpx 0rpx;
+}
+
+.header-con {
+  position: absolute;
+  height: 220rpx;
+  width: 100%;
+  margin-top: -240rpx;
+}
+
+.header-sub-con {
+  height: 220rpx;
+  width: 80%;
+  background-color: white;
+  border-radius: 15rpx;
+  
+  margin: 0 auto;
+  color: red;
+}
+
+.box{
+  -moz-box-shadow:2px 2px 0px rgb(224, 221, 221); 
+  -webkit-box-shadow:2px 2px 0px rgb(224, 221, 221); 
+  box-shadow:2px 2px 0px rgb(224, 221, 221);
+}
+
+.header-sub-con-color{
+  color: white;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.header-tit {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 26rpx;
+  text-align: center;
+}
+
+.header-numer {
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 60rpx;
+  text-align: center;
+}
+
+
+/* 右面列表样式 */
+.list-v-r {
+  width: 100%;
+  height: 1000rpx;
+}
+
+.cell-v-r {
+  width: 100%;
+  height: 130rpx;
+}
+
+.img-r {
+  float: left;
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  margin: 30rpx 50rpx 20rpx 50rpx;
+  vertical-align: middle;
+  background-color: pink;
+}
+
+.con-v-r {
+  float: left;
+  height: 130rpx;
+  overflow: hidden;
+}
+
+.number-r {
+  height: 40rpx;
+  width: 140rpx;
+  line-height: 40rpx;
+  text-align: center;
+  float: right;
+  margin-right: 50rpx;
+  font-size: 36rpx;
+  color: #db2403;
+  margin-top: 40rpx;
+}
+
+.type-y-r {
+  color: #0faf25;
+}
+
+.tit-r {
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-top: 10rpx;
+}
+
+
+.time-r {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size:26rpx;
+  color: #948a8a
+}
+
+
+.lin-r {
+  width: 100%;
+  height: 1rpx;
+  background-color: #ececec;
+  position: relative;
+  top: 130rpx;
+  left: 150rpx;
+}
+
+.list-v-l {
+  border-bottom: 1rpx solid rgb(236, 234, 234);
+}
+
+.cell-v-l {
+  height: 100rpx;
+  border-bottom: 1rpx solid rgba(236, 234, 234, 0.247);
+}
+
+/* <!-- 状态图片 --> */
+.state-img {
+  width: 55rpx;
+  height: 55rpx;
+  float: left;
+  margin-top: 22rpx;
+  margin-left: 20rpx;
+}
+/* <!-- 状态 --> */
+.state-name {
+  margin-left: 20rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 28rpx;
+  color: #c2bbbb;
+  float: left;
+}
+
+.state-number {
+  font-size: 30rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 260rpx; 
+  float: left;
+  text-align: center;
+}
+/* <!-- 时间 --> */
+.time {
+  height: 100rpx;
+  line-height: 100rpx;
+  float: right;
+  font-size: 26rpx;
+  color: #8a8989;
+  margin-right: 20rpx;
+  max-width: 300rpx;
+  text-align: right;
+
+  /* 多余的文字显示... */
+  overflow: hidden; 
+  white-space: nowrap; 
+  text-overflow:ellipsis;
+}
+
+
+
+
+
+/* 飘起来选择的view背景 */
+.zan-dialog__mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  /* 设置阴影半透明背景如： background: rgba(0, 0, 0, 0.4); */
+  background: rgba(0, 0, 0, 0);
+  display: none;
+}
+
+/* 飘起来选择的view内容 */
+.zan-dialog__container {
+  position: fixed;
+  top: 210rpx;
+  /* bottom: 320rpx; */
+  /* 弹窗布局宽 */
+  width: 650rpx;
+  /* 弹窗布局高，与下面弹出距离transform有关 */
+  height: 480rpx;
+  margin-left: 50rpx;
+  background: white;
+  /* 弹框弹出距离，与弹框布局高度有关，如300%表示弹起距离为3倍弹窗高度 */
+  /* transform: translateY(700%); */
+  transform: translateY(0);
+  transition: all 0.7s ease;
+  z-index: 12;
+  border-radius: 20rpx;
+  /* 弹框的悬浮阴影效果，如不需要可注释该行 */
+  /* box-shadow: 0px 3px 3px 2px gainsboro; */
+}
+
+.zan-dialog--show .zan-dialog__container {
+  transform: translateY(0);
+}
+
+.zan-dialog--show .zan-dialog__mask {
+  display: block;
+}
+
+
+.pop-tit {
+  width: 100%;
+  text-align: center;
+  font-size: 34rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #555353;
+  margin-bottom: 10rpx;
+}
+
+.input {
+  width: 290rpx;
+  height: 120rpx;
+  margin: 0 auto;
+  color: #02b437;
+  font-size: 90rpx;
+  text-align: center;
+  border-bottom: 1rpx solid rgb(184, 182, 180);
+}
+
+.diss {
+  width: 80rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  float: right;
+  font-size: 30rpx;
+  color: #8a8484;
+  text-align: center;
+}
+
+.subtit {
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  color: rgb(224, 10, 10);
+  font-size: 26rpx;
+  margin-bottom: 50rpx;
+}
+
+.btn-v {
+  width: 310rpx;
+  height: 66;
+  margin: 0 auto;
+}
+
+.no {
+  width: 140rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  letter-spacing: 7rpx;
+  border-radius: 15rpx;
+  border: 1rpx solid #ececec;
+  background-color: white;
+  font-size: 30rpx;
+  /* font-weight: lighter; */
+  display: inline-block;
+  margin-right: 30rpx;
+}
+
+.yes {
+  width: 140rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  letter-spacing: 7rpx;
+  border-radius: 15rpx;
+  /* border: 1rpx solid  rgb(248, 72, 18); */
+  color: white;
+  font-size: 30rpx;
+  /* font-weight: lighter; */
+  background-color:  rgb(248, 72, 18);
+  display: inline-block;
+}

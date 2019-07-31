@@ -1,0 +1,39 @@
+<!--pages/order/order.wxml-->
+
+
+<!-- navbar -->
+<!-- <cover-view class='navbar-v'  style='height: {{navheight + 46}}px'>
+  <navbar-v class="navbar"  name="订单" naviteml="1"></navbar-v>
+</cover-view> -->
+
+
+<!-- 列表父试图 -->
+<!-- <view class='back-v' style='margin-top:{{navheight + 46 + 10}}px'> -->
+<view class='back-v' >
+  <!-- 承载列表cell的view -->
+  <view class='list-v' wx:for="{{list}}" wx:for-index="index" data-index="{{index}}" bindtap='cellpush'>
+    <!-- 状态和时间view -->
+    <view class='header-v'>
+      <!-- 状态图片 -->
+      <image class='state-img' src='../../static/images/order_state.png' mode='aspectFill'></image>
+      <!-- 状态 -->
+      <view class='state-name'>已完成</view>
+      <!-- 时间 -->
+      <view class='time'>{{item.completeTime}}</view>
+    </view>
+    
+    <!-- 交易详情内容 -->
+    <view class='info-v'>
+      <!-- 交易明细图片 -->
+      <image class='jf-img' src='../../static/images/user_integral.png' mode='aspectFill'></image>
+      <!-- 交易明细 -->
+      <view class='tit'>积分交易积分</view>
+    </view>
+    
+    <!-- 实付文字 -->
+    <view class='tit-money'>实付：</view>
+    <!-- 实付金额 -->
+    <view class='money'>￥{{item.orderMoney}}</view>
+  </view>
+
+</view>

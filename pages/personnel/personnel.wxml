@@ -1,0 +1,100 @@
+<!--pages/personnel/personnel.wxml-->
+
+
+<!-- navbar -->
+<!-- <cover-view class='navbar-v'  style='height: {{navheight + 46}}px'>
+  <navbar-v class="navbar"  name="人才库" naviteml="1"></navbar-v>
+</cover-view> -->
+
+
+
+
+<!-- 搜索view -->
+<!-- <view class='search-v'  style='margin-top:{{navheight + 46}}px'> -->
+<view class='search-v'  >
+  <!-- 搜索框 -->
+  <input class='search' name='search' placeholder='关键字搜索' placeholder-style="color:#dcdcdc;" bindconfirm='searchClick'></input>
+</view>
+
+<!-- 加号按钮 -->
+<!-- <image class='button' style='top: {{navheight + 46}}px + 140rpx;' src='../../static/images/personnel-add.png' bindtap='addbtn' mode='aspectFill'></image> -->
+
+
+
+<!-- 标签列表 -->
+<view class='list-b'>
+  <!-- 标签 -->
+  <!-- <view class='titlist'>
+    <view class='title' wx:for="{{titlist}}" wx:for-iindex="index" data-index="{{index}}" >{{item.tit}}    </view>
+  </view> -->
+
+  <view class='list' wx:for="{{list}}" wx:for-index="index" data-index="{{index}}" data-memberId='{{item.publisherMemberId}}' data-resumeID='{{item.id}}' bindtap='listpush'>
+    <image class='list-img' src='{{item.resumeImageUrl}}' mode='aspectFill'></image>
+    <view class='list-r-v'>
+      <view class='list-name'>{{item.resumeName}}</view>
+      <image class='list-fork' src='../../static/images/personnel-dele.png' catchtap='deleBtn' data-memberId='{{item.publisherMemberId}}' data-resumeID='{{item.id}}' mode='aspectFill'></image>
+      <view class='list-time'>{{item.publisherDate}}</view>
+      <view >
+        <view class='list-industry'>行业：{{item.resumeIndustry}}</view>
+        <view class='list-position'>职位：{{item.resumePosition}}</view>
+      </view>
+      
+      <!-- 电话 -->
+      <view class='list-tel'>
+        <!-- 图片 -->
+        <image class='list-sub-img' src='../../static/images/personnel-list-tel.png' mode='aspectFill'></image>
+        {{item.resumePhone}}
+      </view>
+      <!-- 地址 -->
+      <view class='list-add'>
+        <!-- 图片 -->
+        <image class='list-sub-img' src='../../static/images/personnel-list-add.png' mode='aspectFill'></image>
+        {{item.resumeArea}}
+      </view>
+      <view class='list-con'>备注：{{item.remark}}</view>
+      
+    </view>
+  </view>
+</view>
+
+<view class='add_btn'>
+  <!-- 加号按钮 -->
+  <image class='btn' src='../../static/images/personnel-add.png' bindtap='addbtn' mode='aspectFill'></image>
+</view>
+
+
+<!-- 
+<view class='list-name'>{{item.resumeName}}</view>
+      <image class='list-fork' src='../../static/images/personnel-dele.png'></image>
+      <view class='list-time'>{{item.publisherDate}}</view>
+      <view class='list-industry'>行业：{{item.resumeIndustry}}</view>
+      <view class='list-position'>职位：{{item.resumePosition}}</view>
+      电话
+      <view class='list-tel'>
+        图片
+        <image class='list-sub-img' src='../../static/images/personnel-list-tel.png'></image>
+        {{item.resumePhone}}
+      </view>
+      地址
+      <view class='list-add'>
+        图片
+        <image class='list-sub-img' src='../../static/images/personnel-list-add.png'></image>
+        {{item.resumePosition}}
+      </view>
+      <view class='list-con'>{{item.resumeDescription}}</view>
+ -->
+
+
+
+<!-- 飘起来选择的view -->
+<view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}" catchtouchmove='true' hidden='{{!showDialog}}'>
+  <view class="zan-dialog__mask" bindtap="industrybtn" />
+  <view class="zan-dialog__container">
+    <view class='pop-tit'>温馨提示</view>
+    <view class='pop-subtit'>删除当前选中数据？</view>
+    <view class='btn-v'>
+      <button class='no' bindtap="industrybtn">取消</button>
+      <button class='yes' bindtap="pushrecharge">确定</button>
+    </view>
+  </view>
+</view>

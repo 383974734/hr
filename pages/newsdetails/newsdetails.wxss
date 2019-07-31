@@ -1,0 +1,69 @@
+/* pages/newsdetails/newsdetails.wxss */
+
+.navbar-v {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  background-color: white;
+  top: 0;
+}
+
+.navbar {
+  width: 100%;
+  height: 46px;
+  position: absolute;
+	bottom: 0;
+}
+
+
+
+.back-v {
+  overflow: hidden;
+  border-top: 20rpx solid #f9f9f9;
+  background-color: white;
+}
+
+.problemcon-v {
+  margin: 20rpx 20rpx 20rpx 20rpx;
+}
+
+.img {
+  width: 100%;
+  /* height: 250rpx; */
+}
+
+.tit {
+  font-size: 34rpx;
+  line-height: 50rpx;
+  margin-top: 20rpx;
+  display: block;
+}
+
+.problem {
+  line-height: 50rpx;
+  font-size: 30rpx;
+  display: block;
+  margin-top: 20rpx;
+}
+
+.time {
+  margin: 20rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 34rpx;
+  color: #b9b4b4;
+  text-align: right;
+}
+
+.btn {
+  width: 100rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  border-radius: 50%;
+  border: 1rpx solid #0399429c;
+  color: #039941;
+  background-color:  #0fad510e;
+  margin: 0 auto;
+  /* font-weight: lighter; */
+}

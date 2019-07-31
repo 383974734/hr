@@ -1,0 +1,78 @@
+<!--pages/newbalance/newbalance.wxml-->
+<view class='header-back'>
+  <view class='header-btn'>
+    <view class='add-coin' bindtap='pushHbalance'>+H币</view>
+    <view class='btn {{type == 0 ? "sele-btn" : ""}}' bindtap='clickLBtn'>H币</view>
+  </view>
+  <view class='header-btn'>
+  
+    <!-- <view class='add-integral' bindtap='pushJbalance'>+积分</view> -->
+    <view class='add-integral' bindtap='industrybtn'>+积分</view>
+    <view class='btn {{type == 1 ? "sele-btn" : ""}}' bindtap='clickRBtn'>积分</view>
+  </view>
+  <view class='con-v {{type == 1 ? "con-v-border" : ""}}'>
+
+    <view class='header-con'>
+      <view class='header-sub-con {{type == 1 ? "header-sub-con-color": ""}} {{type == 0 ? "box" : ""}}' bindtap='pushClick'>
+        <view class='header-tit' hidden='{{type == 1}}'>我的H币</view>
+        <view class='header-tit' hidden='{{type == 0}}'>我的积分</view>
+        <view class='header-numer' hidden='{{type == 1}}'>{{mp}}</view>
+        <view class='header-numer' hidden='{{type == 0}}'>{{json.mp}}</view>
+      </view>
+    </view>
+    <!-- 我的积分 -->
+    <view class='list-v-l' hidden='{{type == 1}}'>
+        <view class='cell-v-l' wx:for='{{listH}}' wx:for-index='index' data-index='{{index}}'>
+          <view style='wudth: 200rpx; float: left; height: 100rpx;'>
+            <!-- 状态图片 -->
+            <image class='state-img' src='../../static/images/exchange_loga.png' mode='aspectFill'></image>
+            <!-- 状态 -->
+            <view class='state-name'>已完成</view>
+          </view>
+          <!-- 数量 -->
+          <view class='state-number'>{{item.operation == 1 ? "+" : "-"}}{{item.point}}</view>
+          <!-- 时间 -->
+          <view class='time'>交易时间：{{item.time}}</view>
+        </view>
+    </view>
+
+    <!-- 我的H币 -->
+    <view class='list-v-r' hidden='{{type == 0}}'>
+      <view class='cell-v-r' wx:for="{{json.pointHistory}}" wx:for-index="index" data-index="{{index}}">
+
+        <image class='img-r' style='{{item.operation == "1" ? "background-color: #0faf25" : ""}}' src='{{item.operation == "1" ? "../../static/images/integral_jia.png" : "../../static/images/integral_jian.png"}}' mode='aspectFill'></image>
+
+        <view class='con-v-r'>
+          <view class='tit-r'>{{item.reason}}</view>
+          <view class='time-r'>{{item.time}}</view>
+        </view> 
+
+        <view class='number-r {{item.operation == "1" ? "type-y-r" : ""}}'>{{item.operation == '1' ? "+" : "-"}}{{item.mp}}</view>
+      
+
+        <view class='lin-r'></view>
+      </view>
+    </view>
+  </view>
+
+
+  
+</view>
+
+
+
+<!-- 飘起来选择的view -->
+<view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}" catchtouchmove='true' hidden='{{!showDialog}}'>
+  <view class="zan-dialog__mask" bindtap="industrybtn" />
+  <view class="zan-dialog__container">
+    <!-- <view class='diss' bindtap="industrybtn">X</view> -->
+    <view class='pop-tit'>请输入您需要的积分数</view>
+    <!-- 1元 = 10积分；5000积分=1H币； bindinput='inputClick' -->
+    <input class='input' value='{{jfValue}}'  bindconfirm='inputClick'  bindinput='inputBindinput' type='number'></input>
+    <view class='subtit'>{{paymoney}}</view>
+    <view class='btn-v'>
+      <button class='no' bindtap="industrybtn">取消</button>
+      <button class='yes' bindtap="pushrecharge">确定</button>
+    </view>
+  </view>
+</view>

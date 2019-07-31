@@ -1,0 +1,75 @@
+<!--pages/recharge/recharge.wxml-->
+
+
+<!-- navbar -->
+<!-- <cover-view class='navbar-v'  style='height: {{navheight + 46}}px'>
+  <navbar-v class="navbar"  name="积分充值" naviteml="1"></navbar-v>
+</cover-view> -->
+
+
+<!-- 头部信息 -->
+<!-- <view class='header-v' style='margin-top:{{navheight + 46 + 2}}px'> -->
+<view class='header-v' >
+  <!-- 图片 -->
+  <image class='header-img' src='../../static/images/recharge_logo.png' mode='aspectFill'></image>
+  <!-- 标题 -->
+  <view class='header-title'>积分交易</view>
+  <view class='header-v'>
+    <view class='header-sub-v'>
+      <!-- 交易金额文字 -->
+      <view class='header-con'>交易金额</view>
+      <!-- 金额 -->
+      <view class='header-money'>{{json.orderMoney}}元</view>
+    </view>
+    <view class='header-sub-v'>
+      <!-- 交易金额文字 -->
+      <view class='header-con'>积分数量</view>
+      <!-- 金额 -->
+      <view class='header-money header-number'>{{json.mp}}个</view>
+    </view>
+  </view>
+</view>
+
+<!-- 内容信息 -->
+<view class='con-v'>
+  <view class='back-v'>
+    <!-- 交易金额文字 -->
+    <view class='con'>创建时间:</view>
+    <!-- 金额 -->
+    <view class='money'>{{json.createTime}}</view>
+  </view>
+  <view class='back-v'>
+    <!-- 交易金额文字 -->
+    <view class='con'>订单号:</view>
+    <!-- 金额 -->
+    <view class='money'>{{json.orderId}}</view>
+  </view>
+  <!-- <view class='back-v'>
+    交易金额文字
+    <view class='con'>交易流水号:</view>
+    金额
+    <view class='money'>1247283429837985386874</view>
+  </view> -->
+  <view class='back-v back-v-last'>
+    <!-- 交易金额文字 -->
+    <view class='con'>支付方式:</view>
+    <!-- 金额 -->
+    <view class='money'>微信支付</view>
+  </view>
+</view>
+
+<view class='gotopay' bindtap='gotopay'>去支付</view>
+<view class='gotopay popview' bindtap='popview'>取消</view>
+
+
+
+
+
+<!-- 飘起来选择的view -->
+<view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}" catchtouchmove='true' hidden='{{!showDialog}}'>
+  <view class="zan-dialog__mask" bindtap="industrybtn" />
+  <view class="zan-dialog__container">
+    <view class='pop-tit'>交易成功</view>
+    <button class='yes' bindtap="pushrecharge">确定</button>
+  </view>
+</view>

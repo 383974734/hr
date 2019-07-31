@@ -1,0 +1,358 @@
+/* pages/newpersonnelcon/newpersonnelcon.wxss */
+
+.page {
+  width:100%;
+  overflow-x:hidden;
+}
+
+.user-back-v {
+  width: 100%;
+  height: 340rpx;
+  border-bottom: 22rpx solid rgb(243, 241, 241);
+}
+
+.user-img-v {
+  width: 160rpx;
+  height: 160rpx;
+  float: left;
+  margin-top: 30rpx;
+}
+
+.user-img {
+  width: 120rpx;
+  height: 120rpx;
+  margin-top: 10rpx;
+  margin-left: 25rpx;
+  margin-right: 15rpx;
+  border-radius: 50%;
+  /* background-color: rgb(250, 248, 248); */
+}
+
+.user-con-v {
+  width: 55%;
+  height: 160rpx;
+  float: left;
+  margin-left: 8rpx;
+  margin-top: 35rpx;
+}
+
+.user-name-v {
+  max-width: 90%;
+  /* width: 90%; */
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-top: 35rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.user-name {
+  font-size: 26rpx;
+  margin-left: 15rpx;
+  color: rgb(136, 130, 130);
+  word-break:keep-all;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis; 
+}
+
+.user-logo-v {
+  width: 32rpx;
+  height: 32rpx;
+  display: inline-block;
+  margin-left: 20rpx;  
+}
+
+.user-logo {
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: middle;
+}
+
+.tel-img-v {
+  float: right;
+  width: 130rpx;
+  height: 130rpx;
+  margin-top: 70rpx;
+}
+
+.user-com {
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 26rpx;
+  color: rgb(77, 74, 74);
+}
+
+.class-v {
+  width: 33%;
+  height: 140rpx;
+  float: left;
+  overflow: hidden;
+}
+
+.class-tit {
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+.class-subtit {
+  width: 100%;
+  height: 40rpx;
+  font-size: 25rpx;
+  text-align: center;
+  color: rgb(133, 130, 130);
+  font-weight: bold;
+}
+
+.rec-v {
+  width: 100%;
+  height: 170rpx;
+  /* border-bottom: 22rpx solid rgb(243, 241, 241); */
+}
+
+.cell-red {
+  width: 80%;
+  height: 30rpx;
+  line-height:30rpx;
+  border-left: 15rpx solid rgb(255, 72, 0);
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  padding-left: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.rec-img-v {
+  width: 97rpx;
+  height: 97rpx;
+  margin-top: 10rpx;
+  margin-left: 30rpx;
+  margin-right: 40rpx;
+  float: left;
+}
+
+.hr-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 13rpx;
+  background-color: blue;
+}
+
+.hr-img-v {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 73rpx;
+  margin-left: 75rpx;
+}
+
+.rec-info-v {
+  width: 75%;
+  height: 130rpx;
+  /* background-color: pink; */
+  float: left;
+  /* margin-bottom: 40rpx; */
+}
+
+.evaluate {
+  margin: 10rpx 30rpx 15rpx 30rpx;
+  font-size: 28rpx;
+  text-indent: 53rpx;
+}
+
+.rec-name {
+  height: 70rpx;
+  line-height:70rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  float: left;
+}
+
+.rec-tit {
+  height: 70rpx;
+  line-height:70rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  float: left;
+  color: rgb(168, 166, 166);
+  margin-left: 20rpx;
+}
+
+.rec-con {
+  font-size: 30rpx;
+}
+
+
+.intention-v {
+  width: 100%;
+  height: 145rpx;
+  border-bottom: 22rpx solid rgb(243, 241, 241);
+}
+
+.cell {
+  height: 45rpx;
+  line-height: 45rpx;
+  font-size: 26rpx;
+  margin-left: 30rpx;
+  color: rgb(73, 71, 71);
+}
+
+.tel-v {
+  width: 90%;
+  height: 300rpx;
+  margin: 0 auto;
+}
+
+
+.tits-v {
+  /* width: 76%; */
+  width: 80%;
+  margin: 10rpx 30rpx 45rpx 30rpx;
+  /* float: left; */
+}
+
+.tits {
+  height: 34rpx;
+  font-size: 24rpx;
+  line-height: 34rpx;
+  background-color: #ececec;
+  border-radius: 5rpx;
+  display: inline-block;
+  color: #8f8c8c;
+  padding-left: 5rpx;
+  padding-right: 5rpx;
+  padding-top: 2rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+  margin-bottom: 30rpx;
+  /* font-weight: bold; */
+}
+
+
+
+
+
+
+
+/* 飘起来选择的view背景 */
+.zan-dialog__mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  /* 设置阴影半透明背景如： background: rgba(0, 0, 0, 0.4); */
+  background: rgba(0, 0, 0, 0);
+  display: none;
+}
+
+/* 飘起来选择的view内容 */
+.zan-dialog__container {
+  position: fixed;
+  top: 210rpx;
+  /* bottom: 320rpx; */
+  /* 弹窗布局宽 */
+  width: 650rpx;
+  /* 弹窗布局高，与下面弹出距离transform有关 */
+  height: 280rpx;
+  margin-left: 50rpx;
+  background: white;
+  /* 弹框弹出距离，与弹框布局高度有关，如300%表示弹起距离为3倍弹窗高度 */
+  /* transform: translateY(700%); */
+  transform: translateY(0);
+  transition: all 0.7s ease;
+  z-index: 12;
+  border-radius: 20rpx;
+  /* 弹框的悬浮阴影效果，如不需要可注释该行 */
+  /* box-shadow: 0px 0px 3px 2px rgb(240, 240, 240); */
+}
+
+.zan-dialog--show .zan-dialog__container {
+  transform: translateY(0);
+}
+
+.zan-dialog--show .zan-dialog__mask {
+  display: block;
+}
+
+
+.pop-tit {
+  width: 100%;
+  text-align: center;
+  font-size: 36rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #363434;
+  margin-bottom: 10rpx;
+}
+
+.pop-tits {
+  width: 100%;
+  text-align: center;
+  font-size: 38rpx;
+  height: 180rpx;
+  line-height: 180rpx;
+  color: #363434;
+  margin-bottom: 10rpx;
+}
+
+.pop-subtit {
+  /* color: yellowgreen; */
+  margin-bottom: 60rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 32rpx;
+  text-align: center;
+}
+
+.btn-v {
+  width: 310rpx;
+  height: 50rpx;
+  margin: 0 auto;
+}
+
+.btn-vs {
+  width: 140rpx;
+  height: 50rpx;
+  margin: 0 auto;
+}
+
+
+.no {
+  width: 140rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  letter-spacing: 7rpx;
+  border-radius: 15rpx;
+  border: 1rpx solid rgb(248, 72, 18);
+  background-color: white;
+  color: rgb(248, 72, 18);
+  font-size: 28rpx;
+  /* font-weight: lighter; */
+  display: inline-block;
+  margin-right: 30rpx;
+}
+
+.yes {
+  width: 140rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  letter-spacing: 7rpx;
+  border-radius: 15rpx;
+  /* border: 1rpx solid  rgb(248, 72, 18); */
+  color: white;
+  font-size: 28rpx;
+  /* font-weight: lighter; */
+  background-color:  rgb(248, 72, 18);
+  display: inline-block;
+}
+
+
+.poptit {
+  text-align: center;
+}

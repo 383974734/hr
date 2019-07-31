@@ -1,0 +1,23 @@
+/* pages/webview/webview.wxss */
+
+
+.navbar-v {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  background-color: white;
+  top: 0;
+}
+
+.navbar {
+  width: 100%;
+  height: 46px;
+  position: absolute;
+	bottom: 0;
+}
+
+
+.webview {
+  width: 100%;
+  height: 100%;
+}

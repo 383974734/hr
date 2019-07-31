@@ -1,0 +1,253 @@
+/* pages/problem/problem.wxss */
+page {
+  background-color: #f9f9f9;
+}
+
+.add_btn{
+  position:fixed;
+  display:flex;
+  width:100rpx;
+  bottom: 30rpx;
+  justify-content:center;
+  left: 50%;
+  margin-left: -50rpx;
+}
+.btn{
+  margin-top: 30rpx;
+  width: 100rpx;
+  height:100rpx;
+  font-size: 70rpx;
+  line-height: 70rpx;
+  border-radius: 35rpx;
+  color: white;
+}
+
+
+.navbar-v {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  background-color: white;
+  top: 0;
+}
+
+.navbar {
+  width: 100%;
+  height: 46px;
+  position: absolute;
+	bottom: 0;
+}
+
+
+/* <!-- 搜索view --> */
+.search-v {
+  height: 110rpx;
+  background-color: white;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+
+/* 搜索框 */
+.search {
+  width: 630rpx;
+  height: 70rpx;
+  font-size: 30rpx;
+  line-height: 70rpx;
+  border-radius: 35rpx;
+  margin-top: 20rpx;
+  margin-left: 50rpx;
+  background-color: #f7f7f7;
+  padding-left: 20rpx;
+}
+
+
+/* 加号按钮 */
+.button {
+  width: 45rpx;
+  height:45rpx;
+  background-color: #67b5e9;
+  font-size: 70rpx;
+  line-height: 70rpx;
+  border-radius: 35rpx;
+  color: white;
+  position: fixed;
+  right: 50rpx;
+}
+
+/* 列表 */
+.list {
+  margin: 20rpx 0rpx 0rpx 0rpx;
+  background-color: white;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+/* 分类选择器 父类布局*/
+.classification-v {
+  height: 52rpx;
+  width: 360rpx;
+  margin: 0 auto;
+}
+
+/* 分类选择器 */
+/* 第一个选择器选中 */
+.classification-o-y {
+  border: 1rpx solid #67b5e9;
+  border-radius: 10rpx 0rpx 0rpx 10rpx;
+  color: #67c0fc;
+}
+
+/* 第一个选择器未选中 */
+.classification-o-n {
+  border-radius: 10rpx 0rpx 0rpx 10rpx;
+  color: #c2bebe;
+}
+
+/* 第二个或者第三个选中 */
+.classification-tf-y {
+  border: 1rpx solid #67b5e9;
+  color: #67c0fc;
+}
+
+/* 第四个选择器选中 */
+.classification-f-y {
+  border: 1rpx solid #67b5e9;
+  border-radius: 0rpx 10rpx 10rpx 0rpx;
+  color: #67c0fc;
+}
+/* 第四个选择器未选中 */
+.classification-f-n {
+  border-radius: 0rpx 10rpx 10rpx 0rpx;
+  color: #c2bebe;
+}
+
+/* 选择器共有属性 */
+.classification {
+  height: 50rpx;
+  width: 85rpx;
+  line-height: 50rpx;
+  display: inline-block;
+  font-size: 28rpx;
+  text-align: center;
+}
+
+/* 左侧开口样式 */
+.border-r {
+  color: #c2bebe;
+  border-top: 1rpx solid #c2bebe;
+  border-right: 1rpx solid #c2bebe;
+  border-bottom: 1rpx solid #c2bebe;
+}
+
+/* 右侧开口样式 */
+.border-l {
+  color: #c2bebe;
+  border-top: 1rpx solid #c2bebe;
+  border-left: 1rpx solid #c2bebe;
+  border-bottom: 1rpx solid #c2bebe;
+}
+
+
+/* 列表cell父试图 */
+.list-v {
+  border-radius: 15rpx;
+  margin: 35rpx 20rpx;
+  overflow: hidden;
+  
+    /* 设置阴影  ：  https://www.html.cn/tool/css3Preview/Box-Shadow.html */
+  -moz-box-shadow:0px 2px 3px #ececec;
+  -webkit-box-shadow:0px 2px 3px #ececec;
+  box-shadow:0px 2px 3px #ececec;
+
+}
+
+/* 图片 */
+.list-img {
+  width: 100%;
+  height: 200rpx;
+  border-radius: 15rpx;
+}
+
+/* 标题 */
+.list-tit {
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 34rpx;
+  border-bottom: 1rpx solid #f7f4f4ce;
+  /* 多余的文字显示... */
+  overflow: hidden; 
+  white-space: nowrap; 
+  text-overflow:ellipsis;
+  padding-right: 25rpx;
+  padding-left: 25rpx;
+}
+
+.list-t-con {
+  width: 100%;
+  height: 70rpx;
+  
+}
+
+/* 发布人 */
+.list-name {
+  /* width: 50%; */
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 28rpx;
+  color: #d3cece;
+  display: inline-block;
+  margin-left: 25rpx;
+}
+
+.list-shang {
+  height: 40rpx;
+  width: 40rpx;
+  vertical-align: middle;
+  margin-left: 30rpx;
+}
+
+/* 时间 */
+.list-time {
+  float: right;
+  width: 30%;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: right;
+  font-size: 28rpx;
+  color: #d3cece;
+  /* display: inline-block; */
+  margin-right: 25rpx;
+  /* 多余的文字显示... */
+  overflow: hidden; 
+  white-space: nowrap; 
+  text-overflow:ellipsis;
+  padding-left: 25rpx;
+}
+
+/* 内容 */
+.list-con {
+  width: 70%;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  color: #d3cece;
+  display: inline-block;
+  /* 多余的文字显示... */
+  overflow: hidden; 
+  white-space: nowrap; 
+  text-overflow:ellipsis;
+  padding-left: 25rpx;
+}
+
+/* 回复数量 */
+.list-number {
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: right;
+  font-size: 28rpx;
+  color: #d3cece;
+  display: inline-block;
+  float: right;
+  margin-right: 25rpx;
+  
+}

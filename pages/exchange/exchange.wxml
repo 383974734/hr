@@ -1,0 +1,43 @@
+<!--pages/exchange/exchange.wxml-->
+
+
+
+<!-- navbar -->
+<!-- <cover-view class='navbar-v'  style='height: {{navheight + 46}}px'>
+  <navbar-v class="navbar"  name="" naviteml="1"></navbar-v>
+</cover-view> -->
+
+<!-- <view class='title-v' style='margin-top:{{navheight + 46}}px;'>{{title}}</view> -->
+<view class='title-v' >{{title}}</view>
+<view class='number-v'>
+  <view class='number-img'>
+    <view class='number-j' hidden='{{title == "可兑换H币"}}'>{{json.convertible}}</view>
+    <view class='number-h' hidden='{{title == "可兑换积分"}}'>{{json.convertible}}</view>
+  </view>
+  
+  <view class='numbersub'>{{number}}</view>
+  <view class='titsub'>兑换最大数额</view>
+  <view class='exchange-v-h' hidden='{{title == "可兑换H币"}}'>
+    <input class='exchange-number' maxlength='10' type='number' value='{{json.intouconvertible}}' bindinput="getPhone"></input>
+  </view>
+
+  <view class='exchange-v-j' hidden='{{title == "可兑换积分"}}'>
+    <input class='exchange-number' maxlength='10' type='number' value='{{json.intouconvertible}}' bindinput="getPhone"></input>
+  </view>
+  <button class='button' bindtap='btnclick'>下一步</button>
+
+</view>
+
+
+
+
+
+<!-- 飘起来选择的view -->
+<view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}" catchtouchmove='true' hidden='{{!showDialog}}'>
+  <view class="zan-dialog__mask" bindtap="industrybtn" />
+  <view class="zan-dialog__container">
+    <view class='pop-tit'>{{popTitle}}</view>
+    <view class='pop-subtit'>{{popMessage}}</view>
+    <button class='yes' bindtap="pushrecharge">确定</button>
+  </view>
+</view>

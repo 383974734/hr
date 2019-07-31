@@ -1,0 +1,146 @@
+/* pages/recruit/recruit.wxss */
+
+page {
+  background-color: #f9f9f9;
+}
+
+
+.navbar-v {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  background-color: white;
+  top: 0;
+}
+
+.navbar {
+  width: 100%;
+  height: 46px;
+  position: absolute;
+	bottom: 0;
+}
+
+
+/* <!-- 搜索view --> */
+.search-v {
+  height: 110rpx;
+  background-color: white;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+
+/* 搜索框 */
+.search {
+  width: 630rpx;
+  height: 70rpx;
+  font-size: 30rpx;
+  line-height: 70rpx;
+  border-radius: 35rpx;
+  margin-top: 20rpx;
+  margin-left: 50rpx;
+  background-color: #f7f7f7;
+  padding-left: 20rpx;
+}
+
+.add_btn{
+  position:fixed;
+  display:flex;
+  width:100rpx;
+  bottom: 30rpx;
+  justify-content:center;
+  left: 50%;
+  margin-left: -50rpx;
+}
+.btn{
+  margin-top: 30rpx;
+  width: 100rpx;
+  height:100rpx;
+  font-size: 70rpx;
+  line-height: 70rpx;
+  border-radius: 35rpx;
+  color: white;
+}
+
+/* 列表 */
+.list-b {
+  width: 100%;
+  background-color: white;
+  margin-bottom: 20rpx;
+}
+
+.list-v {
+  margin: 0rpx 50rpx;
+  overflow: hidden;
+}
+
+.title {
+  width: 50%;
+  height: 110rpx;
+  line-height: 110rpx;
+  font-size: 36rpx;
+  float: left;
+  overflow: hidden;
+}
+
+.money {
+  height: 100rpx;
+  line-height: 100rpx;
+  margin-top: 10rpx;
+  font-size: 36rpx;
+  float: right;
+  color: rgb(209, 49, 49);
+  overflow: hidden;
+}
+
+.list-s {
+  width: 100%;
+  float: left;
+}
+
+.add {
+  font-size: 28rpx;
+  color: #a6c8d6;
+  border: 1rpx solid #a6c8d6;
+  border-radius: 5rpx;
+  display: inline-block;
+  padding: 0rpx 5rpx;
+  margin-right: 20rpx;
+}
+
+.education {
+  min-width: 110rpx;
+  /* width: 110rpx; */
+  text-align: center;
+  font-size: 28rpx;
+  color: #a6c8d6;
+  border: 1rpx solid #a6c8d6;
+  border-radius: 5rpx;
+  display: inline-block;
+  padding: 0rpx 5rpx;
+  /* margin-right: 20rpx; */
+}
+
+.img {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  float: left;
+  margin-top: 20rpx;
+  margin-right: 15rpx;
+}
+
+.name {
+  font-size: 28rpx;
+  color: #cee1e9;
+  float: left;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.time {
+  font-size: 28rpx;
+  color: #beb8b8;
+  float: right;
+  height: 100rpx;
+  line-height: 100rpx;
+}

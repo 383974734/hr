@@ -1,0 +1,127 @@
+<!--pages/newpersonnelcon/newpersonnelcon.wxml-->
+
+
+<view class='user-back-v'>
+  <view>
+    <!-- 用户头像view -->
+    <view class='user-img-v'>
+      <!-- 用户头像 -->
+      <image class='user-img' src='{{json.jobwantedImageUrl}}'></image>
+    </view>
+    <!-- 用户信息 -->
+    <view class='user-con-v'>
+      <!-- 名字、应聘职位 -->
+      <view class='user-name-v'>
+        <text style='word-break:keep-all; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;'>{{json.jobwantedName}}</text>
+        <text class='user-name'>{{json.jobwantedPosition}}</text>
+      </view>
+      <view class='user-logo-v'>
+        <image class='user-logo' src='../../static/images/hr-v.png'></image>
+      </view>
+      
+      <view class='user-com'>{{json.jobwantedIndustry}}</view>
+      <view class='user-logo'>
+        <image class='' src=''></image>
+      </view>
+    </view>
+    <!-- 拨打电话按钮 -->
+    <view class='tel-img-v' bindtap='clickTel'>
+      <image style='width:80%; height:80%;' src='../../static/images/newper-tel.png'></image>  
+    </view>
+  </view>
+  <view style='width: 100%; height: 140rpx;'>
+    <view class='class-v' wx:for='{{subtit}}'>
+      <view class='class-tit'>{{item.tit}}</view>
+      <view class='class-subtit'>{{item.subtit}}</view>
+    </view>
+  </view>
+</view>
+
+<!-- 推荐人 -->
+<view class='rec-v'>
+  <view class='cell-red'>推荐人</view>
+  <!-- 头像 -->
+  <view class='rec-img-v'>
+    <!-- 两个图片叠加在一起 -->
+      <view style="position: absolute;"> 
+        <image class='hr-img-v' src="../../static/images/hr-super-v.png"></image>  
+      </view>
+      <image class='hr-img' src='{{json.imageUrl}}'></image>
+  </view>
+  <!-- 信息 -->
+  <view class='rec-info-v'>
+    <view style='width: 100%; float: left;'>
+      <view class='rec-name'>{{json.uname}}</view>
+      <view class='rec-tit'>{{json.busJob}}</view>
+    </view>
+    <view class='rec-con'>{{json.busName}}</view>
+  </view>
+</view>
+<!-- 评语 -->
+<view style='border-bottom: 22rpx solid rgb(243, 241, 241);'>
+  <view class='cell-red'>评语</view>
+  
+  <view class='evaluate'>{{json.resumeDescription}}</view>
+  <!-- <view class='cell'>推荐人 手机：</view> -->
+  <!-- <view class='cell'>求职人 手机：</view> -->
+</view>
+
+<!-- 求职意向 -->
+<view class='intention-v'>
+  <view class='cell-red'>求职意向</view>
+  <view class='cell'>行业：{{json.jobwantedIndustry}}</view>
+  <view class='cell'>职位：{{json.jobwantedPosition}}</view>
+  <!-- <view class='cell'>标签：</view> -->
+</view>
+
+<!-- 个人信息 -->
+<view class='info-v' style='border-bottom: 22rpx solid rgb(243, 241, 241);'>
+  <view class='cell-red'>个人信息</view>
+  <view class='cell' hidden='{{json.jobwantedSex == 1}}'>性别：女</view>
+  <view class='cell' hidden='{{json.jobwantedSex == 0}}'>性别：男</view>
+  <view class='cell'>生日：{{json.birthdayDate}}</view>
+  <view class='cell'>学历：{{json.academicDegree}}</view>
+  <view class='cell' style='margin-bottom: 10rpx;'>毕业院校：{{json.graduatedFrom}}</view>
+</view>
+
+<!-- 标签 -->
+<view class='info-v' style='margin-bottom: 40rpx;'>
+  <view class='cell-red'>标签</view>
+  <view class='tits-v'>
+    <view class='tits' wx:for="{{json.jobwantedLabel}}" wx:for-index="index" data-index="{{index}}">{{item}}</view>
+  </view>
+  <!-- <view class='tel-img-v'>
+    <image style='width:80%; height:80%;' src='../../static/images/newper-tel.png'></image>  
+  </view> -->
+</view>
+
+<!-- 联系方式
+<view class='info-v'>
+  <view class='cell-red'>联系方式</view>
+  <view class='cell'>推荐人 手机：</view>
+  <view class='cell'>求职人 手机：</view>
+</view> -->
+
+<!-- <view class='tel-v'>
+  <view style='width:50%; float:left; height: 120rpx;'>
+    <image style='width:100%; height: 100%;' src='../../static/images/personnel-tel.png'></image>
+  </view>
+  <view style='width:50%; float:left; height: 120rpx;'>
+    <image style='width:100%; height: 100%;' src='../../static/images/personnel-hr-tel.png'></image>
+  </view>
+</view> -->
+
+
+
+<!-- 飘起来选择的view -->
+<view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}" catchtouchmove='true' hidden='{{!showDialog}}'>
+  <view class="zan-dialog__mask" bindtap="industrybtn" />
+  <view class="zan-dialog__container">
+    <view class='pop-tit'>求职者电话</view>
+    <view class='pop-subtit'>{{json.jobwantedPhone}}</view>
+    <view class='btn-v'>
+      <button class='no' bindtap="industrybtn">取消</button>
+      <button class='yes' bindtap="pushrecharge">确定</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,34 @@
+<!--pages/recruit/recruit.wxml-->
+
+<!-- navbar -->
+<!-- <cover-view class='navbar-v'  style='height: {{navheight + 46}}px'>
+  <navbar-v class="navbar"  name="招聘" naviteml="1"></navbar-v>
+</cover-view> -->
+
+<!-- 搜索view -->
+<!-- <view class='search-v' style='margin-top:{{navheight + 46}}px'> -->
+<view class='search-v' >
+  <!-- 搜索框 -->
+  <input class='search' name='search' placeholder='关键字搜索' placeholder-style="color:#dcdcdc;" bindconfirm='searchClick'></input>
+</view>
+
+<!-- 列表 -->
+<view class='list-b' wx:for="{{list}}" wx:for-index="index" data-index="{{index}}" data-jobId='{{item.id}}' bindtap='cellpush'>
+  <view class='list-v'>
+    <view class='title'>{{item.jobName}}</view>
+    <view class='money'>{{item.salaryRange}}</view>
+    <view class='list-s'>
+      <view class='add'>{{item.jobPlace}}</view>
+      <view class='add'>{{item.jobExperience}}</view>
+      <view class='education'>{{item.jobEducation}}</view>
+    </view>
+    <image class='img' src='{{item.userimg}}' mode='aspectFill'></image>
+    <view class='name'>{{item.realName}}</view>
+    <view class='time'>{{item.publisherDate}}</view>
+  </view>
+</view>
+
+<view class='add_btn'>
+<!-- 加号按钮 -->
+<image class='btn' src='../../static/images/personnel-add.png' bindtap='addbtn' mode='aspectFill'></image>
+</view>

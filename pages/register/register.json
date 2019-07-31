@@ -1,0 +1,9 @@
+{
+  "enablePullDownRefresh": false,
+  "disableScroll": true,
+  "usingComponents": {
+    "navbar-v": "../../component/navbar/navbar",
+    "tagview": "../../component/tagview/tagview",
+    "textview": "../../component/textview/textview"
+  }
+}

@@ -1,0 +1,104 @@
+<!--pages/newregister/newregister.wxml-->
+
+
+
+<!-- navbar -->
+<!-- <cover-view class='navbar-v'  style='height: {{navheight + 46}}px'>
+  <navbar-v class="navbar"  name="申请注册" naviteml="0" navpop="1"></navbar-v>
+</cover-view> -->
+
+
+
+<!-- <view class='back-v' style='margin-top:{{navheight + 46}}px'> -->
+<view class='back-v' >
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <!-- 上传头像按钮 -->
+<image class='add-img' src='{{user.avatar}}' bindtap='changeAvatar' mode='aspectFill'></image>
+    <!-- 姓名 -->
+    <informationview tit="姓名" name='realName' placeholder="姓名" ishid='1' disabled="" line="1"></informationview>
+    <!-- 性别 -->
+    <view class='back-v-sex'>
+      <label class='tit'>性别</label>
+      <label class='star'>*</label>
+
+      <view class="radio-box" wx:for="{{radios}}"  key="item.id"  style='margin-right: 50rpx; text-align: lleft'>
+        <lebel class="radio {{ index==sex ? 'on' : ''}}" data-index='{{index}}' data-value='{{item.value}}' bindtap="check">
+        <image wx:if='{{index==sex}}' mode='aspectFill'></image>
+        </lebel>
+        {{item.label}}
+      </view>
+    </view>
+
+    <!-- 生日 -->
+    <informationview tit="生日" name='birthday' value="{{birthday}}" placeholder="生日" bindtap="industrybtn" line="1"></informationview>
+    <!-- 微信 -->
+    <informationview tit="微信" name='wechatId' placeholder="微信号" ishid='1' disabled="" line="1"></informationview>
+    <!-- 手机 -->
+    <informationview tit="手机" name='mobile' placeholder="手机号" state='1' ishid='1' disabled="" line="1"></informationview>
+    <!-- 企业固话 -->
+    <informationview tit="企业固话" name='busTel' placeholder="企业固话" ishid='1' disabled="" line="1"></informationview>
+    <!-- 邮箱 -->
+    <informationview tit="邮箱" name='email' placeholder="邮箱" ishid='1' disabled="" line="1"></informationview>
+    <!-- 所在企业 -->
+    <informationview tit="所在企业" name='busName' placeholder="所在企业" ishid='1' disabled="" line="1"></informationview>
+    <!-- 职务 -->
+    <informationview tit="职务" name='busJob' placeholder="职务" ishid='1' disabled="" line="1"></informationview>
+    <!-- 行业 -->
+    <informationview tit="行业" name='industry' placeholder="行业" ishid='1' disabled="" line="1"></informationview>
+    <!-- 企业性质 -->
+    <informationview tit="企业性质" name='busNature' placeholder="企业性质" ishid='1' disabled="" line="1"></informationview>
+    <!-- 推荐人 -->
+    <informationview tit="推荐人" name='invitephone' state='1' placeholder="推荐人手机号" ishid='1' disabled="" line="1"></informationview>
+    
+    <!-- HR从业经历文字 -->
+    <tagview class='tagview' title='HR从业经历' tips='1'></tagview>
+    <!-- HR从业经历输入框 -->
+    <textarea class='textarea-v' name='hrLive' placeholder='HR从业经历' placeholder-style="color:#dcdcdc;"></textarea>
+
+    <!-- HR资质证书/培训经历文字 -->
+    <tagview class='tagview' title='HR资质证书/培训经历' tips='1'></tagview>
+    <!-- HR资质证书/培训经历输入框 -->
+    <textarea class='textarea-v' name='hrDiploma' placeholder='HR资质证书/培训经历' placeholder-style="color:#dcdcdc;"></textarea>
+
+    <!-- 工作中比较关心的问题文字 -->
+    <tagview class='tagview' title='工作中比较关心的问题' tips='1'></tagview>
+    <!-- 工作中比较关心的问题输入框 -->
+    <textarea class='textarea-v textarea-v-b' name='problem' placeholder='工作中比较关心的问题' placeholder-style="color:#dcdcdc;"></textarea>
+
+    <!-- 提交按钮 -->
+    <button class='submission' form-type='submit' bindtap='pushTab'>提交 申请</button>
+  </form>
+</view>
+
+
+
+<!-- 飘起来选择的view -->
+<view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}" catchtouchmove='true' hidden='{{!showDialog}}'>
+  <view class="zan-dialog__mask" bindtap="industrybtn" />
+  <view class="zan-dialog__container">
+    <view style='text-align: center; height: 110rpx; line-height: 110rpx; font-size: 36rpx;'>请选择日期</view>
+
+      <view class='picker-view-back'>
+        <picker-view
+          indicator-style="height: 50px;"
+          style="width: 100%; height: 450rpx;"
+          value="{{value}}"
+          bindchange="bindChange"
+        >
+          <picker-view-column>
+            <view class='poptit' wx:for="{{years}}" style="line-height: 50px">{{item}}年</view>
+          </picker-view-column>
+          <picker-view-column>
+            <view class='poptit' wx:for="{{months}}" style="line-height: 50px">{{item}}月</view>
+          </picker-view-column>
+          <picker-view-column>
+            <view class='poptit' wx:for="{{days}}" style="line-height: 50px">{{item}}日</view>
+          </picker-view-column>
+        </picker-view>
+      </view>
+
+      <view class='btn-n' bindtap="industrybtn">取消</view>
+      <view class='btn-n btn-y' bindtap="pushrecharge">确定</view>
+
+  </view>
+</view>

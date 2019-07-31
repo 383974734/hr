@@ -1,0 +1,49 @@
+<!--pages/industry/industry.wxml-->
+
+
+
+<!-- navbar -->
+<!-- <cover-view class='navbar-v'  style='height: {{navheight + 46}}px'>
+  <navbar-v class="navbar"  name="期望行业" naviteml="0" navpop="1"></navbar-v>
+</cover-view> -->
+
+
+<!-- 展示选择标签view -->
+<!-- <view class='header-v' style='margin-top:{{navheight + 46}}px'> -->
+<view class='header-v' >
+  <!-- 已选行业 -->
+  <view class='header-tit'>已选行业</view>
+  <!-- 已选择个数 -->
+  <view class='header-number'>{{seleArr.length}}/3</view>
+  <!-- 你还未选择任何行业标签提示 -->
+  <view class='header-tips' hidden='{{seleArr.length > 0}}'>你还未选择任何行业标签</view>
+  <!-- 已经选择标签view -->
+  <view class='header-sele-v' hidden='{{seleArr.length == 0}}'>
+    <!-- 标签 -->
+      <view class='tit' wx:for="{{seleArr}}" wx:for-index="index" data-index="{{index}}">{{item}}</view>
+  </view>
+</view>
+
+
+<!-- 所有标签view -->
+<view class='tit-b-v'>
+  <!-- 标签view -->
+  <view class='tit-v' wx:for="{{tit}}" wx:for-index="index" data-index="{{index}}">
+    <!-- 分类标题 -->
+    <view class='tit-name'>{{item.name}}</view>
+    <!-- 分类view -->
+    <!-- <view class='tits-v' wx:for="{{item.tits}}" wx:for-index="indexs" data-indexs="{{indexs}}">
+      标签
+      <view class='tit {{item.sele ? "tit-back-colo" : ""}}' bindtap='seleitem'>{{item.tit}}</view>
+    </view> -->
+    <view class='tit {{item.sele ? "tit-back-colo" : ""}}' wx:for="{{item.tits}}" wx:for-index="indexs" data-indexs="{{indexs}}" data-index="{{index}}" bindtap='seleitem'>{{item.tit}}
+      <!-- 标签
+      <view class='tit {{item.sele ? "tit-back-colo" : ""}}' bindtap='seleitem'>{{item.tit}}</view> -->
+    </view>
+  </view>
+</view>
+
+
+<view style='width:100%; position: fixed; bottom: 10rpx;'>
+  <button type='primary' style='background-color: #dc001c;width:686rpx;margin-top: 0rpx;margin-left: auto;margin-right: auto;' bindgetuserinfo='sendCode' disabled='{{disabled}}' open-type='getUserInfo'>保存</button>
+</view>

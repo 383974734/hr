@@ -1,0 +1,6 @@
+{
+  
+  "usingComponents": {
+    "navbar-v": "../../component/navbar/navbar"
+  }
+}

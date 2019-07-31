@@ -1,0 +1,15 @@
+<!--pages/webview/webview.wxml-->
+
+<!-- navbar -->
+<!-- <cover-view class='navbar-v'  style='height: {{navheight + 46}}px'>
+  <navbar-v class="navbar"  name="详情" naviteml="1"></navbar-v>
+</cover-view> -->
+
+<!-- <web-view class='webview' src="{{newsUrl}}"  style='margin-top:{{navheight + 46}}px'></web-view> -->
+
+
+<web-view class='webview' src="{{newsUrl}}"></web-view>
+
+<!-- <view style='width: 100%; height: 100%; position:fixed;' hidden='{{type != 1}}'>
+  <image style='width: 100%; height: 100%;' src='{{newsUrl}}'></image>
+</view> -->

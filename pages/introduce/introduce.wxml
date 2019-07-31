@@ -1,0 +1,14 @@
+<!--pages/introduce/introduce.wxml-->
+
+
+<!-- 描述 -->
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class='textarea-v'>
+    <textarea class='textarea' name="jobDescribe" placeholder="请输入（500）" placeholder-style="color:#e2e2e2;" maxlength='100' value="{{jobDescribe}}"></textarea>
+  </view>
+
+  <image class='add-img' src='{{user.avatar}}' bindtap='changeAvatar' mode='aspectFit'></image>
+
+  <!-- 发布按钮 -->
+  <button class='submission'  form-type='submit' bindtap='formSubmit'>确定</button>
+</form>

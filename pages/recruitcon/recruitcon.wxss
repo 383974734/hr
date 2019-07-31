@@ -1,0 +1,164 @@
+/* pages/recruitcon/recruitcon.wxss */
+
+
+page {
+  background-color: white;
+}
+
+
+.navbar-v {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  background-color: white;
+  top: 0;
+}
+
+.navbar {
+  width: 100%;
+  height: 46px;
+  position: absolute;
+	bottom: 0;
+}
+
+
+.back-v {
+  overflow: hidden;
+  background-color: white;
+}
+
+.problemcon-v {
+  margin: 15rpx 20rpx 30rpx 20rpx;
+}
+
+.img {
+  width: 100%;
+  height: 235rpx;
+  border: 1rpx solid #ececec;
+  border-radius: 15rpx;
+  margin-bottom: 10rpx;
+  margin-top: 20rpx;
+}
+
+.tit-back-v {
+  margin: 0rpx 30rpx;
+}
+
+.tit {
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 32rpx;
+  display: block;
+  font-weight: bold;
+}
+
+.train-cv {
+  height: 50rpx;
+  overflow: hidden;
+}
+.train-rv {
+  height: 20rpx;
+  line-height: 20rpx;
+  font-size: 26rpx;
+  border-right: 2rpx solid #363535;
+  float: left;
+  color: #363535;
+  padding-right: 12rpx;
+  margin-right: 12rpx;
+  margin-top: 20rpx;
+}
+
+.train-v {
+  height: 20rpx;
+  line-height: 20rpx;
+  font-size: 26rpx;
+  border-right: 1rpx solid white;
+  float: left;
+  color: #363535;
+  padding-right: 12rpx;
+  margin-right: 12rpx;
+  margin-top: 20rpx;
+}
+
+.tit-money {
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: rgb(206, 1, 1);
+  display: inline-block;
+}
+
+.tit-time {
+  float: right;
+  text-align: right;
+  display: inline-block;
+  font-size: 28rpx;
+  color: #a09c9c;
+}
+
+.tit-add-img {
+  width: 35rpx;
+  height: 40rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.tit-add {
+  display: inline-block;
+  font-size: 28rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-left: 10rpx;
+}
+
+
+.con-back-v {
+  border-top: 20rpx solid #f9f9f9;
+  border-bottom: 20rpx solid #f9f9f9;
+  padding: 20rpx;
+}
+
+.con-back-img {
+  width: 60rpx;
+  height: 60rpx;
+  /* margin-left: 20rpx; */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.con-back-tit {
+  /* display: inline-block; */
+  font-size: 30rpx;
+  /* height: 60rpx; */
+  line-height: 60rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  overflow: hidden;
+  white-space: pre-wrap;/*规定段落中换行 */
+}
+
+.con-img {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 20rpx 20rpx;
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 20rpx;
+}
+
+.con-tit {
+  height: 100rpx;
+  display: inline-block;
+  margin-top: 20rpx;
+}
+
+.con-tit-name {
+  height: 70rpx;
+  font-size: 30rpx;
+}
+
+.con-tit-str {
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 30rpx;
+}

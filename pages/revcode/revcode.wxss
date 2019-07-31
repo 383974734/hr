@@ -1,0 +1,118 @@
+/* pages/revcode/revcode.wxss */
+.text{
+  font-size: 32rpx;
+  color: #666666;
+  margin-top: 54rpx;
+  text-align: center;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+.phone{
+  display: inline;
+  color: black;
+}
+
+.time{
+  display: inline;
+}
+
+.tips{
+  text-align: center;
+  color: #666666;
+  font-size: 32rpx;
+  margin-top: 60rpx;
+}
+
+page .code .input-content-wrap .input-code-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center1;
+  height: 150rpx;
+}
+page .code .input-content-wrap .input-code-wrap .code_dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #000;
+  background-color: #fff;
+  box-sizing: border-box;
+  width: 124rpx;
+  height: 150rpx;
+  border: #dfdfdf solid 1rpx;
+  border-left: none 0;
+  font-size: 60rpx;
+}
+page .code .input-content-wrap .input-code-wrap .code_dot:nth-child(1) {
+  border-left: 2rpx solid #ddd;
+}
+page .code .input-content-wrap .input-code-wrap .code_dot i {
+  /* background: #000; */
+  border-radius: 50%;
+  width: 20rpx;
+  height: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+page .code .input-content {
+  position: absolute;
+  opacity: 0;
+  left: -100%;
+  top: 600rpx;
+  background: #f56;
+  z-index: -999;
+  text-align: center;
+}
+page .code .input-content.active {
+  z-index: -99;
+}
+.input {
+  height: 86rpx;
+  width: 86rpx;
+	flex: 1;
+  background-color: #fff;
+  color: #262626;
+  font-size: 64rpx;
+	margin: 0 29rpx 0 29rpx;
+	border: 1rpx #00bb7b solid;
+	position: relative;
+}
+.input_none{
+  height: 86rpx;
+  width: 86rpx;
+	flex: 1;
+  background-color: #fff;
+  color: #262626;
+  font-size: 64rpx;
+	margin: 0 20rpx 0 20rpx;
+	border: 1rpx #c2c2c2 solid;
+	position: relative;
+}
+.input text {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.input_none text {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+page .code{
+  margin-top: 74rpx;
+}

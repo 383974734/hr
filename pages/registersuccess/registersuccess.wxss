@@ -1,0 +1,22 @@
+/* pages/registersuccess/registersuccess.wxss */
+
+
+.back-v {
+  text-align: center;
+  width: 100%;
+  margin-top: 150rpx;
+}
+
+.img {
+  width: 300rpx;
+  height: 300rpx;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 90rpx;
+}
+
+.tit {
+  font: 24rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+}

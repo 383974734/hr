@@ -1,8 +1,9 @@
 <!--informationview.wxml-->
-<view class='back-v'>
+<view class='back-v {{line == "1" ? "back-line" : ""}}'>
   <label class='tit'>{{tit}}</label>
   <label class='star' hidden='{{tips === "1"}}'>*</label>
-  <image class='img' src='../../resources/images/push-btn-img.png' hidden='{{ishid === "1"}}'></image>
-  <input class="input" name="{{name}}" placeholder="{{placeholder}}" placeholder-style="color:#dcdcdc;"
-bindinput="getInputValue" disabled="{{disabled}}"/>
+  <image class='img' src='../../static/images/push-btn-img.png' hidden='{{ishid === "1"}}'></image>
+  <input class="input" name="{{name}}" placeholder="{{placeholder}}" value="{{value}}" hidden='{{state == "1"}}' placeholder-style="color:#dcdcdc;" bindinput="getInputValue" disabled="{{disabled}}" maxlength='{{maxlengthT}}'/>
+
+  <input class="input" name="{{name}}" placeholder="{{placeholder}}" value="{{value}}" hidden='{{state != "1"}}' maxlength='11' type='number'  placeholder-style="color:#dcdcdc;" bindinput="getInputValue" disabled="{{disabled}}"/>
 </view>

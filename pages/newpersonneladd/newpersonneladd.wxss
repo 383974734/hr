@@ -1,0 +1,575 @@
+/* pages/newpersonneladd/newpersonneladd.wxss */
+
+
+.navbar-v {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  background-color: white;
+  top: 0;
+}
+
+.navbar {
+  width: 100%;
+  height: 46px;
+  position: absolute;
+	bottom: 0;
+}
+
+/* <!-- 上传头像按钮 --> */
+.add-img {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 100rpx;
+  /* 居中显示 */
+  margin: 20rpx auto;
+  display: flex;
+  justify-content: center;
+   /* 居中显示 */
+}
+
+
+/* 底部view */
+.back-v {
+  margin: 0rpx 20rpx 40rpx 20rpx;
+  padding-bottom: 40rpx;
+}
+
+.radio-box{
+  /* display: inline-block; */
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+  margin-right: 5px;
+  font-size: 30rpx;
+  float: right;
+  margin-top: 15rpx;
+}
+
+.input-radio {
+  display: inline-block;
+  position: absolute;
+  opacity: 0;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  left: 0px;
+  outline: none;
+  -webkit-appearance: none;
+}
+.radio {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  vertical-align: middle;
+  cursor: pointer;
+  background: #D7D7D9;
+  
+}
+
+.on{
+    background: #dc001c;
+}
+
+lebel image{
+    width: 15px;
+    height: 15px;
+}
+
+.back-v-sex {
+   border-bottom: 1rpx solid #ececec;
+   height: 100rpx;
+}
+
+.tit {
+  letter-spacing: 15rpx;
+  font-size: 34rpx;
+  line-height: 100rpx;
+  float: left;
+}
+
+.star {
+  color: #dc001c;
+  font-size: 32rpx;
+  line-height: 100rpx;
+}
+
+.img {
+  width: 20rpx;
+  height: 80rpx;
+  float: right;
+  margin-top: 10rpx;
+  margin-right: 10rpx;
+}
+
+.con {
+  height: 100rpx;
+  font-size: 28rpx;
+  line-height: 100rpx;
+  float: right;
+  text-align: right;
+  margin-right: 15rpx;
+}
+
+/* 附件样式 */
+.back-fj-v {
+  border-bottom: 1rpx solid #ececec;
+  height: 170rpx;
+  
+}
+
+/* 附件上传图片 */
+.fj-img {
+  width: 240rpx;
+  height: 90rpx;
+  margin-left: 40rpx;
+  margin-top: 10rpx;
+}
+
+/* 附件备注文字 */
+.fj-text {
+  float:right;
+  margin-right: 110rpx;
+  font-size: 28rpx;
+  color: #8f8a8a;
+}
+
+/* 附件文字和标签文字公用样式 */
+.tit-fb {
+  letter-spacing: 15rpx;
+  font-size: 34rpx;
+  line-height: 100rpx;
+  float: left;
+  height: 100rpx;
+}
+
+/* 标签父试图大小设置 */
+/* .back-bq-v {
+  height: 100rpx;
+} */
+
+/* 标签中点击添加标签的按钮 */
+.bq-img {
+  margin-left: 50rpx;
+  margin-top: 20rpx;
+  width: 120rpx;
+  height:70rpx;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* 标签备注文字 */
+.bq-text {
+  height: 90rpx;
+  line-height: 90rpx;
+  margin-left: 50rpx;
+  font-size: 24rpx;
+  margin-top: 10rpx;
+  color: #8f8a8a;
+  display: inline-block;
+}
+
+/* 备注文字 */
+.bz-tit {
+  letter-spacing: 15rpx;
+  font-size: 34rpx;
+  line-height: 100rpx;
+  float: left;
+  height: 100rpx;
+  margin-top: 100rpx;
+}
+
+ /* 备注输入文字的组件 */
+.textarea {
+  /* width: 530rpx; */
+  width: 94%;
+  height: 200rpx;
+  margin: 40rpx 0rpx;
+  /* margin-top: 40rpx;
+  margin-bottom: 50rpx;
+  margin-right: 30rpx; */
+  float: right;
+  font-size: 30rpx;
+  border: 1rpx solid #ececec;
+  padding: 20rpx;
+  
+}
+
+/* 提交按钮 */
+.submission {
+  /* width: 100%; */
+  height: 90rpx;
+  margin-top: 40rpx;
+  border-radius: 10rpx;
+  background-color: rgb(250, 76, 82);
+  color: white;
+  font-size: 34rpx;
+  line-height: 90rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  /* float: left; */
+  /* display: inline-block; */
+}
+
+/* 取消按钮 */
+.reste {
+  width: 260rpx;
+  height: 90rpx;
+  margin-left: 60rpx;
+  margin-bottom: 40rpx;
+  border-radius: 10rpx;
+  background-color: white;
+  border: 1rpx solid #dc001c;
+  color: #dc001c;
+  font-size: 34rpx;
+  line-height: 90rpx;
+  /* float: left; */
+  display: inline-block;
+}
+
+
+
+
+
+.title-back-v {
+  margin: 10rpx 20rpx 0rpx 110rpx;
+  display: block;
+  height: 50rpx;
+}
+
+/* 标签文字 */
+.title {
+  min-width: 80rpx;
+  /* width: 110rpx; */
+  text-align: center;
+  font-size: 28rpx;
+  color: #67b5e9;
+  border: 1rpx solid #67b5e9;
+  border-radius: 5rpx;
+  display: inline-block;
+  padding: 0rpx 5rpx;
+  margin-right: 20rpx;
+  /* margin-top: 30rpx;
+  margin-bottom: 30rpx; */
+  background-color: #e7eff5;
+}
+
+
+
+/* 飘起来选择的view背景 */
+.zan-dialog__mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  /* 设置阴影半透明背景如： background: rgba(0, 0, 0, 0.4); */
+  background: rgba(0, 0, 0, 0);
+  display: none;
+}
+
+/* 飘起来选择的view内容 */
+.zan-dialog__container {
+  position: fixed;
+  top: 210rpx;
+  /* bottom: 390rpx; */
+  /* 弹窗布局宽 */
+  width: 650rpx;
+  /* 弹窗布局高，与下面弹出距离transform有关 */
+  height: 380rpx;
+  margin-left: 50rpx;
+  background: white;
+  /* 弹框弹出距离，与弹框布局高度有关，如300%表示弹起距离为3倍弹窗高度 */
+  /* transform: translateY(700%); */
+  transform: translateY(0);
+  transition: all 0.7s ease;
+  z-index: 12;
+  border-radius: 20rpx;
+  /* 弹框的悬浮阴影效果，如不需要可注释该行 */
+  /* box-shadow: 0px 0px 3px 2px rgb(240, 240, 240); */
+}
+
+.zan-dialog--show .zan-dialog__container {
+  transform: translateY(0);
+}
+
+.zan-dialog--show .zan-dialog__mask {
+  display: block;
+}
+
+
+.pop-tit {
+  width: 100%;
+  text-align: center;
+  font-size: 34rpx;
+  height: 130rpx;
+  line-height: 130rpx;
+  color: #555353;
+  margin-bottom: 10rpx;
+}
+
+.pop-subtit {
+  /* color: yellowgreen; */
+  width: 530rpx;
+  margin: 0rpx 40rpx 60rpx 40rpx;
+  border: 1rpx solid #ececec;
+  border-radius: 15rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 26rpx;
+  padding: 20rpx;
+}
+
+.btn-v {
+  width: 310rpx;
+  height: 66;
+  margin: 0 auto;
+}
+
+.no {
+  width: 140rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  letter-spacing: 7rpx;
+  border-radius: 15rpx;
+  border: 1rpx solid #ececec;
+  background-color: white;
+  font-size: 30rpx;
+  /* font-weight: lighter; */
+  display: inline-block;
+  margin-right: 30rpx;
+}
+
+.yes {
+  width: 140rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  letter-spacing: 7rpx;
+  border-radius: 15rpx;
+  /* border: 1rpx solid  rgb(248, 72, 18); */
+  color: white;
+  font-size: 30rpx;
+  /* font-weight: lighter; */
+  background-color:  rgb(248, 72, 18);
+  display: inline-block;
+}
+
+
+
+
+
+
+
+
+/* 提示功能飘起来选择的view背景 */
+.zan-dialog__mask-sub {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  /* 设置阴影半透明背景如： background: rgba(0, 0, 0, 0.4); */
+  background: rgba(0, 0, 0, 0);
+  display: none;
+}
+
+/* 飘起来选择的view内容 */
+.zan-dialog__container-sub {
+  position: fixed;
+  top: 210rpx;
+  /* bottom: 320rpx; */
+  /* 弹窗布局宽 */
+  width: 650rpx;
+  /* 弹窗布局高，与下面弹出距离transform有关 */
+  height: 280rpx;
+  margin-left: 50rpx;
+  background: white;
+  /* 弹框弹出距离，与弹框布局高度有关，如300%表示弹起距离为3倍弹窗高度 */
+  /* transform: translateY(700%); */
+  transform: translateY(0);
+  transition: all 0.7s ease;
+  z-index: 12;
+  border-radius: 20rpx;
+  /* 弹框的悬浮阴影效果，如不需要可注释该行 */
+  /* box-shadow: 0px 0px 3px 2px rgb(240, 240, 240); */
+}
+
+.zan-dialog--show-sub .zan-dialog__container-sub {
+  transform: translateY(0);
+}
+
+.zan-dialog--show-sub .zan-dialog__mask-sub {
+  display: block;
+}
+
+
+.pop-tit-sub {
+  width: 100%;
+  text-align: center;
+  font-size: 36rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #363434;
+  margin-bottom: 10rpx;
+}
+
+.pop-tits-sub {
+  width: 100%;
+  text-align: center;
+  font-size: 38rpx;
+  height: 180rpx;
+  line-height: 180rpx;
+  color: #363434;
+  margin-bottom: 10rpx;
+}
+
+.pop-subtit-sub {
+  color: yellowgreen;
+  margin-bottom: 60rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 26rpx;
+  text-align: center;
+}
+
+.btn-v-sub {
+  width: 310rpx;
+  height: 50rpx;
+  margin: 0 auto;
+}
+
+.btn-vs-sub {
+  width: 140rpx;
+  height: 50rpx;
+  margin: 0 auto;
+}
+
+.add_btn-sub{
+  position:fixed;
+  display:flex;
+  width:100%;
+  bottom: 30rpx;
+  justify-content:center;
+}
+.btn-sub{
+  margin-top: 30rpx;
+  width: 100rpx;
+  height:100rpx;
+  font-size: 70rpx;
+  line-height: 70rpx;
+  border-radius: 35rpx;
+  color: white;
+}
+
+.no-sub {
+  width: 140rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  letter-spacing: 7rpx;
+  border-radius: 15rpx;
+  border: 1rpx solid rgb(248, 72, 18);
+  background-color: white;
+  color: rgb(248, 72, 18);
+  font-size: 28rpx;
+  /* font-weight: lighter; */
+  display: inline-block;
+  margin-right: 30rpx;
+}
+
+.yes-sub {
+  width: 140rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  letter-spacing: 7rpx;
+  border-radius: 15rpx;
+  /* border: 1rpx solid  rgb(248, 72, 18); */
+  color: white;
+  font-size: 28rpx;
+  /* font-weight: lighter; */
+  background-color:  rgb(248, 72, 18);
+  display: inline-block;
+}
+
+
+.poptit-sub {
+  text-align: center;
+}
+
+
+
+
+
+
+/* 飘起来选择的view背景 */
+.zan-dialog__maskDay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  /* 设置阴影半透明背景如： background: rgba(0, 0, 0, 0.4); */
+  background: rgba(0, 0, 0, 0);
+  display: none;
+}
+
+/* 飘起来选择的view内容 */
+.zan-dialog__containerDay {
+  position: fixed;
+  top: 210rpx;
+  /* bottom: 320rpx; */
+  /* 弹窗布局宽 */
+  width: 650rpx;
+  /* 弹窗布局高，与下面弹出距离transform有关 */
+  height: 680rpx;
+  margin-left: 50rpx;
+  background: white;
+  /* 弹框弹出距离，与弹框布局高度有关，如300%表示弹起距离为3倍弹窗高度 */
+  /* transform: translateY(700%); */
+  transform: translateY(0);
+  transition: all 0.7s ease;
+  z-index: 12;
+  border-radius: 20rpx;
+  /* 弹框的悬浮阴影效果，如不需要可注释该行 */
+  /* box-shadow: 0px 3px 3px 2px gainsboro; */
+}
+
+.zan-dialog--showDay .zan-dialog__containerDay {
+  transform: translateY(0);
+}
+
+.zan-dialog--showDay .zan-dialog__maskDay {
+  display: block;
+}
+
+.picker-view-backDay {
+  background-color: pink;
+}
+
+.view-tDay {
+  width: 100%;
+  text-align: center;
+}
+
+.btn-nDay {
+  margin-top: 20rpx;
+  display: inline-block;
+  width: 50%;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #aca1a1;
+  font-size: 36rpx;
+  text-align: center;
+  
+}
+
+.btn-yDay {
+  color: red;
+}
+
+.poptitDay {
+  text-align: center;
+}

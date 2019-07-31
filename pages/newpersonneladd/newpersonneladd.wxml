@@ -1,0 +1,145 @@
+<!--pages/newpersonneladd/newpersonneladd.wxml-->
+
+<!-- navbar -->
+<!-- <cover-view class='navbar-v'  style='height: {{navheight + 46}}px'>
+  <navbar-v class="navbar"  name="创建简历" naviteml="1"></navbar-v>
+</cover-view> -->
+
+
+<!-- 上面的灰色线 -->
+<!-- <view style='margin-top:{{navheight + 46}}px; height:20rpx; background-color:#ececec'></view> -->
+<!-- <view style=' height:2rpx; background-color:#ececec'></view> -->
+
+<view class='back-v'>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <!-- 标题 -->
+    <!-- <informationview tit="标题" name='resumeTitle' placeholder="标题" ishid='1' disabled="" value="{{resumeTitle}}"></informationview> -->
+    <textarea class='textarea' name="resumeDescription" placeholder='评语（100字以内）' placeholder-style="color:#e2e2e2;" value="{{remark}}"></textarea>
+    <!-- 上传头像按钮 -->
+<image class='add-img' src='{{user.avatar}}' bindtap='changeAvatar' mode='aspectFill'></image>
+    <!-- 姓名 -->
+    <informationview tit="姓名" name='jobwantedName' placeholder="姓名" ishid='1' disabled="" value="{{resumeName}}"></informationview>
+    <!-- 性别 -->
+    <view class='back-v-sex'>
+      <label class='tit'>性别</label>
+      <label class='star'>*</label>
+
+      <view class="radio-box" wx:for="{{radios}}"  key="item.id"  style='margin-right: 50rpx; text-align: lleft' wx:for-index="index" data-index="{{index}}" bindtap="check">
+        <lebel class="radio {{ index==sex ? 'on' : ''}}" data-index='{{index}}' data-value='{{item.value}}'>
+        <image wx:if='{{index==sex}}' mode='aspectFill'></image>
+        </lebel>
+        {{item.label}}
+      </view>
+    </view>
+    <!-- 生日 -->
+    <informationview tit="生日" name='birthdayDate' placeholder="请选择" tips='1'  value="{{birthdayDate}}" bindtap='btnClickBirthday'></informationview>
+    <!-- 电话 -->
+    <informationview tit="电话" name='jobwantedPhone' placeholder="电话" state='1' ishid='1' disabled="" state='1' value="{{resumePhone}}"></informationview>
+    <!-- 地址 -->
+    <informationview tit="工作地点" name='resumeArea' placeholder="请输入" ishid='1' disabled="" value="{{resumeArea}}"></informationview>
+    <!-- 行业 -->
+    <informationview tit="行业" name='jobwantedIndustry' placeholder="请选择" tips='1' value="{{industry}}" bindtap="industrybtn"></informationview>
+    <!-- 职位 -->
+    <informationview tit="职位" name='jobwantedPosition' placeholder="请选择" tips='1' value="{{position}}" bindtap="positionbtn"></informationview>
+    <!-- 毕业院校 -->
+    <informationview tit="毕业院校" name='graduatedFrom' placeholder="请输入" tips='1' ishid='1' disabled="" value="{{school}}"></informationview>
+    <!-- 毕业时间 -->
+    <informationview tit="毕业时间" name='graduationDate' placeholder="请选择" tips='1'  value="{{birthday}}" bindtap='industrybtnDay'></informationview>
+    <!-- 所学专业 -->
+    <informationview tit="所学专业" name='jobwantedMajor' placeholder="请输入" tips='1' ishid='1' disabled="" value="{{major}}"></informationview>
+    <!-- 学位 -->
+    <informationview tit="学位" name='academicDegree' placeholder="请输入" tips='1' ishid='1' disabled="" value="{{education}}"></informationview>
+    <!-- 附件 -->
+    <!-- <view class='back-fj-v'>
+      <view class='tit-fb'>附件</view>
+      <image class='fj-img' src='../../static/images/personneladd-file.png'></image>
+      <view class='fj-text'>支持扩展名：.txt .doc .docx .pdf .jpg...</view>
+    </view> -->
+    <!-- 标签 -->
+    <view class='back-bq-v'>
+      <view class='tit-fb'>标签</view>
+      <image class='bq-img' src='../../static/images/personneladd-title.png' bindtap='addtitClick'></image>
+      <view class='bq-text'>最多可添加3个标签</view>
+      <view class='title-back-v'>
+        <view class='title' wx:for="{{titlist}}" wx:for-iindex="index" data-index="{{index}}" >{{item}}</view>
+      </view>
+    </view>
+    <!-- 备注 -->
+    <!-- <label class='bz-tit'>备注</label> -->
+    <!-- <textarea class='textarea' name="remark" placeholder='备注说明' placeholder-style="color:#e2e2e2;" value="{{remark}}"></textarea> -->
+    
+    <!-- 提交按钮 -->
+    <button class='submission' form-type='submit' bindtap='formSubmit'>发布</button>
+    <!-- <button class='reste'  form-type='reste' bindtap='formCancelt'>取消</button> -->
+  </form>
+</view>
+
+
+
+
+<!-- 飘起来选择的view -->
+<view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}" catchtouchmove='true' hidden='{{!showDialog}}'>
+  <view class="zan-dialog__mask" bindtap="industrybtn" />
+  <view class="zan-dialog__container">
+    <view class='pop-tit'>添加标签</view>
+    <form bindsubmit="formSubmitadd" bindreset="formReset">
+      <input class='pop-subtit' name='problem' placeholder='备注说明' value='{{jfValue}}' placeholder-style="color:#e2e2e2;"></input>
+      <view class='btn-v'>
+        <button class='no'  form-type='reste' bindtap='formCanceltadd'>取消</button>
+        <button class='yes'  form-type='submit' bindtap='formSubmitadd'>确定</button>
+      </view>
+    </form>
+  </view>
+</view>
+
+
+
+
+<!-- 提示飘起来选择的view -->
+<view class="zan-dialog-sub {{ showDialogSub ? 'zan-dialog--show-sub' : '' }}" catchtouchmove='true' hidden='{{!showDialogSub}}'>
+  <view class="zan-dialog__mask-sub" bindtap="industrybtnsub" />
+  <view class="zan-dialog__container-sub">
+    <view class='pop-tit-sub'>温馨提示</view>
+    <view class='pop-subtit-sub'>是否确认提交数据？</view>
+    <view class='btn-v-sub'>
+      <button class='no-sub' bindtap="industrybtnsub">取消</button>
+      <button class='yes-sub' bindtap="pushrechargesub">确定</button>
+    </view>
+  </view>
+</view>
+
+
+
+
+
+
+<!-- 飘起来选择的view -->
+<view class="zan-dialogDay {{ showDialogDay ? 'zan-dialog--showDay' : '' }}" catchtouchmove='true' hidden='{{!showDialogDay}}'>
+  <view class="zan-dialog__maskDay" bindtap="industrybtnDay" />
+  <view class="zan-dialog__containerDay">
+    <view style='text-align: center; height: 110rpx; line-height: 110rpx; font-size: 36rpx;'>请选择日期</view>
+
+      <view class='picker-view-backDay'>
+        <picker-view
+          indicator-style="height: 50px;"
+          style="width: 100%; height: 450rpx;"
+          value="{{value}}"
+          bindchange="bindChangeDay"
+        >
+          <picker-view-column>
+            <view class='poptitDay' wx:for="{{years}}" style="line-height: 50px">{{item}}年</view>
+          </picker-view-column>
+          <picker-view-column>
+            <view class='poptitDay' wx:for="{{months}}" style="line-height: 50px">{{item}}月</view>
+          </picker-view-column>
+          <picker-view-column>
+            <view class='poptitDay' wx:for="{{days}}" style="line-height: 50px">{{item}}日</view>
+          </picker-view-column>
+        </picker-view>
+      </view>
+
+      <view class='btn-nDay' bindtap="industrybtnDay">取消</view>
+      <view class='btn-nDay btn-yDay' bindtap="pushrechargeDay">确定</view>
+
+  </view>
+</view>

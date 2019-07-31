@@ -1,0 +1,15 @@
+<!--pages/authentication/authentication.wxml-->
+
+<view style='width: 100%; height: 20rpx; background-color: rgb(249, 249, 253);'></view>
+<view class='tit'>上传本人省份证</view>
+<view class='img-v'>
+  <image class='img' src='{{user.avatarT}}' bindtap='changeAvatarT' mode='aspectFill'></image>
+</view>
+
+<view class='tit'>上传企业执照</view>
+<view class='img-v'>
+  <image class='img' src='{{user.avatarB}}' bindtap='changeAvatarB' mode='aspectFill'></image>
+</view>
+
+<!-- 提交按钮 -->
+<button class='submission'  form-type='submit' bindtap='formSubmit'>提交审核</button>

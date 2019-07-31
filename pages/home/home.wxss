@@ -1,14 +1,82 @@
 /* pages/home/home.wxss */
+page {
+  position: relative;
+  height: 100%;
+}
+
+.navbar-v {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  background-color: white;
+  top: 0;
+}
+
+.navbar {
+  width: 100%;
+  height: 46px;
+  position: absolute;
+	bottom: 0;
+}
 
 
+/* banner */
+.swiper-container{
+  position: relative;
+}
+.swiper-container .swiper{
+  height: 300rpx;
+  /* margin: 0 5rpx; */
+}
+.swiper-container .swiper .img{
+  width: 100%;
+  height: 100%;
+  border-radius: 15rpx;
+   /* 居中显示 */
+  margin: 0rpx auto;
+  display: flex;
+  justify-content: center;
+   /* 居中显示 */
+}
+.swiper-container .dots{
+  position: absolute;
+  /* 居右 */
+  /* right: 40rpx; */
+  width: 100%;
+  bottom: 20rpx;
+  display: flex;
+  justify-content: center;
+}
+.swiper-container .dots .dot{
+  margin: 0 8rpx;
+  width: 18rpx;
+  height: 18rpx;
+  /* background: #fff; */
+  border-radius: 50%;
+  transition: all .6s;
+  font: 300 18rpx/28rpx "microsoft yahei";
+  border: 2rpx solid #363535;
+  text-align: center;
+}
+.swiper-container .dots .dot.active{
+  /* background: #f80; */
+  background: #363535;
+  color:#fff;
+}
 
 
 /* <!-- 模块 --> */
+
+.modular-v {
+  overflow: hidden;
+}
+
 .modular {
   margin-top: 40rpx;
   width: 20%;
   float: left;
 }
+
 /* 图片 */
 .modular-img {
   margin: 0 auto;  
@@ -18,6 +86,7 @@
   width: 100rpx;
   height: 100rpx;
   border-radius: 50%;
+  background-color: white;
 }
 /* 文字 */
 .modular-tit {
@@ -29,25 +98,274 @@
 }
 
 
+/* 分类new图片显示 */
+.modular-new {
+  width: 55rpx;
+  height: 30rpx;
+  position: absolute;
+  top: 3rpx;
+  left: 20rpx;
+}
+
+.job_wanted-sub-v {
+  margin-top: 20rpx;
+}
+
+
+/*  <!--协会头条--> */
+.sub-view {
+  /* width: 100%; */
+  height: 70rpx; 
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+
+.sub-tit {
+  height: 36rpx;
+  line-height: 36rpx;
+  border-left: 6rpx solid rgb(233, 7, 7);
+  margin-top: 34rpx;
+  font-size: 38rpx;
+  padding-left: 18rpx;
+  float: left;
+  font-weight: bold;
+}
+
+.sub-all {
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 30rpx;
+  color: rgb(129, 128, 128);
+  float: right;
+  margin-top: 35rpx;
+}
+/* <!-- 协会头条--> */
+
+/* <!-- 协会消息展示--> */
+.not-v {
+  /* width: 100%; */
+  height: 190rpx;
+  margin-top: 35rpx;
+  /* margin-bottom: 50rpx; */
+  border-radius: 15rpx;
+  -moz-box-shadow:0px 2px 3px rgb(245, 241, 241);
+  -webkit-box-shadow:0px 2px 3px rgb(245, 241, 241);
+  box-shadow:0px 2px 3px rgb(245, 241, 241);
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+
+.not-sub-v {
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 29rpx;
+  color: rgb(145, 141, 141);
+}
+
+.not-sub-l {
+  width: 73%;
+  height: 60rpx;
+  float: left;
+  margin-left: 22rpx;
+  overflow: hidden;/*超出部分隐藏*/
+  text-overflow:ellipsis;/* 超出部分显示省略号 */
+  white-space: nowrap;/*规定段落中的文本不进行换行 */
+}
+
+.not-sub-r {
+  width: 12%;
+  height: 60rpx;
+  float: right;
+  text-align: right;
+  margin-right: 22rpx;
+  font-size: 22rpx;
+  overflow: hidden;/*超出部分隐藏*/
+  text-overflow:ellipsis;/* 超出部分显示省略号 */
+  white-space: nowrap;/*规定段落中的文本不进行换行 */
+}
+/* <!-- 协会消息展示--> */
+
+/* 热门活动 */
+.scroller-v {
+  height: 300rpx;
+  margin: 30rpx;
+  white-space: nowrap;
+}
+
+.scoll-w {
+  height: 300rpx;
+}
+
+
+.cell-view-avi {
+  width: 40%;
+  height: 300rpx;
+  margin-right: 30rpx;
+  display: inline-block;
+}
+
+.cell-img-avi {
+  width: 100%;
+  height: 200rpx;
+  border-radius: 20rpx;
+  }
+
+.cell-tit-avi {
+  height: 100rpx;
+  font-size: 26rpx;
+  font-weight: bold;
+    /* 隐藏超出部分 */
+  overflow:hidden;
+  /* 显示省略号 */
+  text-overflow: ellipsis;
+  display:-webkit-box;
+  /* 块元素显示的文本行数 */
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  
+}
+/* 热门活动 */
+
+
+/* 分类 */
+.page-v {
+  width: 100%;
+  
+  /* height: 969rpx; */
+}
+.tab-item {
+  width: 33%;
+  /* margin: 0 36rpx; */
+  height: 65rpx;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 38rpx;
+}
+ 
+.tab-item.active {
+  color: rgb(228, 3, 3);
+  position: relative;
+}
+ 
+.tab-item.active:after {
+  content: "";
+  display: block;
+  height: 7rpx;
+  width: 70rpx;
+  background: rgb(228, 3, 3);
+  position: absolute;
+  margin-left: 50%;
+  bottom: 0;
+  left: -12.5%;
+  border-radius: 16rpx;
+}
+ 
+.item-ans {
+  width: 100%;
+  display: flex;
+  flex-grow: row no-wrap;
+  justify-content: space-between;
+  padding: 30rpx;
+  box-sizing: border-box;
+  height: 180rpx;
+  align-items: center;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+
+.avatar {
+  width: 100rpx;
+  height: 100rpx;
+  position: relative;
+  padding-right: 30rpx;
+}
+ 
+.avatar .img {
+  width: 100%;
+  height: 100%;
+}
+ 
+.avatar .doyen {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  bottom: -2px;
+  right: 20rpx;
+}
+ 
+.expertInfo {
+  font-size: 12px;
+  flex-grow: 2;
+  color: #b0b0b0;
+  line-height: 1.5em;
+}
+ 
+.expertInfo .name {
+  font-size: 16px;
+  color: #000;
+  margin-bottom: 6px;
+}
+ 
+.askBtn {
+  width: 120rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 60rpx;
+  border: 1px solid #4675f9;
+  color: #4675f9;
+}
+ 
+.tab-content {
+  margin-top: 25rpx;
+}
+
+::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+ /* 分类 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* <!-- 招聘求职 --> */
 /*  列表内容view */
 .job_wanted-back-v {
-  margin: 180rpx 40rpx 0rpx 40rpx;
+  margin: 0rpx 30rpx 0rpx 30rpx;
 }
 /* 内容view */
 .job_wanted-v {
-  height: 160rpx;
-  border: 5rpx solid #f8f6f6;
-  border-radius: 3rpx;
-  /* margin-bottom: 1rpx; */
-  padding: 30rpx;
+  /* background-color: pink; */
+  height: 150rpx;
+  border-radius: 15rpx;
+  padding: 15rpx 30rpx 30rpx 40rpx;
+  margin-bottom: 15rpx;
+  -moz-box-shadow:0px 2px 2px #ececec; -webkit-box-shadow:0px 2px 2px #ececec; box-shadow:0px 2px 1px #ececec;
+
 }
 /* 名字  */
 .job_wanted-tit {
-  width: 80%;
+  width: 50%;
   height: 35rpx;
   line-height: 35rpx;
-  font-size: 28rpx;
+  font-size: 30rpx;
   font-weight: bolder;
   /* margin-right: 130rpx; */
   float: left;
@@ -60,27 +378,29 @@
 .job_wanted-money {
   height: 30rpx;
   line-height: 30rpx;
-  font-size: 24rpx;
-  color: rgba(179, 45, 4, 0.932);
+  font-size: 30rpx;
+  font-weight: bolder;
+  color: rgb(219, 33, 33);
   float: right;
 }
 
 /* 显示地址一栏的布局 */
 .job_wanted-add-cell {
+  width: 100%;
   display: block;
   height: 40rpx;
-  padding-top: 15rpx;
+  padding-top: 25rpx;
   float: left;
 }
 
 /* 地址  */
 .job_wanted-add {
-  height: 20rpx;
-  line-height: 20rpx;
-  font-size: 21rpx;
-  border-right: 1rpx solid #838181;
+  height: 28rpx;
+  line-height: 28rpx;
+  font-size: 24rpx;
+  border-right: 1rpx solid #b9b7b7;
   float: left;
-  color: #838181;
+  color: #b9b7b7;
   padding-right: 12rpx;
   margin-right: 12rpx;
 }
@@ -97,18 +417,34 @@
 }
 /* 学历  */
 .job_wanted-education {
-  height: 20rpx;
-  line-height: 20rpx;
-  font-size: 21rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  font-size: 24rpx;
   float: left;
-  color: #838181;
+  color: #b9b7b7;
+}
 
+
+.tit-add-img {
+  width: 35rpx;
+  height: 40rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.tit-add {
+  display: inline-block;
+  font-size: 28rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-left: 10rpx;
 }
 
 /* 公司区域的veiw */
 .job_wanted-company {
   width: 100%;
-  height: 90rpx;
+  /* height: 90rpx; */
+  height: 40rpx;
   float: left;
 }
 /* 图片  */
@@ -142,29 +478,26 @@
 
 
 
-
-
-
-
 /* <!-- 有问必答 --> */
-.problem-sub-v {
-  margin: 0rpx 40rpx 0rpx 40rpx;
+.problem-back-v {
+  margin: 0rpx 30rpx 0rpx 30rpx;
 }
 .problem-v {
-  height: 145rpx;
+  /* height: 260rpx; */
   width: 100%;
-  border-right: 1rpx solid #ececec;
-  border-top: 1rpx solid #ececec;
-  border-bottom: 1rpx solid #ececec;
-  padding: 10rpx 0rpx 30rpx 0rpx;
+  padding: 0rpx 0rpx 0rpx 10rpx;
+  margin-bottom: 30rpx;
+  border-radius: 20rpx;
+  -moz-box-shadow:0px 2px 2px #ececec; -webkit-box-shadow:0px 2px 2px #ececec; box-shadow:0px 2px 1px #ececec;
+  overflow: hidden;
 }
 
 /* 红色的数字 */
 .problem-number {
   float: left;
-  height: 130rpx;
+  height: 70rpx;
   color: rgba(179, 45, 4, 0.932);
-  font-size: 34rpx;
+  font-size: 32rpx;
   font-weight: bolder;
   margin-right: 20rpx;
   margin-top: 8rpx;
@@ -172,33 +505,82 @@
 
 /* 图片 */
 .problem-img {
-  width: 200rpx;
-  height: 140rpx;
-  border-radius: 10rpx;
-  background-color: pink;
-  float: right;
-  margin: 10rpx 20rpx 10rpx 10rpx;
-}
-
-.problem-name-v {
+  width: 210rpx;
+  height: 155rpx;
   float: left;
+  /* display: inline-block; */
+  border-radius: 20rpx;
+  margin: 5rpx 20rpx 10rpx 0rpx;
 }
-
-/* 问题题目 */
-.problem-name {
-  font-size: 30rpx;
-  font-weight: bold;
-  margin-top: 10rpx;
-  display: block;
-  width: 400rpx;
-  max-height: 115rpx;
+/* 内容 */
+.problem-subtit {
+  width: 395rpx;
+  /* height: 150rpx; */
+  padding: 10rpx 0rpx 0rpx 10rpx;
+  float: left;
+  /* display: inline-block; */
   /* 隐藏超出部分 */
   overflow:hidden;
   /* 显示省略号 */
   text-overflow: ellipsis;
   display:-webkit-box;
   /* 块元素显示的文本行数 */
-  -webkit-line-clamp:3;
+  /* -webkit-line-clamp:4; */
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  font-size: 26rpx;
+  
+}
+
+.problem-maxclass-v {
+  height: 60rpx;
+  margin: 10rpx 0rpx 0rpx 70rpx;
+}
+
+.problem-maxclass {
+  width: 30%;
+  float: left;
+  display: inline-block;
+}
+
+.problem-maxclass-img {
+  width: 50rpx;
+  height: 50rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.problem-maxclass-tit {
+  display: inline-block;
+  font-size: 28rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-left: 10rpx;
+  color: #b9b7b7;
+}
+
+.problem-maxclass-r {
+  float: right;
+}
+
+
+
+/* 问题题目 */
+.problem-name {
+  /* width: 380rpx; */
+  height: 60rpx;
+  margin-right: 10rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  display: block;
+  /* 隐藏超出部分 */
+  overflow:hidden;
+  /* 显示省略号 */
+  text-overflow: ellipsis;
+  display:-webkit-box;
+  /* 块元素显示的文本行数 */
+  -webkit-line-clamp:1;
   -webkit-box-orient:vertical;
 }
 
@@ -218,23 +600,22 @@
   color: #9b9898;
 }
 
-.problem-subtit {
-  font-size: 24rpx;
-  color: #9b9898;
-}
 
 
 
 /* <!-- 热门培训 --> */
 .train-back-v {
+  height: auto;
   margin-left: 40rpx;
+  overflow: hidden;
 }
 .train-v {
   width: 315rpx;
-  height: 350rpx;
+  height: 330rpx;
   margin-right: 40rpx;
   display: inline-block;
   padding-bottom: 30rpx;
+  float: left;
 }
 
 .train-img {
@@ -242,7 +623,6 @@
   height: 200rpx;
   margin: 0rpx;
   border-radius: 15rpx;
-  background-color: yellow;
 }
 
 .train-tit {
@@ -259,6 +639,7 @@
   /* 块元素显示的文本行数 */
   -webkit-line-clamp:2;
   -webkit-box-orient:vertical;
+  white-space:pre-line;
 }
 .train-number-v {
   height: 10rpx;
@@ -268,7 +649,7 @@
   height: 20rpx;
   line-height: 20rpx;
   font-size: 26rpx;
-  border-right: 1rpx solid #b3afaf;
+  border-right: 2rpx solid #b3afaf;
   float: left;
   color: #b3afaf;
   padding-right: 12rpx;
@@ -301,10 +682,6 @@
 
 .news-l {
   float: left;
-  /* margin-top: 40rpx;
-  width: 400rpx;
-  display: inline-block;
-  background-color: pink;  */
 }
 
 .news-img {
@@ -313,8 +690,6 @@
   height: 160rpx;
   margin-top: 20rpx;
   /* margin-left: 40rpx; */
-  display: inline-block;
-  background-color: yellow;
 }
 
 
@@ -336,4 +711,202 @@
 .news-subtit {
   font-size: 24rpx;
   color: #b3afaf;
+}
+
+
+.look-all {
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  color: rgb(150, 149, 149);
+  text-align: center;
+}
+
+
+
+
+
+
+
+.cell-back-v {
+  width: 100%;
+  /* height: 210rpx; */
+   height: 160rpx;
+  -moz-box-shadow:0px 4px 6px rgba(241, 239, 239, 0.527); 
+  -webkit-box-shadow:0px 4px 6px rgba(241, 239, 239, 0.527);  
+  box-shadow:0px 4px 6px rgba(241, 239, 239, 0.527); 
+  margin-top: 50rpx;
+  /* background-color: lightblue; */
+  background-color: white;
+}
+
+.user-img-v {
+  width: 160rpx;
+  height: 100%;
+  /* background-color: rgb(146, 146, 5); */
+  float: left;
+  margin-top: -50rpx;
+  
+}
+
+.user-img {
+  width: 120rpx;
+  height: 120rpx;
+  margin-top: 10rpx;
+  margin-left: 25rpx;
+  margin-right: 15rpx;
+  border-radius: 50%;
+  /* background-color: rgb(250, 248, 248); */
+  background-color: white;
+  border: 10rpx solid white;
+}
+
+.user-con-v {
+  height: 100%;
+  width: 375rpx;
+  float: left;
+  margin-left: 8rpx;
+  /* background-color: pink; */
+  margin-top: -57rpx;
+}
+
+.user-name-v {
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-top: 35rpx;
+  font-size: 36rpx;
+  /* background-color: lightblue; */
+  overflow: hidden;
+}
+
+.user-name {
+  font-size: 24rpx;
+  margin-left: 15rpx;
+  color: rgb(136, 130, 130);
+  font-weight: bold;
+}
+
+.user-add-v {
+  margin-top:7rpx;
+  font-size: 25rpx;
+  /* color: rgb(136, 130, 130); */
+  /* font-weight: bold; */
+}
+
+.user-tit-v {
+  width: 100%;
+  height: 60rpx;
+  /* background-color: lavender; */
+}
+
+.tits {
+  height: 34rpx;
+  font-size: 24rpx;
+  line-height: 34rpx;
+  background-color: #ececec;
+  border-radius: 5rpx;
+  display: inline-block;
+  color: #8f8c8c;
+  padding-left: 5rpx;
+  padding-right: 5rpx;
+  padding-top: 2rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+  /* font-weight: bold; */
+}
+
+
+
+.hr-info-v {
+  width: 190rpx;
+  height: 100%;
+  float: right;
+  margin-top: -60rpx;
+}
+
+.hr-hot-v {
+  width: 100%;
+  height: 155rpx;
+  
+}
+
+.hr-con-name-v {
+  width: 120rpx;
+  height: 125rpx;
+  float: left;
+}
+
+.hr-img {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background-color: pink;
+  margin-top: 40rpx;
+  margin-left: 40rpx;
+  border: 5rpx solid white;
+}
+
+
+.hr-img-v {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 93rpx;
+  margin-left: 87rpx;
+}
+
+.hr-hot {
+  width: 70rpx;
+  height: 125rpx;
+  float: left;
+  
+}
+
+.hot-img {
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: 10rpx;
+  margin-top: 65rpx;
+}
+
+
+
+.hr-name {
+  width: 160rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  color: rgba(230, 61, 19, 0.863);
+  font-size: 24rpx;
+  text-align: center;
+  float: left;
+}
+
+
+
+.hr-title {
+  width: 170rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: rgb(182, 180, 180);
+  font-weight: bold;
+  /* background-color: olivedrab; */
+}
+
+
+
+
+
+.float-v {
+  width: 100%;
+  height: 100rpx;
+  top: 0rpx;
+  position: fixed;
+  background-color: white;
+  
+}
+
+
+.tab-hs {
+  margin: 0rpx;
 }

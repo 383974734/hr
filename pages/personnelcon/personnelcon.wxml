@@ -1,0 +1,31 @@
+<!--pages/personnelcon/personnelcon.wxml-->
+
+
+<!-- navbar -->
+<!-- <cover-view class='navbar-v'  style='height: {{navheight + 46}}px'>
+  <navbar-v class="navbar"  name="详情" naviteml="1"></navbar-v>
+</cover-view> -->
+
+
+<!-- 上面的灰色线 -->
+<!-- <view style="height:20rpx; background-color:#ececec" style='margin-top:{{navheight + 46}}px'></view> -->
+<!-- <view style="height:20rpx; background-color:#ececec" ></view> -->
+
+<!-- 头像 ../../static/images/user_img.png-->
+<image class='add-img' src='{{info.resumeImageUrl}}' mode='aspectFill'></image>
+
+<!-- 标签列表 -->
+<view class='list-b'>
+  <!-- 标签文字 -->
+  <!-- <view class='titlist'>
+    <view class='title' wx:for="{{titlist}}" wx:for-iindex="index" data-index="{{index}}">{{item}}
+    </view>
+  </view> -->
+</view>
+
+<!-- 详情内容 -->
+<view class='con-info-v' wx:for="{{coninfo}}" wx:for-index="index" data-index="{{index}}">
+  <label class='{{item.tit == "备注" ? "tit-bz" : "tit"}}'>{{item.tit}}</label>
+  <label class='star' hidden='{{item.tit != "姓名" && item.tit != "性别" && item.tit != "电话"}}'>*</label>
+  <view class='{{item.tit == "备注" ? "con-bz" : "con"}}'>{{info[item.name]}}</view>
+</view>

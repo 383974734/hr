@@ -1,0 +1,110 @@
+<!--pages/problemcon/problemcon.wxml-->
+
+<!-- navbar -->
+<!-- <cover-view class='navbar-v'  style='height: {{navheight + 46}}px'>
+  <navbar-v class="navbar"  name="问题" naviteml="1"></navbar-v>
+</cover-view> -->
+
+<!-- 整体父试图 -->
+<!-- <view class='back-v' style='margin-top:{{navheight + 46}}px'> -->
+<view class='back-v' >
+  <!-- 缩进背景试图 -->
+  <view class='problemcon-v'>
+    <!-- 图片 -->
+    <!-- <image class='img' src='{{json.questionDetail.imageUrl}}' hidden='{{json.questionDetail.imageUrl == ""}}' mode='aspectFill'></image> -->
+    <image class='img' src='{{json.questionDetail.imageUrl}}' hidden='{{json.questionDetail.imageUrl == ""}}' mode='aspectFill'></image>
+    <!-- 标题 -->
+    <view class='tit'>{{json.questionDetail.questionTitle}}</view>
+    <!-- 发布人 -->
+    <view class='user'>发布人:{{json.questionDetail.uname}}</view>
+    <!-- 赏 -->
+    <image class='list-shang' src='../../static/images/problem-shang.png'></image>
+    <view class='list-shang-number'>+{{json.questionDetail.questionMp}}</view>
+
+    <!-- 分享 -->
+    <view  class='shear-view'>
+        <image class='shear-img' src='../../static/images/share.png'></image>
+        <button  class='shear' open-type='share'></button>
+    </view>
+
+
+    <!-- 问题 -->
+    <view class='problem'>{{json.questionDetail.questionMessage}}</view>
+    <!-- 标签 -->
+    <!-- <view class='tits' wx:for="{{titleArr}}" wx:for-index="index" data-index="{{index}}">{{item}}</view> -->
+    <view>
+      <!-- 浏览量 -->
+      <view class='number'>已阅读（{{json.questionDetail.statue}}）</view>
+      <!-- 日期 -->
+      <view class='time'>{{json.questionDetail.questionDate}}</view>
+    </view>
+    
+    <!-- 回答和点赞按钮 -->
+    <view class='pf-btn-v'>
+      <!-- 回答 -->
+      <image class='problembtn' src='../../static/images/fabulou-ben.png' bindtap='industrybtn' mode='aspectFill'></image>
+      <!-- <view class='problembtn-v'>
+        <image class='problembtn' src='../../static/images/fabulou-ben.png'></image>
+      </view> -->
+      <!-- 点赞 -->
+      <view class='fabulousbtn-v' hidden='true'>
+        <image class='fabulousbtn' src='../../static/images/fabulousbtn-Y.png' mode='aspectFill'></image>
+      </view>
+    </view>
+
+    <!-- 上一条按钮
+    <image class='popbtn' src='../../static/images/problemcon-pop.png'></image>
+    下一条按钮
+    <image class='pushbtn' src='../../static/images/problemcon-push.png'></image> -->
+
+    <!-- 评论liist -->
+    <view class='list-v'>
+      <!-- 评论文字 -->
+      <view class='comment'>评论（{{json.answerListSize}}）</view>
+      <!-- 评论cell -->
+      <view class='list' wx:for="{{json.answerList}}" wx:for-index="index" data-index="{{index}}">
+        <image class='list-img' src='{{item.imageurl}}' mode='aspectFill'></image>
+        <view class='list-name'>{{item.uname}}</view>
+        <view class='list-con'>{{item.answerMessage}}</view>
+        <view class='list-time'>{{item.answerDate}}</view>
+        <image class='list-fabulous' src='{{item.answerSelect == 0 ? "../../static/images/fabulous-n.png" : "../../static/images/fabulous-y.png"}}' bindtap='zanBtn' data-indexsele='{{index}}' mode='aspectFill' hidden='{{memberId != memberidT}}'></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+
+
+<!-- 飘起来选择的view -->
+<view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}" catchtouchmove='true' hidden='{{!showDialog}}'>
+  <view class="zan-dialog__mask" bindtap="industrybtn" />
+  <view class="zan-dialog__container">
+    <view class='pop-tit'>回答问题</view>
+    <form bindsubmit="formSubmit" bindreset="formReset" report-submit="true">
+      <textarea class='pop-subtit' name='problem' placeholder='(限制2000字)' value='{{jfValue}}' placeholder-style="color:#e2e2e2;" maxlength='2000'></textarea>
+      <view class='btn-v'>
+        <button class='no'  form-type='reste' bindtap='formCancelt'>取消</button>
+        <button class='yes'  form-type='submit'>确定</button>
+      </view>
+    </form>
+  </view>
+</view>
+
+
+
+
+
+<!-- 飘起来选择的view -->
+<view class="zan-dialogs {{ showDialogs ? 'zan-dialog--shows' : '' }}" catchtouchmove='true' hidden='{{!showDialogs}}'>
+  <view class="zan-dialog__masks" bindtap="industrybtns" />
+  <view class="zan-dialog__containers">
+    <view class='pop-tits'>确认最佳</view>
+    <view class='pop-subtits'>亲， <label style='color: orange; font-size: 40rpx;'>{{tips}}</label>  将得到您的悬赏</view>
+    <view class='btn-vs'>
+      <button class='nos' bindtap="industrybtns">取消</button>
+      <button class='yess' bindtap="pushrecharges">确定</button>
+    </view>
+  </view>
+</view>

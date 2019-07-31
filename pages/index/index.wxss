@@ -1,5 +1,5 @@
 /**index.wxss**/
-.userinfo {
+/* .userinfo {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,4 +18,190 @@
 
 .usermotto {
   margin-top: 200px;
+} */
+
+
+page{
+  /* background-color: #f9f9f9; */
+}
+
+/* 底部view */
+
+
+.navbar-v {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  background-color: white;
+  top: 0;
+}
+
+.navbar {
+  width: 100%;
+  height: 46px;
+  position: absolute;
+	bottom: 0;
+}
+
+.header{
+  /* height: 580rpx; */
+  background-color: white;
+}
+
+.head-text{
+  padding-top: 104rpx;
+  font-size: 44rpx;
+  color: #000000;
+  text-align: center;
+}
+
+.inputView { 
+ background-color: #fff; 
+ line-height: 44px; 
+ width: 300px;
+ margin-top: 118rpx;
+} 
+
+.inputText { 
+ float: right;
+ margin-right: 37px; 
+ margin-left: 15px;
+ color: #cccccc; 
+ font-size: 14px
+} 
+
+.phone-right{
+  height: 32px;
+  background-image: "../static/images/key.png";
+}
+
+.register-button {
+  color: white;
+  background-color: rgb(241, 128, 107);
+}
+
+/* <!-- 上传头像按钮 --> */
+.logo-img {
+  width: 200rpx;
+  height: 200rpx;
+  /* 居中显示 */
+  margin: 0 auto;
+  margin-top: 200rpx;
+  display: flex;
+  justify-content: center;
+   /* 居中显示 */
+}
+
+.agreement-backv {
+  margin-top: 50rpx;
+  text-align: center;
+}
+
+.tit-add-img {
+  width: 40rpx;
+  height: 40rpx;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 40rpx;
+  font-size: 30rpx; 
+  /* border: 1rpx solid lightgrey; */
+  background-color: white;
+  color: lightgrey;
+}
+
+.tit-add-img-sele {
+  background-color: rgb(22, 133, 236);
+  border: 1rpx solid rgb(22, 133, 236);
+  color: white;
+}
+
+.tit-add {
+  display: inline-block;
+  font-size: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-left: 10rpx;
+  color: rgb(129, 124, 124);
+}
+
+
+
+
+
+/* 飘起来选择的view背景 */
+.zan-dialog__mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  /* 设置阴影半透明背景如： background: rgba(0, 0, 0, 0.4); */
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+}
+
+/* 飘起来选择的view内容 */
+.zan-dialog__container {
+  position: fixed;
+  top: 210rpx;
+  /* bottom: 320rpx; */
+  /* 弹窗布局宽 */
+  width: 650rpx;
+  /* 弹窗布局高，与下面弹出距离transform有关 */
+  height: 480rpx;
+  margin-left: 50rpx;
+  background: white;
+  /* 弹框弹出距离，与弹框布局高度有关，如300%表示弹起距离为3倍弹窗高度 */
+  /* transform: translateY(700%); */
+  transform: translateY(0);
+  transition: all 0.7s ease;
+  z-index: 12;
+  border-radius: 20rpx;
+  /* 弹框的悬浮阴影效果，如不需要可注释该行 */
+  /* box-shadow: 0px 3px 3px 2px gainsboro; */
+}
+
+.zan-dialog--show .zan-dialog__container {
+  transform: translateY(0);
+}
+
+.zan-dialog--show .zan-dialog__mask {
+  display: block;
+}
+
+
+.public-number-subv {
+  width: 100%;
+  height: 168rpx;
+  /* line-height: 480rpx; */
+  margin-top: 136rpx;
+}
+
+
+
+.content {
+  margin-left: 50rpx;
+  margin-bottom: 90rpx;
+}
+
+.content text {
+  display: block;
+  color: #9d9d9d;
+  margin-top: 40rpx;
+} 
+
+.hide{
+  border-radius: 80rpx;
+  margin: 70rpx 50rpx;
+  font-size: 35rpx;
+  display: none;
+}
+.show{
+  display: block;
+  /* background: #eef0ed !important; */
+  border-radius: 80rpx;
+  margin: 70rpx 50rpx;
+  font-size: 35rpx;
+  /* color: #000300 !important; */
 }
