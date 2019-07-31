@@ -35,7 +35,7 @@
 }
 
 .mes-back-v {
-  border: 1rpx solid #aaa9a9;
+  /* border: 1rpx solid #aaa9a9; */
   background-color: rgb(153, 241, 21);
   border-radius: 15rpx;
   padding: 25rpx;

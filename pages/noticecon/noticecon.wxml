@@ -11,7 +11,7 @@
       <view class='mes-jt'>
       </view>
       {{json.messageTitle}}
-      <label class='mes-back-time'>{{json.messageDate}}</label>
+      <!-- <label class='mes-back-time'>{{json.messageDate}}</label> -->
       {{json.messageContent}}
     </view>
   </view>

@@ -39,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 7,
+			"current": 8,
 			"list": [
 				{
 					"id": -1,
@@ -94,6 +94,13 @@
 					"id": -1,
 					"name": "活动详情",
 					"pathName": "pages/traincon/traincon",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "消息详情",
+					"pathName": "pages/noticecon/noticecon",
 					"query": "",
 					"scene": null
 				}
